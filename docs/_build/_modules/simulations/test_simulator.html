@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simulations.test_simulator &#8212; Agent-based simulations 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx-toolbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_toolbox_installation.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/sphinx_toolbox_installation.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/simulations/test_simulator';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Agent-based simulations 1.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../simulator_dynamics.html">
+                        Simulator Dynamics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../functions.html">
+                        Functions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../test_simulator.html">
+                        Test Simulator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../config.html">
+                        Configuration
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../simulator_dynamics.html">
+                        Simulator Dynamics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../functions.html">
+                        Functions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../test_simulator.html">
+                        Test Simulator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../config.html">
+                        Configuration
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../simulator_dynamics.html">Simulator Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_simulator.html">Test Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">Configuration</a></li>
+</ul>
+</div>
+        <div class="sidebar-primary-item">
+<div id="searchbox"></div></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">simulations.test_simulator</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for simulations.test_simulator</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Test module for the simulation system.</span>
+<span class="sd">This module contains unit tests for the simulator functionality, including</span>
+<span class="sd">testing for V functions, Phi functions, group dynamics, and heuristic search.</span>
+<span class="sd">It verifies the correctness of the simulation algorithms and ensures</span>
+<span class="sd">proper functionality of all components.</span>
+
+<span class="sd">Authors: Álvaro Romaniega</span>
+<span class="sd">Version: 1.0</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Import the necessary libraries</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="c1"># Import the modules</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">simulator</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">r_function</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.simulator</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">r_function</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">simulator_dynamics</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">PhiFunction</span><span class="p">,</span>
+        <span class="n">PhiGroup</span><span class="p">,</span>
+        <span class="n">VFunction</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.simulator_dynamics</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">PhiFunction</span><span class="p">,</span>
+        <span class="n">PhiGroup</span><span class="p">,</span>
+        <span class="n">VFunction</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">functions</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">test_group_h</span><span class="p">,</span>
+        <span class="n">test_individual_h</span><span class="p">,</span>
+        <span class="n">excel_results</span><span class="p">,</span>
+        <span class="n">test_V</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.functions</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">test_group_h</span><span class="p">,</span>
+        <span class="n">test_individual_h</span><span class="p">,</span>
+        <span class="n">excel_results</span><span class="p">,</span>
+        <span class="n">test_V</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">figures_path</span><span class="p">,</span>
+        <span class="n">results_path</span><span class="p">,</span>
+        <span class="n">tables_path</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="n">figures_path</span><span class="p">,</span>
+        <span class="n">results_path</span><span class="p">,</span>
+        <span class="n">tables_path</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="c1"># Global test variables</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<div class="viewcode-block" id="TestSimulator"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator">[docs]</a><span class="k">class</span> <span class="nc">TestSimulator</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSimulator.setUpClass"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.setUpClass">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">setUpClass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up test fixtures that are used across all tests.&quot;&quot;&quot;</span>
+        <span class="c1"># Create test directories if they don&#39;t exist</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="p">[</span><span class="n">results_path</span><span class="p">,</span> <span class="n">figures_path</span><span class="p">,</span> <span class="n">tables_path</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+        <span class="c1"># Store original paths for cleanup</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">original_paths</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">results_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">results_path</span><span class="p">)</span> <span class="k">else</span> <span class="p">[],</span>
+            <span class="s1">&#39;figures&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">figures_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">figures_path</span><span class="p">)</span> <span class="k">else</span> <span class="p">[],</span>
+            <span class="s1">&#39;tables&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">tables_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">tables_path</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="TestSimulator.setUp"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up test fixtures.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V_random</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V_params</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V_r</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">r_function</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.tearDownClass"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.tearDownClass">[docs]</a>    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">tearDownClass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clean up any files created during testing.&quot;&quot;&quot;</span>
+        <span class="c1"># Remove any new files in results directory</span>
+        <span class="n">current_results</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">results_path</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">current_results</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">original_paths</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+
+        <span class="c1"># Remove any new files in figures directory</span>
+        <span class="n">current_figures</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">figures_path</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">current_figures</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">original_paths</span><span class="p">[</span><span class="s1">&#39;figures&#39;</span><span class="p">]:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figures_path</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+
+        <span class="c1"># Remove any new files in tables directory</span>
+        <span class="n">current_tables</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">tables_path</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">current_tables</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">original_paths</span><span class="p">[</span><span class="s1">&#39;tables&#39;</span><span class="p">]:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tables_path</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_individual_heuristic"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_individual_heuristic">[docs]</a>    <span class="k">def</span> <span class="nf">test_individual_heuristic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test individual heuristic performance with different heuristics and hardcoded V function.&quot;&quot;&quot;</span>
+        <span class="c1"># Test case 1: Basic heuristic</span>
+        <span class="n">r1</span> <span class="o">=</span> <span class="n">test_individual_h</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">r1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">29.47</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Test case 2: Sequential heuristic</span>
+        <span class="n">h1</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="n">test_individual_h</span><span class="p">(</span><span class="n">h1</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">r2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">29.47</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Test case 3: Larger heuristic</span>
+        <span class="n">max_h</span> <span class="o">=</span> <span class="mi">6</span>
+        <span class="n">h2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_h</span><span class="p">)]</span>
+        <span class="n">r3</span> <span class="o">=</span> <span class="n">test_individual_h</span><span class="p">(</span><span class="n">h2</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">r3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">25.3</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_function_initialization"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_function_initialization">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_function_initialization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test PhiFunction initialization with different parameters.&quot;&quot;&quot;</span>
+        <span class="c1"># Test initialization with region</span>
+        <span class="n">phi_region</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">phi_region</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+        <span class="c1"># Test initialization with radius</span>
+        <span class="n">phi_radius</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">phi_radius</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+        <span class="c1"># Test initialization with heuristics</span>
+        <span class="n">phi_heur</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">phi_heur</span><span class="o">.</span><span class="n">heuristics</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+        <span class="c1"># Test error when multiple parameters provided</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_region_search"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_region_search">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_region_search</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test phi_region search functionality.&quot;&quot;&quot;</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+        <span class="c1"># Test basic search</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">phi_region</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+
+        <span class="c1"># Test with return_checks</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">checks</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">phi_region</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">checks</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_hp_algorithm"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_hp_algorithm">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_hp_algorithm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test Hong-Page algorithm implementation.&quot;&quot;&quot;</span>
+        <span class="c1"># Test basic HP algorithm</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="o">.</span><span class="n">phi_hp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertGreaterEqual</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertLess</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+        <span class="c1"># Test with return_checks</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">checks</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="o">.</span><span class="n">phi_hp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">checks</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertGreater</span><span class="p">(</span><span class="n">checks</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_group_dynamics"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_group_dynamics">[docs]</a>    <span class="k">def</span> <span class="nf">test_group_dynamics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test group dynamics performance.&quot;&quot;&quot;</span>
+        <span class="n">heuristics_k_test</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">test_group_h</span><span class="p">(</span><span class="n">heuristics_k_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertGreater</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mf">0.99</span><span class="p">)</span>  <span class="c1"># Expected value random</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">10.99</span><span class="p">))</span>  <span class="c1"># Expected value best</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Intersection</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Distinct heuristics sorted</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Distinct heuristics expected</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_group_dynamics_oscillatory"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_group_dynamics_oscillatory">[docs]</a>    <span class="k">def</span> <span class="nf">test_group_dynamics_oscillatory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test group dynamics with oscillatory V function.&quot;&quot;&quot;</span>
+        <span class="c1"># Create test data</span>
+        <span class="n">heuristics_k_test</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
+        <span class="n">additional_bests</span> <span class="o">=</span> <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_params</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
+                            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+        <span class="c1"># Test group dynamics</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">test_group_h</span><span class="p">(</span><span class="n">heuristics_k_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_params</span><span class="p">,</span>
+                            <span class="n">additional_best</span><span class="o">=</span><span class="n">additional_bests</span><span class="p">,</span>
+                            <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span>  <span class="c1"># Expected value best</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)))</span>  <span class="c1"># Intersection</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>  <span class="c1"># Distinct heuristics sorted</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>  <span class="c1"># Distinct heuristics expected</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_group_functionality"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_group_functionality">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_group_functionality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test PhiGroup class functionality.&quot;&quot;&quot;</span>
+        <span class="c1"># Create a group of phi functions</span>
+        <span class="n">phis</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
+            <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+            <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="p">]</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">phis</span><span class="p">)</span>
+
+        <span class="c1"># Test group dynamics</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">checks</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">phi_group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">checks</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+
+        <span class="c1"># Test expected value calculation</span>
+        <span class="n">exp_value</span><span class="p">,</span> <span class="n">exp_iter</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">exp_value</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">exp_iter</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_v_function_creation"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_v_function_creation">[docs]</a>    <span class="k">def</span> <span class="nf">test_v_function_creation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test VFunction creation and properties.&quot;&quot;&quot;</span>
+        <span class="c1"># Test random V function</span>
+        <span class="n">v_random</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">v_random</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">))</span>
+
+        <span class="c1"># Test parametric V function</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">v_param</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">v_param</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">))</span>
+
+        <span class="c1"># Test function-based V</span>
+        <span class="n">v_func</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">v_func</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">))</span>
+
+        <span class="c1"># Test error when multiple parameters provided</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_r_function"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_r_function">[docs]</a>    <span class="k">def</span> <span class="nf">test_r_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test r_function and best phi calculations.&quot;&quot;&quot;</span>
+        <span class="n">heuristics_k_test</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
+
+        <span class="c1"># Get best phis</span>
+        <span class="n">best_phi</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_sorted</span><span class="p">,</span> <span class="n">distinct_exp</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">V_r</span><span class="o">.</span><span class="n">best_phis</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">heuristics_k_test</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+
+        <span class="c1"># Create group from best phis</span>
+        <span class="n">best_phi_group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">best_phi</span><span class="p">)</span>
+
+        <span class="c1"># Test expected values</span>
+        <span class="n">expected_value</span><span class="p">,</span> <span class="n">expected_iterations</span> <span class="o">=</span> <span class="n">best_phi_group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">expected_value</span><span class="p">,</span> <span class="mf">0.9011856361939549</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">expected_iterations</span><span class="p">,</span> <span class="mf">11.94</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">phi_value</span><span class="p">,</span> <span class="n">phi_iterations</span> <span class="o">=</span> <span class="n">best_phi_group</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">expected_value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">phi_value</span><span class="p">,</span> <span class="mf">0.8398630424629704</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">phi_iterations</span><span class="p">,</span> <span class="mf">5.24</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Test best heuristics</span>
+        <span class="n">expected_heuristics</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+        <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">best_heuristics</span><span class="p">,</span> <span class="n">expected_heuristics</span><span class="p">)</span>
+
+        <span class="c1"># Test other metrics</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">intersection</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">distinct_sorted</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">distinct_exp</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_test_V_function"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_test_V_function">[docs]</a>    <span class="k">def</span> <span class="nf">test_test_V_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test the test_V function with various parameters.&quot;&quot;&quot;</span>
+        <span class="c1"># Test with parametric V</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">test_V</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">trials</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+               <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">additional_best_no</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># Verify files were created</span>
+        <span class="n">expected_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;test_V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">_M_2_N_5_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_0_search_5_less_None_noless_0_alternative_False_stop_None.xlsx&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">expected_file</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_excel_results"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_excel_results">[docs]</a>    <span class="k">def</span> <span class="nf">test_excel_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test the excel_results function with various configurations.&quot;&quot;&quot;</span>
+        <span class="c1"># Test basic excel creation</span>
+        <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                      <span class="n">no_random</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="c1"># results_M_2_randomVperc_1_N_5_n_100_l_12_addPhi_0_search_5_less_None_noless_0_alternative_False_stop_None.xlsx</span>
+        <span class="n">expected_file</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;results_M_2_randomVperc_1_N_5_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_0_search_5&quot;</span>
+                         <span class="s2">&quot;_less_None_noless_0_alternative_False_stop_None.xlsx&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">expected_file</span><span class="p">)))</span>
+
+        <span class="c1"># Test with latex table creation</span>
+        <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                      <span class="n">no_random</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">expected_file_latex</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;results_M_2_randomVperc_1_N_5_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">&quot;</span>
+                               <span class="s2">&quot;_delta_rho_[3, 5].tex&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tables_path</span><span class="p">,</span> <span class="n">expected_file_latex</span><span class="p">)))</span>
+
+        <span class="c1"># Test with ability difference analysis</span>
+        <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                      <span class="n">no_random</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">analysis_ability_difference</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">expected_file_ab</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;results_M_2_randomVperc_1_N_5_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_0_search_5&quot;</span>
+                            <span class="s2">&quot;_less_None_noless_0_alternative_False_stop_None_ab_diff.tex&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tables_path</span><span class="p">,</span> <span class="n">expected_file_ab</span><span class="p">)))</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_excel_results_errors"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_excel_results_errors">[docs]</a>    <span class="k">def</span> <span class="nf">test_excel_results_errors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test error handling in excel_results function.&quot;&quot;&quot;</span>
+        <span class="c1"># Test error when delta_rho provided without radial search</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                          <span class="n">delta_rho</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># Test handling of invalid parameters</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+            <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_file_content_validity"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_file_content_validity">[docs]</a>    <span class="k">def</span> <span class="nf">test_file_content_validity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test that created files have valid content.&quot;&quot;&quot;</span>
+        <span class="c1"># Create a test file</span>
+        <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                      <span class="n">no_random</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">expected_file</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;results_M_2_randomVperc_1_N_5_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_0_search_5&quot;</span>
+                         <span class="s2">&quot;_less_None_noless_0_alternative_False_stop_None.xlsx&quot;</span><span class="p">)</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">expected_file</span><span class="p">)</span>
+
+        <span class="c1"># Check file size is non-zero</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertGreater</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Check latex file if created</span>
+        <span class="n">tex_file</span> <span class="o">=</span> <span class="n">expected_file</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.xlsx&#39;</span><span class="p">,</span> <span class="s1">&#39;.tex&#39;</span><span class="p">)</span>
+        <span class="n">tex_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tables_path</span><span class="p">,</span> <span class="n">tex_file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">tex_path</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">tex_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">begin</span><span class="si">{table}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">end</span><span class="si">{table}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_delta_invariance"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_delta_invariance">[docs]</a>    <span class="k">def</span> <span class="nf">test_delta_invariance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Results should be independent of delta.&quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">VFunction</span><span class="o">.</span><span class="n">_random_params</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">params_without_delta</span> <span class="o">=</span> <span class="n">params</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">delta_1</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">delta_2</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">params_with_delta_1</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">params_without_delta</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">delta_1</span><span class="p">])</span>
+        <span class="n">params_with_delta_2</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">params_without_delta</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">delta_2</span><span class="p">])</span>
+        <span class="n">heuristics_k_test</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
+        <span class="n">V_1</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params_with_delta_1</span><span class="p">)</span>
+        <span class="n">V_2</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params_with_delta_2</span><span class="p">)</span>
+        <span class="n">best_phi_1</span><span class="p">,</span> <span class="n">best_heuristics_1</span><span class="p">,</span> <span class="n">intersection_1</span><span class="p">,</span> <span class="n">distinct_sorted_1</span><span class="p">,</span> <span class="n">distinct_exp_1</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">V_1</span><span class="o">.</span><span class="n">best_phis</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">heuristics_k_test</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+        <span class="n">best_phi_2</span><span class="p">,</span> <span class="n">best_heuristics_2</span><span class="p">,</span> <span class="n">intersection_2</span><span class="p">,</span> <span class="n">distinct_sorted_2</span><span class="p">,</span> <span class="n">distinct_exp_2</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">V_2</span><span class="o">.</span><span class="n">best_phis</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">heuristics_k_test</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">best_heuristics_1</span><span class="p">,</span> <span class="n">best_heuristics_2</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_linear_V_apriori"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_linear_V_apriori">[docs]</a>    <span class="k">def</span> <span class="nf">test_linear_V_apriori</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;More tests for the results when the V function is increasing when we know the apriori some results.&quot;&quot;&quot;</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span>
+        <span class="n">heuristics</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
+        <span class="n">random_heur</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">while</span> <span class="mi">1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">random_heur</span><span class="p">:</span>
+            <span class="n">random_heur</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># If heuristic contain the number one, for sure it achieve the maximum</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">test_individual_h</span><span class="p">(</span><span class="n">random_heur</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Random heuristic not containing one must be worse than the one 1 as it does not achieve the maximum</span>
+        <span class="c1"># at the penultimate point</span>
+        <span class="n">random_heur_not_one</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">while</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">random_heur_not_one</span><span class="p">:</span>
+            <span class="n">random_heur_not_one</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">test_individual_h</span><span class="p">(</span><span class="n">random_heur_not_one</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertLess</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Join both and see that as a group they are perfect</span>
+        <span class="n">heuristics_group</span> <span class="o">=</span> <span class="p">[</span><span class="n">random_heur</span><span class="p">,</span> <span class="n">random_heur_not_one</span><span class="p">]</span>
+        <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span> <span class="o">=</span> <span class="n">test_group_h</span><span class="p">(</span><span class="n">heuristics_group</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span>
+                                                                                                 <span class="n">no_random</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                                                                                 <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">ev_best</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">ev_random</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">heuristics_group_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">random_heur_not_one</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="n">ev_random_2</span><span class="p">,</span> <span class="n">ev_best_2</span><span class="p">,</span> <span class="n">intersection_2</span><span class="p">,</span> <span class="n">distinct_heur_sorted_2</span><span class="p">,</span> <span class="n">distinct_heur_exp_2</span> <span class="o">=</span> <span class="n">test_group_h</span><span class="p">(</span>
+            <span class="n">heuristics_group_2</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">ev_best_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">ev_random_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="TestSimulator.test_random_V_apriori"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_random_V_apriori">[docs]</a>    <span class="k">def</span> <span class="nf">test_random_V_apriori</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Test the results when the V function is random and we know apriori some results.&quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">25</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="c1"># Random V function but first and second best separated more than 5 positions</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">delta</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">j_1</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">delta_0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">j_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">j_1</span> <span class="o">+</span> <span class="n">delta_0</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+            <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">j_1</span> <span class="o">-</span> <span class="n">j_2</span><span class="p">)</span> <span class="o">%</span> <span class="n">n</span>
+
+        <span class="k">def</span> <span class="nf">V_function</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j_1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j_2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mf">0.95</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mf">0.94</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+
+        <span class="n">V</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">V_function</span><span class="p">)</span>
+        <span class="n">heuristics</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
+        <span class="n">random_heur</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span>
+                                   <span class="mi">0</span><span class="p">])</span>  <span class="c1"># Otherwise the modification of the list will affect the original one, which will affect the second test below</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">random_heur</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">random_heur</span> <span class="o">+=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">phi</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">random_heur</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="n">j_2</span><span class="p">),</span> <span class="n">j_2</span><span class="p">)</span>  <span class="c1"># It cannot be j_1 as it is too far away, so second best</span>
+
+        <span class="n">random_heur</span> <span class="o">+=</span> <span class="p">[</span><span class="n">delta</span><span class="p">]</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">random_heur</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="n">j_2</span><span class="p">),</span> <span class="n">j_1</span><span class="p">)</span>  <span class="c1"># Now it can reach j_1 as delta is reached</span>
+        <span class="c1"># Now for a group adding phi_functions with heuristics [i]</span>
+        <span class="n">random_heur</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">phi_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">random_heur</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">random_heur</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">random_heur_plus</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">phi_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">random_heur_plus</span><span class="p">))</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">phi_list</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">group</span><span class="p">(</span><span class="n">j_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">j_2</span><span class="p">)</span>
+        <span class="n">random_heur_plus</span> <span class="o">=</span> <span class="p">[</span><span class="n">delta</span><span class="p">]</span>
+        <span class="n">phi_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">random_heur_plus</span><span class="p">))</span>
+        <span class="n">group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">phi_list</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">group</span><span class="p">(</span><span class="n">j_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">j_1</span><span class="p">)</span></div></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
