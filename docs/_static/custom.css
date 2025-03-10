@@ -1,0 +1,97 @@
+/* Theme colors */
+html[data-theme=dark] {
+    --pst-color-background: #363636 !important;
+    --pst-color-inline-code: #86c0ff !important;
+    --pst-color-primary: #86c0ff !important;
+    --color-heading: #d4cbcb !important;
+}
+
+html[data-theme=light] {
+    --pst-color-inline-code: #075dad !important;
+    --pst-color-primary: #075dad !important;
+    --color-heading: #000000 !important;
+}
+
+/* Element styling */
+svg {
+    fill: var(--pst-color-primary) !important;
+}
+
+h1, h2 {
+    color: var(--color-heading);
+}
+
+/* Primary color text elements */
+.descname .pre,
+p .reference,
+.prev-next-title,
+.viewcode-link,
+p a,
+code a,
+.tocsection a,
+li.current > a,
+.py-obj .pre,
+dt strong,
+.docutils .pre {
+    color: var(--pst-color-primary);
+}
+
+/* Hover effects */
+.viewcode-link:hover,
+a:hover {
+    color: #e9a33b !important;
+}
+
+/* Special cases */
+.fa-gitlab-square {
+    font-size: 24px;
+    color: #e62e00 !important;
+}
+
+li.current > a {
+    font-weight: bold;
+}
+
+code a {
+    font-weight: bold;
+}
+
+.cell_input {
+    border-left-color: var(--pst-color-primary) !important;
+}
+
+.docutils .pre[data-theme=dark] {
+    color: #e98c1e !important;
+}
+
+/* Site title and dataframe styling */
+#site-title {
+    font-weight: bold;
+    font-family: Calibri Light;
+}
+
+.cell_output {
+    overflow: auto;
+}
+
+.dataframe th {
+    font-size: 11px;
+}
+
+.dataframe td {
+    font-size: 9px;
+}
+
+/* Navigation and layout */
+div.bd-sidebar {
+    overflow-y: auto;
+    display: flow-root;
+}
+
+.company-logo {
+    position: fixed;
+    top: 8%;
+    left: 6.7%;
+    width: 10%;  
+    height: auto;
+}
