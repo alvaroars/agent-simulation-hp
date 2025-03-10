@@ -1,0 +1,1354 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simulations.simulator_dynamics &#8212; Agent-based simulations 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx-toolbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_toolbox_installation.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/sphinx_toolbox_installation.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/simulations/simulator_dynamics';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Agent-based simulations 1.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../simulator_dynamics.html">
+                        Simulator Dynamics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../functions.html">
+                        Functions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../test_simulator.html">
+                        Test Simulator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../config.html">
+                        Configuration
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../simulator_dynamics.html">
+                        Simulator Dynamics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../functions.html">
+                        Functions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../test_simulator.html">
+                        Test Simulator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../config.html">
+                        Configuration
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../simulator_dynamics.html">Simulator Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_simulator.html">Test Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">Configuration</a></li>
+</ul>
+</div>
+        <div class="sidebar-primary-item">
+<div id="searchbox"></div></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">simulations.simulator_dynamics</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for simulations.simulator_dynamics</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.auxiliary</span> <span class="kn">import</span> <span class="n">latex_settings</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">auxiliary</span> <span class="kn">import</span> <span class="n">latex_settings</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="c1"># Class to represent a phi function</span>
+<span class="c1"># noinspection PyPep8Naming</span>
+<div class="viewcode-block" id="PhiFunction"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction">[docs]</a><span class="k">class</span> <span class="nc">PhiFunction</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a :math:`\\phi` function.</span>
+
+<span class="sd">    :param V: The function :math:`V` to be maximized</span>
+<span class="sd">    :type V: VFunction</span>
+<span class="sd">    :param region: The region to search the maximizer of :math:`V`, optional (default is None). See :meth:`phi_region` for more details.</span>
+<span class="sd">    :type region: list or None</span>
+<span class="sd">    :param random_points: The random points to search the maximizer of :math:`V`, optional (default is None). See :meth:`phi_region` for more details.</span>
+<span class="sd">    :type random_points: int or None</span>
+<span class="sd">    :param radius: The radius to search the maximizer of :math:`V`, optional (default is None). See :meth:`phi_region` for more details.</span>
+<span class="sd">    :type radius: int or None</span>
+<span class="sd">    :param heuristics: The heuristics to search the maximizer of :math:`V`, optional (default is None). See :meth:`phi_hp` for more details.</span>
+<span class="sd">    :type heuristics: list or None</span>
+<span class="sd">    :param less_ability_coef: The less ability coefficient to search the maximizer of :math:`V`, optional (default is None).</span>
+<span class="sd">    :type less_ability_coef: list or None</span>
+
+<span class="sd">    .. note:: The less ability coefficient is a list of at least 2 elements, the first one is the </span>
+<span class="sd">        type of less ability coefficient, and the rest are the parameters associated to the type. The types are:</span>
+<span class="sd">        </span>
+<span class="sd">        * **displacement**: the less ability coefficient is a displacement of the function :math:`V`. The parameters are:</span>
+<span class="sd">          </span>
+<span class="sd">          * ``c`` = less_ability_coef[0]: the displacement parameter, an integer.</span>
+<span class="sd">        </span>
+<span class="sd">        * **error**: the less ability coefficient is an error in the function :math:`V`. The parameters are:</span>
+<span class="sd">          </span>
+<span class="sd">          * ``c`` = less_ability_coef[0]: the error parameter, a float between 0 and 1. Then, the error </span>
+<span class="sd">            region is a random sample of ``c*n`` points from the range ``[0, n-1]``. In this region, the function</span>
+<span class="sd">            returns :math:`1-V(i)`.</span>
+<span class="sd">        </span>
+<span class="sd">        * **max_min**: the less ability coefficient is a maximum away from the real maximum. The parameters are:</span>
+<span class="sd">          </span>
+<span class="sd">          * ``c1`` = less_ability_coef[0]: the number of minimum values to exclude, an integer.</span>
+<span class="sd">          * ``c2`` = less_ability_coef[1]: the number of maximum values to exclude, an integer.</span>
+<span class="sd">          * ``c3`` = less_ability_coef[2]: the coefficient to modify :math:`V`, a float between 0 and 1. That is, for the alternative</span>
+<span class="sd">            region, the function returns :math:`V(i)\cdot(1-c_3)+1-V(i)\cdot c_3`.</span>
+<span class="sd">        </span>
+<span class="sd">        * **middle**: the less ability coefficient is a middle value. The parameters are:</span>
+<span class="sd">          </span>
+<span class="sd">          * ``c1`` = less_ability_coef[0]: the number of middle values to include, an integer.</span>
+<span class="sd">          * ``c3`` = less_ability_coef[-1]: the new value to assign to the middle values, a float between 0 and 1.</span>
+<span class="sd">        </span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; v_func = VFunction(n=100, random=True)</span>
+<span class="sd">        &gt;&gt;&gt; # Create a phi function that searches within a fixed region</span>
+<span class="sd">        &gt;&gt;&gt; phi_region = PhiFunction(V=v_func, region=[10, 20, 30, 40, 50])</span>
+<span class="sd">        &gt;&gt;&gt; # Create a phi function that uses a heuristic search strategy</span>
+<span class="sd">        &gt;&gt;&gt; phi_heuristic = PhiFunction(V=v_func, heuristics=[1, 3, 5, 7])</span>
+<span class="sd">        &gt;&gt;&gt; # Find the maximizer starting from position 15</span>
+<span class="sd">        &gt;&gt;&gt; best_point = phi_heuristic(15)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="PhiFunction.__init__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">global</span> <span class="n">plot_count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">V</span>  <span class="c1"># The function is a function of V</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">n</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">random_points</span> <span class="o">=</span> <span class="n">random_points</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">heuristics</span> <span class="o">=</span> <span class="n">heuristics</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error_sample</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">less_ability_coef</span> <span class="o">=</span> <span class="n">less_ability_coef</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">less_ability_coef</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">alt_V</span> <span class="o">=</span> <span class="n">V</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">la_type</span> <span class="o">=</span> <span class="n">less_ability_coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span> <span class="o">=</span> <span class="n">less_ability_coef</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_type</span> <span class="o">==</span> <span class="s2">&quot;displacement&quot;</span><span class="p">:</span>
+                <span class="c1"># Introduce a displacement</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">alt_V_u</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">V</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">c</span> <span class="o">%</span> <span class="n">n</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_type</span> <span class="o">==</span> <span class="s2">&quot;error&quot;</span><span class="p">:</span>
+                <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">error_subset</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span> <span class="o">*</span> <span class="n">n</span><span class="p">))</span>
+                <span class="n">alt_V_u</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">error_subset</span> <span class="k">else</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_type</span> <span class="o">==</span> <span class="s2">&quot;max_min&quot;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_type</span> <span class="o">==</span> <span class="s2">&quot;middle&quot;</span><span class="p">:</span>
+                <span class="n">sorted_values</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_type</span> <span class="o">==</span> <span class="s2">&quot;max_min&quot;</span><span class="p">:</span>
+                    <span class="c1"># Maximum away from real maximum</span>
+                    <span class="n">c1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Number of minimum values to exclude</span>
+                    <span class="n">c2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Number of maximum values to exclude</span>
+                    <span class="n">c3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># Coefficient to multiply the maximum values</span>
+                    <span class="n">min_values</span> <span class="o">=</span> <span class="n">sorted_values</span><span class="p">[:</span><span class="nb">int</span><span class="p">(</span><span class="n">c1</span><span class="p">)]</span>
+                    <span class="n">mins</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">min_values</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">c2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="c1"># Exclude the maximum value</span>
+                        <span class="c1"># max_values = sorted_values[-int(c2*2)-1:-1]</span>
+                        <span class="n">max_values</span> <span class="o">=</span> <span class="n">sorted_values</span><span class="p">[</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">c2</span><span class="p">):]</span>
+                        <span class="n">maxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">max_values</span><span class="p">]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">maxs</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="n">alt_region</span> <span class="o">=</span> <span class="n">mins</span> <span class="o">+</span> <span class="n">maxs</span>
+
+                    <span class="k">def</span> <span class="nf">alt_V_unnormalized</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">alt_region</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">*</span> <span class="n">c3</span> <span class="o">+</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c3</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+                    <span class="c1"># Assign 1 to the maximum values so the normalization does not modify other points</span>
+                    <span class="n">max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">alt_V_unnormalized</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+                    <span class="n">maximizer</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">alt_V_unnormalized</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="n">max_value</span><span class="p">]</span>
+                    <span class="n">alt_V_normalized</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">alt_V_unnormalized</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">maximizer</span> <span class="k">else</span> <span class="mi">1</span>
+                    <span class="n">alt_V_u</span> <span class="o">=</span> <span class="n">alt_V_normalized</span>  <span class="c1"># It is already normalized, but it is called alt_V_u to be consistent</span>
+                    <span class="k">assert</span> <span class="n">alt_V_u</span><span class="p">(</span><span class="n">maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_type</span> <span class="o">==</span> <span class="s2">&quot;middle&quot;</span><span class="p">:</span>
+                    <span class="c1"># Middle values</span>
+                    <span class="n">c1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">c3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">la_params</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                    <span class="n">median_v</span> <span class="o">=</span> <span class="n">sorted_values</span><span class="p">[</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">c1</span><span class="p">):</span><span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">c1</span><span class="p">)]</span>
+                    <span class="n">alt_region</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="ow">in</span> <span class="n">median_v</span><span class="p">]</span>
+
+                    <span class="k">def</span> <span class="nf">alt_V_u</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">alt_region</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">c3</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+                <span class="c1"># Normalize the function</span>
+                <span class="n">max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">alt_V_u</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">alt_V</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="p">(</span><span class="n">alt_V_u</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">max_value</span><span class="p">))</span>
+                <span class="c1"># Plot both functions</span>
+                <span class="k">if</span> <span class="n">c3</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">plot_count</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+                    <span class="c1"># plt.plot([alt_V_u(j) for j in range(n)])</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">alt_V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;V&quot;</span><span class="p">,</span> <span class="s2">&quot;Alt_V normalized&quot;</span><span class="p">])</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+                    <span class="n">plot_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;The less ability coefficient type is not recognized&quot;</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Raise error if more than one region is provided or none</span>
+        <span class="n">no_not_none</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">z</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="p">[</span><span class="n">region</span><span class="p">,</span> <span class="n">random_points</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">heuristics</span><span class="p">]</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">no_not_none</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Only one region, random_points, radius or heuristics MUST be provided&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PhiFunction.__eq__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__eq__">[docs]</a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if two :math:`\\phi` functions are equal. By definition if they are equal as functions.&quot;&quot;&quot;</span>
+        <span class="n">results_1</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span>
+        <span class="n">results_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">other</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">results_1</span> <span class="o">==</span> <span class="n">results_2</span></div>
+
+<div class="viewcode-block" id="PhiFunction.expected_value_static"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.expected_value_static">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">expected_value_static</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">phi_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the expected value of the maximum of :math:`V` using the uniform distribution.</span>
+
+<span class="sd">        :return: Expected value of the maximum of :math:`V` and the average number of evaluations of :math:`V`</span>
+<span class="sd">        :rtype: tuple[float, float]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">phi_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">phi_function</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">phi_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Both phi_function and h cannot be provided&quot;</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">n</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi_function</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>
+                  <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>  <span class="c1"># phi is called with the return_checks flag, once</span>
+        <span class="n">expected_value</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">V</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">/</span> <span class="n">n</span>
+        <span class="n">expected_value_iterations</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">/</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">expected_value</span><span class="p">,</span> <span class="n">expected_value_iterations</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">expected_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_value_static</span><span class="p">(</span><span class="n">phi_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_function</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PhiFunction.phi_region"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_region">[docs]</a>    <span class="k">def</span> <span class="nf">phi_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)`  where :math:`\\phi(i)` is the maximizer of :math:`V` in the search space.</span>
+
+<span class="sd">        :param i: The starting point.</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :param V: The function :math:`V` to be maximized.</span>
+<span class="sd">        :type V: VFunction</span>
+<span class="sd">        :param return_checks: Flag to return the number of checks. If it is True, the function returns a tuple with the</span>
+<span class="sd">            maximizer and the number of checks.</span>
+<span class="sd">        :type return_checks: bool</span>
+<span class="sd">        :return: :math:`\\phi(i)` according to the region, random_points or radius, and optionally the number of checks</span>
+<span class="sd">        :rtype: float or tuple.</span>
+
+<span class="sd">        .. note:: The search region always includes the current point `i`, so it always improves. Also, to avoid a perfect algorithm, if the search region includes the global maximizer (except it is `i` or we are taking a random sample), it returns the second best. </span>
+<span class="sd">            Otherwise, it would always find the global maximizer.  See also :meth:`VFunction.create_additional_bests`, where the maximizer point is not included in the argument of the phi function.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">region</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+        <span class="n">random_points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_points</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+        <span class="n">no_not_none</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">z</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="p">[</span><span class="n">region</span><span class="p">,</span> <span class="n">random_points</span><span class="p">,</span> <span class="n">radius</span><span class="p">]</span> <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">no_not_none</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Both region, random_points or radius cannot be provided&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">region</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">search_region</span> <span class="o">=</span> <span class="n">region</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># Add the current element to the region, so it always improves</span>
+        <span class="k">elif</span> <span class="n">random_points</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">search_region</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">random_points</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">radius</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">search_region</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">radius</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">radius</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">delta</span> <span class="o">=</span> <span class="n">radius</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">rad</span> <span class="o">=</span> <span class="n">radius</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">delta_2</span> <span class="o">=</span> <span class="n">radius</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                    <span class="n">delta_2</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">rad_2</span> <span class="o">=</span> <span class="n">radius</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+                    <span class="n">rad_2</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="n">delta_2</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">rad_2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">search_region</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">rad</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">rad</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+                    <span class="c1"># This is NOT the same as the one below with delta_2 and rad_2 equal to delta and rad</span>
+                <span class="k">elif</span> <span class="n">delta_2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">rad_2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">search_region</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">rad</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">delta</span><span class="p">))</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">rad_2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">delta_2</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The radius must be an integer or a list of two elements&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The radius must be an integer or a list of two elements&quot;</span><span class="p">)</span>
+            <span class="n">search_region</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="o">%</span> <span class="n">n</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">search_region</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">search_region</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># Initial region is all the elements</span>
+
+        <span class="c1"># If the global maximizer is in the region, it will always be chosen, resulting in a perfect algorithm. To avoid</span>
+        <span class="c1"># this, introduce an error so that for some proportion of points (not random), it returns the second best.</span>
+        <span class="c1"># See also _create_additional_bests, where the maximizer is avoided</span>
+        <span class="k">if</span> <span class="n">region</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_sample</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+                <span class="n">global_maximizer</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="n">max_value</span><span class="p">]</span>
+                <span class="n">error_sample_cond</span> <span class="o">=</span> <span class="n">global_maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">search_region</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">global_maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">error_sample_cond</span><span class="p">:</span>
+                    <span class="c1"># Deterministic region where the function return a second best. For instance, take the multiples of a number</span>
+                    <span class="n">error_sample</span> <span class="o">=</span> <span class="p">[</span><span class="n">z</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">search_region</span> <span class="k">if</span> <span class="n">z</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">error_sample</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">error_sample</span> <span class="o">=</span> <span class="n">error_sample</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">error_sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_sample</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">error_sample</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Locate the maximizer of V in the region</span>
+        <span class="n">max_value_reg</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">search_region</span><span class="p">])</span>
+        <span class="n">maximizer</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">search_region</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="n">max_value_reg</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_sample</span> <span class="o">!=</span> <span class="p">[]</span> <span class="ow">and</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_sample</span><span class="p">:</span>
+            <span class="c1"># Select the second best</span>
+            <span class="n">second_max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">search_region</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">!=</span> <span class="n">max_value_reg</span><span class="p">])</span>
+            <span class="n">maximizer</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">search_region</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="n">second_max_value</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;The phi function is not working properly&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">return_checks</span><span class="p">:</span>  <span class="c1"># Only needs to check the search region one time, say the first time</span>
+            <span class="n">no_checks</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">no_checks</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">search_region</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">search_region</span><span class="p">:</span>
+                <span class="n">no_checks</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="k">return</span> <span class="n">maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">no_checks</span>
+        <span class="k">return</span> <span class="n">maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="PhiFunction.phi_hp"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_hp">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">phi_hp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)` using the Hong-Page algorithm.</span>
+
+<span class="sd">        :param i: Starting point</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :param h: Heuristic, list of :math:`k` elements</span>
+<span class="sd">        :type h: list</span>
+<span class="sd">        :param V: Function :math:`V` to be maximized</span>
+<span class="sd">        :type V: VFunction</span>
+<span class="sd">        :param return_checks: Flag to return the number of checks</span>
+<span class="sd">        :type return_checks: bool</span>
+
+<span class="sd">        :return: :math:`\\phi(i)` according to the heuristic h, and optionally the number of checks</span>
+<span class="sd">        :rtype: float or tuple</span>
+
+<span class="sd">        .. note:: The number of checks is not the number of times the heuristic is applied, but the </span>
+<span class="sd">            number of times the function V is evaluated.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">n</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">heur</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">number_of_checks</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="c1"># Iterate through the heuristic list</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">heur</span><span class="p">)):</span>
+                <span class="n">number_of_checks</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">x_j</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">heur</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">%</span> <span class="n">n</span>
+                <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">(</span><span class="n">x_j</span><span class="p">):</span>
+                    <span class="n">heur</span> <span class="o">=</span> <span class="n">heur</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">heur</span><span class="p">[:</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="n">x_j</span>
+                    <span class="k">break</span>
+                    <span class="c1"># The break statement exits the for loop, causing the while loop to start over with the new values.</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If no break occurred, the condition V(x) &gt;= V(x_j) is satisfied</span>
+                <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The Hong-Page algorithm is not working properly&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">return_checks</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">number_of_checks</span>
+                <span class="k">return</span> <span class="n">x</span></div>
+
+<div class="viewcode-block" id="PhiFunction.from_h_to_phi"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.from_h_to_phi">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_h_to_phi</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a heuristic to a :math:`\\phi` function.</span>
+
+<span class="sd">        :param h: Heuristic, list of :math:`k` elements</span>
+<span class="sd">        :type h: list</span>
+<span class="sd">        :param V: Function :math:`V` to be maximized</span>
+<span class="sd">        :type V: VFunction</span>
+<span class="sd">        :return: :math:`\\phi` function according to HP model</span>
+<span class="sd">        :rtype: function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">:</span> <span class="n">PhiFunction</span><span class="o">.</span><span class="n">phi_hp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PhiFunction.phi_function"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_function">[docs]</a>    <span class="k">def</span> <span class="nf">phi_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)` using the region, random_points, radius or heuristics, see :meth:`phi_region` and :meth:`phi_hp` for more details.</span>
+
+<span class="sd">        :param i: The starting point</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :param return_checks: Flag to return the number of checks</span>
+<span class="sd">        :type return_checks: bool</span>
+<span class="sd">        :return: :math:`\\phi(i)` according to the region, random_points, radius or heuristics, and optionally the number of checks</span>
+<span class="sd">        :rtype: float or tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_points</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_region</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="n">return_checks</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">heuristics</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_hp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">heuristics</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">alt_V</span><span class="p">,</span> <span class="n">return_checks</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No region, random_points, radius or heuristics provided&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PhiFunction.__call__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)` using the region, random_points, radius or heuristics, see :meth:`phi_region` and :meth:`phi_hp` for more details.</span>
+<span class="sd">        </span>
+<span class="sd">        :param i: The starting point</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :param return_checks: Flag to return the number of checks</span>
+<span class="sd">        :type return_checks: bool</span>
+<span class="sd">        :return: :math:`\\phi(i)` according to the region, random_points, radius or heuristics, and optionally the number of checks</span>
+<span class="sd">        :rtype: float or tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_function</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="n">return_checks</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="PhiGroup"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup">[docs]</a><span class="k">class</span> <span class="nc">PhiGroup</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a group of phi functions.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="PhiGroup.__init__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span> <span class="o">=</span> <span class="n">phi_list</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_best</span> <span class="o">=</span> <span class="n">is_best</span></div>
+
+<div class="viewcode-block" id="PhiGroup.__call__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi^\\Phi(i)` using the group dynamics with a sequential approach, also known as ``relay dynamics``.</span>
+
+<span class="sd">        :param i: Starting point</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :param alternative_stop: (optional, default is False) Flag to stop the algorithm when there is</span>
+<span class="sd">            a disagreement cycle</span>
+<span class="sd">        :type alternative_stop: bool</span>
+<span class="sd">        :param stop: (optional, default is None) The number of checks to stop the algorithm</span>
+<span class="sd">        :type stop: int</span>
+<span class="sd">        :return: :math:`\\phi^\\Phi(i)` according to the group dynamics and the number of checks</span>
+<span class="sd">        :rtype: float or tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_group</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="PhiGroup.__eq__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__eq__">[docs]</a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if two :math:`\\Phi` groups are equal. By definition if they are equal as functions.&quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">n</span>
+        <span class="n">results_1</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="n">results_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">other</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">results_1</span> <span class="o">==</span> <span class="n">results_2</span></div>
+
+<div class="viewcode-block" id="PhiGroup.phi_group"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.phi_group">[docs]</a>    <span class="k">def</span> <span class="nf">phi_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi^\\Phi(i)` using the group dynamics with a sequential approach, also known as `relay dynamics`.</span>
+
+<span class="sd">        :param i: Starting point</span>
+<span class="sd">        :type i: int</span>
+<span class="sd">        :param phi_list: List of functions to compute phi(i) for each heuristic</span>
+<span class="sd">        :type phi_list: list</span>
+<span class="sd">        :param alternative_stop: (optional, default is False) Flag to stop the algorithm when there is</span>
+<span class="sd">            a disagreement cycle</span>
+<span class="sd">        :type alternative_stop: bool</span>
+<span class="sd">        :param stop: (optional, default is None) The number of checks to stop the algorithm</span>
+<span class="sd">        :type stop: int</span>
+<span class="sd">        :return: :math:`\\phi(i)` according to the group dynamics and the number of checks</span>
+<span class="sd">        :rtype: float or tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">if</span> <span class="n">stop</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># No stop provided, set an &quot;infinite&quot; number of checks</span>
+            <span class="n">stop</span> <span class="o">=</span> <span class="mf">1e6</span>
+        <span class="n">group_check</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1"># Check all share the same V</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">V</span>
+        <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">phi</span><span class="o">.</span><span class="n">V</span> <span class="o">!=</span> <span class="n">V</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;All phi functions must share the same V function&quot;</span><span class="p">)</span>
+        <span class="n">list_x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">alternative_stop</span> <span class="ow">and</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list_x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alternative stop activated: a disagreement cycle has been detected&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">group_check</span>
+
+            <span class="c1"># Iterate through the list of phi functions</span>
+            <span class="k">for</span> <span class="n">pos</span><span class="p">,</span> <span class="n">phi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">):</span>
+                <span class="n">group_check</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">group_check</span> <span class="o">&gt;=</span> <span class="n">stop</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alternative stop activated: too many checks&quot;</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">group_check</span>
+                <span class="k">if</span> <span class="n">phi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">phi</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Disagreement detected&quot;</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">group_check</span>  <span class="c1"># Could be commented, so a whole cycle is needed</span>
+                    <span class="n">x</span> <span class="o">=</span> <span class="n">phi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="n">pos</span><span class="p">:]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[:</span><span class="n">pos</span><span class="p">]</span>
+                    <span class="n">list_x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                    <span class="k">break</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If no break occurred, all phi functions agree</span>
+                <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">([</span><span class="n">phi</span><span class="o">.</span><span class="n">less_ability_coef</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">]):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The group dynamics is not working properly&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">group_check</span></div>
+
+<div class="viewcode-block" id="PhiGroup.expected_value_group"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.expected_value_group">[docs]</a>    <span class="k">def</span> <span class="nf">expected_value_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the expected value of the maximum of :math:`V` using the group dynamics.</span>
+
+<span class="sd">        :param alternative_stop: (optional, default is False) Flag to stop the algorithm when there is</span>
+<span class="sd">            a disagreement cycle</span>
+<span class="sd">        :type alternative_stop: bool</span>
+<span class="sd">        :param stop: (optional, default is None) The number of checks to stop the algorithm</span>
+<span class="sd">        :type stop: int</span>
+<span class="sd">        :return: Expected value of the maximum of :math:`V` and the average number of iterations</span>
+<span class="sd">        :rtype: tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check that all phi share the same V</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">V</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">n</span>
+        <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">phi</span><span class="o">.</span><span class="n">V</span> <span class="o">!=</span> <span class="n">V</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;All phi functions must share the same V function&quot;</span><span class="p">)</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_group</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="n">expected_values</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">V</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">/</span> <span class="n">n</span>
+        <span class="n">expected_iterations</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">/</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">expected_values</span><span class="p">,</span> <span class="n">expected_iterations</span></div>
+
+<div class="viewcode-block" id="PhiGroup.analyze_phi_region"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_phi_region">[docs]</a>    <span class="k">def</span> <span class="nf">analyze_phi_region</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Analyze the :math:`\\phi` functions to check duplicates, expected values and regions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if there are duplicates in the best phi functions. Find that sorted regions are the same</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No phi functions provided&quot;</span><span class="p">)</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">V</span>
+        <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">phi</span><span class="o">.</span><span class="n">V</span> <span class="o">!=</span> <span class="n">V</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;All phi functions must share the same V function&quot;</span><span class="p">)</span>
+        <span class="c1"># Print values of phi</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">phi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Phi &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V at region &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">phi</span><span class="o">.</span><span class="n">region</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected value &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Checking for duplicates in regions and expected values--------------------------------&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">phi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">phi2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">phi</span> <span class="o">!=</span> <span class="n">phi2</span> <span class="ow">and</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">phi</span><span class="o">.</span><span class="n">region</span><span class="p">)</span> <span class="o">==</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">phi2</span><span class="o">.</span><span class="n">region</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Duplicate regions&quot;</span><span class="p">)</span>
+                    <span class="n">i</span> <span class="o">=</span> <span class="o">+</span><span class="mi">1</span>
+                <span class="k">if</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">phi2</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Duplicate expected values (</span><span class="si">{</span><span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">)for position &quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s2">&quot; and &quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+                    <span class="c1"># Print regions</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Region &quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V at region &quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">phi</span><span class="o">.</span><span class="n">region</span><span class="p">])</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Region &quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">phi2</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V at region &quot;</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">phi2</span><span class="o">.</span><span class="n">region</span><span class="p">])</span>
+                    <span class="c1"># Print common values and its evaluation with V</span>
+                    <span class="n">common_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">phi</span><span class="o">.</span><span class="n">region</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">phi2</span><span class="o">.</span><span class="n">region</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Common values &quot;</span><span class="p">,</span> <span class="n">common_values</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V at common values &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">common_values</span><span class="p">])</span>
+                    <span class="c1"># Now check if the functions are the same</span>
+                    <span class="n">n</span> <span class="o">=</span> <span class="n">phi</span><span class="o">.</span><span class="n">n</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">phi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="n">phi2</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Different functions&quot;</span><span class="p">)</span>
+                            <span class="k">break</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Same functions. The values are: &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">phi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No duplicate regions&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>  <span class="c1"># Hardcoded for the example of 10 additional best phi functions</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected value of the radial search: &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="PhiGroup._create_random_phi"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup._create_random_phi">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_create_random_phi</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">random_sample</span><span class="p">,</span> <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PhiFunction</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create random :math:`\\phi` functions from a random sample of heuristics.</span>
+
+<span class="sd">        :param V: The function V to be maximized</span>
+<span class="sd">        :type V: VFunction</span>
+<span class="sd">        :param random_sample: The random sample of heuristics to be used for obtaining the random phi </span>
+<span class="sd">            functions</span>
+<span class="sd">        :type random_sample: list</span>
+<span class="sd">        :param less_ability_coef: (optional, default is None) The less ability coefficient to be used </span>
+<span class="sd">            for obtaining the random phi functions</span>
+<span class="sd">        :type less_ability_coef: float</span>
+<span class="sd">        :param no_less: (optional, default is 0) The number of times the less ability coefficient is </span>
+<span class="sd">            used</span>
+<span class="sd">        :type no_less: int</span>
+<span class="sd">        :param prints: (optional, default is True) Flag to print the random phi functions</span>
+<span class="sd">        :type prints: bool</span>
+<span class="sd">        :param delta_rho: (optional, default is None) The delta_rho to be used. If None, the random sample </span>
+<span class="sd">            is meant to be a list of heuristics. If not None, the random sample is meant to be a list of </span>
+<span class="sd">            tuples with the delta_rhos.</span>
+<span class="sd">        :type delta_rho: list</span>
+<span class="sd">        :return: The random phi functions</span>
+<span class="sd">        :rtype: list of :class:`PhiFunction`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">type_random</span> <span class="o">=</span> <span class="s2">&quot;heuristics&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">type_random</span> <span class="o">=</span> <span class="s2">&quot;delta_rho&quot;</span>
+        <span class="n">phi_random</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Intercalate the less ability coefficient no times ([less_ability_coef] + [None]) no_less times</span>
+        <span class="n">less_ability_list</span> <span class="o">=</span> <span class="p">([</span><span class="n">less_ability_coef</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">])</span> <span class="o">*</span> <span class="n">no_less</span> <span class="o">+</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">random_sample</span><span class="p">)</span>
+                                                                                 <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">no_less</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">random_sample</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">type_random</span> <span class="o">==</span> <span class="s2">&quot;heuristics&quot;</span><span class="p">:</span>
+                <span class="n">phi_random</span> <span class="o">+=</span> <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_list</span><span class="p">[</span><span class="n">j</span><span class="p">])]</span>
+            <span class="k">elif</span> <span class="n">type_random</span> <span class="o">==</span> <span class="s2">&quot;delta_rho&quot;</span><span class="p">:</span>
+                <span class="n">phi_random</span> <span class="o">+=</span> <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_list</span><span class="p">[</span><span class="n">j</span><span class="p">])]</span>
+
+        <span class="k">return</span> <span class="n">phi_random</span></div>
+
+<div class="viewcode-block" id="PhiGroup.plot_comparison"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.plot_comparison">[docs]</a>    <span class="k">def</span> <span class="nf">plot_comparison</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_group_alt</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figures_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot the :math:`\\phi` functions.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">sizes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">labelsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">title_size</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">ysize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">xsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">legend_size</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">figsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">labelsize</span> <span class="o">=</span> <span class="mi">15</span>
+            <span class="n">title_size</span> <span class="o">=</span> <span class="mi">16</span>
+            <span class="n">ysize</span> <span class="o">=</span> <span class="mi">15</span>
+            <span class="n">xsize</span> <span class="o">=</span> <span class="mi">15</span>
+            <span class="n">legend_size</span> <span class="o">=</span> <span class="mi">15</span>
+            <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="n">latex_settings</span><span class="p">(</span><span class="n">plt</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="n">labelsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+        <span class="c1"># Red colors for best group, blues if not</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_best</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+        <span class="k">if</span> <span class="n">phi_group_alt</span><span class="o">.</span><span class="n">is_best</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;red&quot;</span><span class="p">:</span>
+                <span class="c1"># Different red color for the best group    </span>
+                <span class="n">color_alt</span> <span class="o">=</span> <span class="s2">&quot;tab:red&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">color_alt</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;blue&quot;</span><span class="p">:</span>
+                <span class="n">color_alt</span> <span class="o">=</span> <span class="s2">&quot;tab:blue&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">color_alt</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">n</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="bp">self</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">phi_group_alt</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="n">color_alt</span><span class="p">)</span>
+        <span class="c1"># Horizontal, not vertical, position of the ylabel and add a separation between the ylabel and the plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\phi^\Phi$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">ysize</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="c1"># Plot identity line in black</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">xsize</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">title_size</span><span class="p">)</span>
+
+        <span class="c1"># Labels</span>
+        <span class="k">def</span> <span class="nf">label_function</span><span class="p">(</span><span class="n">phi_group</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">phi_group</span><span class="o">.</span><span class="n">is_best</span><span class="p">:</span>
+                <span class="k">return</span> <span class="sa">r</span><span class="s2">&quot;$\phi^{\Phi_B}$&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="sa">r</span><span class="s2">&quot;$\phi^{\Phi_R}$&quot;</span>
+
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">label_function</span><span class="p">(</span><span class="n">phi_group</span><span class="p">)</span> <span class="k">for</span> <span class="n">phi_group</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_group_alt</span><span class="p">]]</span>
+        <span class="k">if</span> <span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="c1"># Add a prime to the label</span>
+            <span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\Phi&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;^\Phi&#39;&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">legend_size</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">figures_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># Define a figures directory relative to the current working directory and ensure it exists</span>
+                <span class="n">figures_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;figures&quot;</span><span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">figures_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">saving_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figures_path</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">saving_path</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="PhiGroup.analyze_ability_difference"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_ability_difference">[docs]</a>    <span class="k">def</span> <span class="nf">analyze_ability_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Analyze the ability difference between the :math:`\\phi` functions.&quot;&quot;&quot;</span>
+        <span class="c1"># Compute individual ability</span>
+        <span class="n">phis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span>
+        <span class="n">abilities</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">phis</span><span class="p">]</span>
+        <span class="c1"># Compute statistics</span>
+        <span class="n">mean_ability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">abilities</span><span class="p">)</span>
+        <span class="n">min_ability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">abilities</span><span class="p">)</span>
+        <span class="n">max_ability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abilities</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">mean_ability</span><span class="p">,</span> <span class="n">min_ability</span><span class="p">,</span> <span class="n">max_ability</span></div>
+
+<div class="viewcode-block" id="PhiGroup.create_pool_tools"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.create_pool_tools">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_pool_tools</span><span class="p">(</span><span class="n">delta_rho_ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a pool of heuristics or :math:`\\delta` and :math:`\\rho` for the group dynamics.</span>
+<span class="sd">        </span>
+<span class="sd">        :param delta_rho_ratio: The ratio of :math:`\\delta` to :math:`\\rho`. If None, the pool </span>
+<span class="sd">            of heuristics is created. If not None, the pool of :math:`\\delta` and :math:`\\rho` is created.</span>
+<span class="sd">        :type delta_rho_ratio: float or list</span>
+<span class="sd">        :param repeat: The number of times to repeat the pool of heuristics or :math:`\\delta` and :math:`\\rho`.</span>
+<span class="sd">        :type repeat: int</span>
+<span class="sd">        :param l: The number of heuristics to be used.</span>
+<span class="sd">        :type l: int</span>
+<span class="sd">        :param k: The number of heuristics to be used.</span>
+<span class="sd">        :type k: int</span>
+<span class="sd">        :return: The pool of heuristics or :math:`\\delta` and :math:`\\rho`.</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">delta_rho_ratio</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pool_tools</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delta_rho_ratio</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">delta_rho_min</span> <span class="o">=</span> <span class="n">delta_rho_ratio</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">delta_rho_max</span> <span class="o">=</span> <span class="n">delta_rho_ratio</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">delta_rho_min</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">delta_rho_max</span> <span class="o">=</span> <span class="n">delta_rho_ratio</span>
+            <span class="c1"># Pairs of deltas and rhos such that rho/delta &lt; 3, repeat the same heuristic 100</span>
+            <span class="n">pool_tools</span> <span class="o">=</span> <span class="p">[[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">delta_rho_max</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">delta_rho_max</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">delta_rho_max</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">delta_rho_max</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+                          <span class="k">if</span> <span class="n">b</span> <span class="o">/</span> <span class="n">a</span> <span class="o">&lt;=</span> <span class="n">delta_rho_max</span> <span class="ow">and</span> <span class="n">d</span> <span class="o">/</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="n">delta_rho_max</span>
+                          <span class="ow">and</span> <span class="n">b</span> <span class="o">/</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">delta_rho_min</span> <span class="ow">and</span> <span class="n">d</span> <span class="o">/</span> <span class="n">c</span> <span class="o">&gt;=</span> <span class="n">delta_rho_min</span><span class="p">]</span>
+            <span class="n">pool_tools</span> <span class="o">=</span> <span class="p">[</span><span class="n">pair</span> <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pool_tools</span> <span class="k">if</span> <span class="n">pair</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">pair</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">pair</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">pair</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span>
+            <span class="n">pool_tools</span> <span class="o">=</span> <span class="n">repeat</span> <span class="o">*</span> <span class="n">pool_tools</span>
+
+        <span class="k">return</span> <span class="n">pool_tools</span></div></div>
+
+
+<div class="viewcode-block" id="VFunction"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction">[docs]</a><span class="k">class</span> <span class="nc">VFunction</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a function :math:`V`.</span>
+
+<span class="sd">    </span>
+<span class="sd">    :param params: The parameters for the parametric form of the function :math:`V` according to the formula </span>
+<span class="sd">        in the paper. Optional, default is None.</span>
+<span class="sd">    :type params: tuple</span>
+<span class="sd">    :param random: Flag to create a random :math:`V` function. Optional, default is False.</span>
+<span class="sd">    :type random: bool</span>
+<span class="sd">    :param function: The function to be used for the :math:`V` function. Optional, default is None.</span>
+<span class="sd">    :type function: function    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="VFunction.__init__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">random</span> <span class="o">=</span> <span class="n">random</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">function</span> <span class="o">=</span> <span class="n">function</span>
+        <span class="n">not_none</span> <span class="o">=</span> <span class="p">[</span><span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="n">random</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="n">function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="n">not_none</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Either params or random or function must be provided, not more than one&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">random</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># If nothing is provided, create a V function with random parameters</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">VFunction</span><span class="o">.</span><span class="n">_random_params</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_V</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="VFunction.__call__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the :math:`V` function.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VFunction._create_V"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction._create_V">[docs]</a>    <span class="k">def</span> <span class="nf">_create_V</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the :math:`V` function.&quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">i_0</span><span class="p">,</span> <span class="n">displacement</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+            <span class="c1"># Use numpy vectorized operations</span>
+            <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">indices</span> <span class="o">-</span> <span class="n">i_0</span><span class="p">)</span> <span class="o">**</span> <span class="n">gamma</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">beta</span> <span class="o">*</span> <span class="n">indices</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">indices</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">**</span> <span class="n">alpha</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">displacement</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Either params or random or function must be provided in the VFunction class&quot;</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">V_u</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># noqa</span>
+        <span class="n">max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">V_u</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">V_u</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">max_value</span><span class="p">)</span>  <span class="c1"># noqa</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">V</span></div>
+
+<div class="viewcode-block" id="VFunction.plot"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">saving_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figures_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Plot the :math:`V` function.</span>
+<span class="sd">        </span>
+<span class="sd">        :param name: The name of the file to save the plot. Optional, default is None.</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param sizes: The sizes of the plot. Optional, default is None.</span>
+<span class="sd">        :type sizes: tuple</span>
+<span class="sd">        :param saving_folder: The folder to save the plot. Optional, default is None.</span>
+<span class="sd">        :type saving_folder: str</span>
+<span class="sd">        :param figures_path: The path to the figures folder. Optional, default is None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+        <span class="k">if</span> <span class="n">sizes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">labelsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">title_size</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">ysize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">xsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">legend_size</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">figsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">labelsize</span> <span class="o">=</span> <span class="mi">14</span>
+            <span class="n">title_size</span> <span class="o">=</span> <span class="mi">15</span>
+            <span class="n">ysize</span> <span class="o">=</span> <span class="mi">14</span>
+            <span class="n">xsize</span> <span class="o">=</span> <span class="mi">14</span>
+            <span class="n">legend_size</span> <span class="o">=</span> <span class="mi">14</span>  <span class="c1"># Unused here</span>
+            <span class="n">figsize</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">latex_settings</span><span class="p">(</span><span class="n">plt</span><span class="p">,</span> <span class="n">mathpazo</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="n">labelsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+        <span class="n">ylabel</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$V$&quot;</span>
+        <span class="n">xlabel</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$x$&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Delta is not 0&#39;</span><span class="p">)</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\alpha=</span><span class="si">{:.3f}</span><span class="s2">\,, \beta=</span><span class="si">{:.3f}</span><span class="s2">\,, \gamma=</span><span class="si">{:.3f}</span><span class="s2">\,, x_0=</span><span class="si">{}</span><span class="s2">\,, \delta=</span><span class="si">{}</span><span class="s2">$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\alpha=</span><span class="si">{:.3f}</span><span class="s2">\,, \beta=</span><span class="si">{:.3f}</span><span class="s2">\,, \gamma=</span><span class="si">{:.3f}</span><span class="s2">\,, x_0=</span><span class="si">{}</span><span class="s2">$&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;Random V&quot;</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">title_size</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;darkgray&quot;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">ysize</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">xsize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">saving_folder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">figures_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># Define a figures directory relative to the current working directory and ensure it exists</span>
+                    <span class="n">figures_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;figures&quot;</span><span class="p">)</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">figures_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">saving_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figures_path</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">saving_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">saving_folder</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+            <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">saving_path</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="VFunction.return_index"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.return_index">[docs]</a>    <span class="k">def</span> <span class="nf">return_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">params_formatted</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">params_formatted</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">random</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Random case </span><span class="si">{</span><span class="n">case</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Function case </span><span class="si">{</span><span class="n">case</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Either params or random or function must be provided in the VFunction class&quot;</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="VFunction._random_params"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction._random_params">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_random_params</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate random parameters for the parametric form of the function :math:`V`.&quot;&quot;&quot;</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+        <span class="c1"># beta = random.random() / (n/100)</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+        <span class="n">gamma</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+        <span class="n">i_0</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">displacement</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">i_0</span><span class="p">,</span> <span class="n">displacement</span></div>
+
+<div class="viewcode-block" id="VFunction.best_phis"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.best_phis">[docs]</a>    <span class="k">def</span> <span class="nf">best_phis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">heuristics</span><span class="p">,</span> <span class="n">no_elements</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find the best :math:`\\phi` functions according to the expected value of the maximum of :math:`V` for a given set of heuristics.</span>
+
+<span class="sd">        :param V: The function :math:`V` to be maximized</span>
+<span class="sd">        :type V: function</span>
+<span class="sd">        :param heuristics: The heuristics to be used for obtaining the best phi functions</span>
+<span class="sd">        :type heuristics: list</span>
+<span class="sd">        :param no_elements: The number of best heuristics to find</span>
+<span class="sd">        :type no_elements: int</span>
+<span class="sd">        :param additional_best: (optional, default is None) The additional best phi functions to </span>
+<span class="sd">            consider. If this is not None, the best heuristics are found first, then the additional </span>
+<span class="sd">            best phi functions are added to the best heuristics if their expected value is higher.</span>
+<span class="sd">        :type additional_best: list of :class:`PhiFunction`</span>
+<span class="sd">        :param best_heuristics: (optional, default is None) The best heuristics to be used. If this is </span>
+<span class="sd">            not None, the best heuristics are used directly.</span>
+<span class="sd">        :type best_heuristics: list</span>
+<span class="sd">        :param delta_rho: (optional, default is None) The delta_rho to be used. If None, the best heuristics are the heuristics. </span>
+<span class="sd">            If not None, the best heuristics are the radii of the best phi functions.</span>
+<span class="sd">        :type delta_rho: list</span>
+<span class="sd">        :return: The best phi functions, the best heuristics, the number of elements that come from </span>
+<span class="sd">            the additional best, the number of distinct heuristics in the best heuristics, and the </span>
+<span class="sd">            number of distinct expected values in the best heuristics</span>
+<span class="sd">        :rtype: tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># Use cached values if delta_rho is not None, as there are repeated calls</span>
+        <span class="k">def</span> <span class="nf">sorting_function_no_cache</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">)</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">def</span> <span class="nf">sorting_function_cache</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+            <span class="n">h_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">h_tuple</span> <span class="ow">in</span> <span class="n">cache</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="k">return</span> <span class="n">cache</span><span class="p">[</span><span class="n">h_tuple</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">sorting_function_no_cache</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+                <span class="n">cache</span><span class="p">[</span><span class="n">h_tuple</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+                <span class="k">return</span> <span class="n">res</span>
+
+        <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sorting_function</span> <span class="o">=</span> <span class="n">sorting_function_cache</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sorting_function</span> <span class="o">=</span> <span class="n">sorting_function_no_cache</span>
+
+        <span class="k">if</span> <span class="n">best_heuristics</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sorted_heur</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sorting_function</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">best_heuristics</span> <span class="o">=</span> <span class="n">sorted_heur</span><span class="p">[:</span><span class="n">no_elements</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">best_heuristics</span> <span class="o">=</span> <span class="n">best_heuristics</span>
+        <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">best_phi</span> <span class="o">=</span> <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">best_phi</span> <span class="o">=</span> <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">additional_best</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">sorted_additional_best</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">additional_best</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># Add additional best phi functions to the best ones if their expected value is higher. Record the number of</span>
+            <span class="c1"># elements that come from the additional best. As it is sorted, we find the intersection</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">sorted_additional_best</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best_phi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="n">best_phi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">phi</span>
+                    <span class="n">best_phi</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">best_phi</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">break</span>  <span class="c1"># The list is sorted, so we can break when the expected value is lower</span>
+            <span class="n">intersection</span> <span class="o">=</span> <span class="n">count</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">intersection</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Find duplicates in the best heuristics</span>
+        <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Best heuristics are the radii of the best phi functions</span>
+            <span class="n">best_heuristics</span> <span class="o">=</span> <span class="p">[</span><span class="n">phi</span><span class="o">.</span><span class="n">radius</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">best_phi</span><span class="p">]</span>
+        <span class="n">sorted_best_heur</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sorted</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span><span class="p">]</span>
+        <span class="n">distinct_heur_sorted</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">sorted_best_heur</span><span class="p">))</span>
+        <span class="n">distinct_heur_exp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">PhiFunction</span><span class="o">.</span><span class="n">expected_value_static</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span><span class="p">]))</span>
+
+        <span class="k">return</span> <span class="n">best_phi</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span></div>
+
+<div class="viewcode-block" id="VFunction.create_additional_bests"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.create_additional_bests">[docs]</a>    <span class="k">def</span> <span class="nf">create_additional_bests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">additional_best_no</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                                <span class="n">exclude_max</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PhiFunction</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create additional best :math:`\\phi` functions.</span>
+
+<span class="sd">        :param add_radial_search: (optional, default is False) Flag to include best :math:`\\phi` functions that search the maximizer of :math:`V` in a region given by the radius centered at the starting point</span>
+<span class="sd">        :type add_radial_search: bool</span>
+<span class="sd">        :param additional_best_no: (optional, default is 10) The number of additional best :math:`\\phi` functions to create</span>
+<span class="sd">        :type additional_best_no: int</span>
+<span class="sd">        :param search: (optional, default is :math:`n//20`) The number of points to add to the search region where the maximizer of :math:`V` is searched. This is a subset of the points in the search region.</span>
+<span class="sd">        :type search: int</span>
+<span class="sd">        :param exclude_max: (optional, default is True) Flag to exclude the global maximizer from the search region, see :meth:`phi_region` for more details</span>
+<span class="sd">        :type exclude_max: bool</span>
+<span class="sd">        :param delta_rho: (optional, default is None) The delta_rho to be used. If None, </span>
+<span class="sd">            the search region is the pool of points. If not None, the search region is the pool of points plus the radius.</span>
+<span class="sd">        :type delta_rho: list</span>
+<span class="sd">        :return: The additional best :math:`\\phi` functions</span>
+<span class="sd">        :rtype: list of :class:`PhiFunction`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">phi_best</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">V</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
+        <span class="k">if</span> <span class="n">exclude_max</span><span class="p">:</span>
+            <span class="n">global_maximizer</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">V</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">pool</span> <span class="o">=</span> <span class="p">[</span><span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">j</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">global_maximizer</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pool</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">additional_best_no</span><span class="p">):</span>
+            <span class="n">region</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">pool</span><span class="p">,</span> <span class="n">search</span><span class="p">)</span>  <span class="c1"># n//20 is another option</span>
+            <span class="n">phi</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">)</span>
+            <span class="n">phi_best</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">add_radial_search</span> <span class="ow">and</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Append the phi function that searches the maximizer of V in a region given by the radius</span>
+            <span class="n">pairs</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">create_pool_tools</span><span class="p">(</span><span class="n">delta_rho_ratio</span><span class="o">=</span><span class="p">[</span><span class="n">delta_rho</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">delta_rho</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># Smaller delta_rho_ratio are considered in pool for random_group</span>
+            <span class="c1"># pairs = create_pool_tools(delta_rho_ratio=[delta_rho[1]-1, delta_rho[1]], repeat=1)</span>
+
+            <span class="c1"># Takes less time, but less functions</span>
+            <span class="c1"># pairs = random.sample(pairs, 5)</span>
+            <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+                <span class="n">phi_rad</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">pair</span><span class="p">)</span>
+                <span class="n">phi_best</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phi_rad</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">phi_best</span></div></div>
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1211 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simulations.functions &#8212; Agent-based simulations 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx-toolbox.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_toolbox_installation.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/sphinx_toolbox_installation.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/simulations/functions';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Agent-based simulations 1.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../simulator_dynamics.html">
+                        Simulator Dynamics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../functions.html">
+                        Functions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../test_simulator.html">
+                        Test Simulator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../config.html">
+                        Configuration
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../simulator_dynamics.html">
+                        Simulator Dynamics
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../functions.html">
+                        Functions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../test_simulator.html">
+                        Test Simulator
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../config.html">
+                        Configuration
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<h3><a href="../../index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../simulator_dynamics.html">Simulator Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test_simulator.html">Test Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">Configuration</a></li>
+</ul>
+</div>
+        <div class="sidebar-primary-item">
+<div id="searchbox"></div></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">simulations.functions</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for simulations.functions</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.simulator_dynamics</span> <span class="kn">import</span> <span class="n">PhiFunction</span><span class="p">,</span> <span class="n">VFunction</span><span class="p">,</span> <span class="n">PhiGroup</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">simulator_dynamics</span> <span class="kn">import</span> <span class="n">PhiFunction</span><span class="p">,</span> <span class="n">VFunction</span><span class="p">,</span> <span class="n">PhiGroup</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.auxiliary</span> <span class="kn">import</span> <span class="n">adjust_excel</span><span class="p">,</span> <span class="n">generate_latex_table</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">auxiliary</span> <span class="kn">import</span> <span class="n">adjust_excel</span><span class="p">,</span> <span class="n">generate_latex_table</span>
+<span class="c1"># Additional imports to resolve missing modules and configuration variables</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">load_workbook</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">openpyxl</span> <span class="kn">import</span> <span class="n">load_workbook</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">openpyxl.drawing.image</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">openpyxl.drawing.image</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.auxiliary</span> <span class="kn">import</span> <span class="n">latex_settings</span><span class="p">,</span> <span class="n">saving_routine_excel</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">auxiliary</span> <span class="kn">import</span> <span class="n">latex_settings</span><span class="p">,</span> <span class="n">saving_routine_excel</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">tables_path</span><span class="p">,</span> <span class="n">results_path</span><span class="p">,</span> <span class="n">repo_path</span><span class="p">,</span> <span class="n">figures_path</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">config</span> <span class="kn">import</span> <span class="n">tables_path</span><span class="p">,</span> <span class="n">results_path</span><span class="p">,</span> <span class="n">repo_path</span><span class="p">,</span> <span class="n">figures_path</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Latex column dictionary</span>
+<span class="n">LATEX_COLUMN_DICT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Expected value random&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\hat{\mathcal</span><span class="si">{A}</span><span class="s2">}(\Phi_R)$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Expected iterations random&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\hat{\tau}^R$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Expected value best&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\hat{\mathcal</span><span class="si">{A}</span><span class="s2">}(\Phi_B)$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Expected iterations best&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\hat{\tau}^B$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Best outperform random&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\hat{\mathcal</span><span class="si">{O}</span><span class="s2">}_{\Phi_B, \Phi_R}$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Distinct in best heuristic (sorted)&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$N_B$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Intersection&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$N_I$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mean ability best&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$$\widehat{\textnormal</span><span class="si">{mean}</span><span class="s2">}_{\Phi_B}\left(\mathcal</span><span class="si">{A}</span><span class="s2">(\phi)\right)$$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Min ability best&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{min}</span><span class="s2">}_{\Phi_B}\left(\mathcal</span><span class="si">{A}</span><span class="s2">(\phi)\right)$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Max ability best&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{max}</span><span class="s2">}_{\Phi_B}\left(\mathcal</span><span class="si">{A}</span><span class="s2">(\phi)\right)$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mean ability random&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{mean}</span><span class="s2">}_{\Phi_R}\left(\mathcal</span><span class="si">{A}</span><span class="s2">(\phi)\right)$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Min ability random&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{min}</span><span class="s2">}_{\Phi_R}\left(\mathcal</span><span class="si">{A}</span><span class="s2">(\phi)\right)$&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Max ability random&quot;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{max}</span><span class="s2">}_{\Phi_R}\left(\mathcal</span><span class="si">{A}</span><span class="s2">(\phi)\right)$&quot;</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="_create_excel_from_df"><a class="viewcode-back" href="../../functions.html#simulations.functions._create_excel_from_df">[docs]</a><span class="k">def</span> <span class="nf">_create_excel_from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an Excel file from a DataFrame.</span>
+
+
+<span class="sd">    :param df: The DataFrame to be converted to Excel</span>
+<span class="sd">    :type df: pandas.DataFrame</span>
+<span class="sd">    :param file_name: The name of the file to be created</span>
+<span class="sd">    :type file_name: str</span>
+<span class="sd">    :param open_excel: Whether to open the Excel file after creation</span>
+<span class="sd">    :type open_excel: bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create a deep copy of the DataFrame, so the new rows do not affect the original one</span>
+    <span class="n">df_excel</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Add final row with the average of the columns</span>
+    <span class="n">df_excel</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Average&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">df_excel</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="c1"># Write results to file</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">df_excel</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">PermissionError</span><span class="p">:</span>
+        <span class="nb">input</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Permission denied: Unable to save the file at </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">. Try closing the file and press Enter to continue...&quot;</span><span class="p">)</span>
+        <span class="n">df_excel</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An unexpected error occurred: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+    <span class="n">adjust_excel</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s2">&quot;large&quot;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="n">open_excel</span><span class="p">)</span></div>
+
+
+<span class="c1"># Testing functions</span>
+<span class="c1"># noinspection PyPep8Naming</span>
+<div class="viewcode-block" id="test_individual_h"><a class="viewcode-back" href="../../functions.html#simulations.functions.test_individual_h">[docs]</a><span class="k">def</span> <span class="nf">test_individual_h</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test an individual heuristic.</span>
+
+<span class="sd">    :param h: The heuristic to test.</span>
+<span class="sd">    :type h: list</span>
+<span class="sd">    :param V: The :math:`V` function.</span>
+<span class="sd">    :type V: VFunction</span>
+<span class="sd">    :param prints: Whether to print the results.</span>
+<span class="sd">    :type prints: bool</span>
+
+<span class="sd">    :return: The expected value of the heuristic.</span>
+<span class="sd">    :rtype: tuple[float, float]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">prints</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Heuristic: &quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected value: &quot;</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span></div>
+
+
+<span class="c1"># Testing group dynamics</span>
+<div class="viewcode-block" id="test_group_h"><a class="viewcode-back" href="../../functions.html#simulations.functions.test_group_h">[docs]</a><span class="k">def</span> <span class="nf">test_group_h</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">analysis_ability_difference</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test the group dynamics of a set of heuristics.</span>
+
+<span class="sd">    :param heuristics: The heuristics to test.</span>
+<span class="sd">    :type heuristics: list</span>
+<span class="sd">    :param V: The :math:`V` function.</span>
+<span class="sd">    :type V: VFunction</span>
+<span class="sd">    :param no_random: The number of random heuristics to test.</span>
+<span class="sd">    :type no_random: int</span>
+<span class="sd">    :param no_elements: The number of elements to test.</span>
+<span class="sd">    :type no_elements: int</span>
+<span class="sd">    :param additional_best: The additional best heuristics to test.</span>
+<span class="sd">    :type additional_best: list</span>
+<span class="sd">    :param analysis: Whether to analyze the results.</span>
+<span class="sd">    :type analysis: bool</span>
+<span class="sd">    :param less_ability_coef: The less ability coefficient.</span>
+<span class="sd">    :type less_ability_coef: float</span>
+<span class="sd">    :param no_less: The number of less ability elements.</span>
+<span class="sd">    :type no_less: int</span>
+<span class="sd">    :param alternative_stop: Whether to use an alternative stop condition.</span>
+<span class="sd">    :type alternative_stop: bool</span>
+<span class="sd">    :param stop: The stop condition.</span>
+<span class="sd">    :type stop: int</span>
+<span class="sd">    :param delta_rho: List of delta ratios for the group dynamics.</span>
+<span class="sd">    :type delta_rho: list</span>
+<span class="sd">    :param analysis_ability_difference: Whether to analyze the ability difference.</span>
+<span class="sd">    :type analysis_ability_difference: bool</span>
+
+<span class="sd">    :return: The expected value of the heuristics.</span>
+<span class="sd">    :rtype: tuple</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">n</span>
+    <span class="c1"># l is the maximum number that each element in the heuristic can take</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">heuristics</span><span class="p">))</span>
+    <span class="c1"># k is the number of elements in the heuristic</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">heuristics</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">no_elements</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">no_elements</span> <span class="o">=</span> <span class="n">no_random</span>
+    <span class="n">random_pool_h</span> <span class="o">=</span> <span class="n">heuristics</span>
+    <span class="n">best_pool_phi</span> <span class="o">=</span> <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">)</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">random_pool_h</span><span class="p">]</span>
+    <span class="n">random_heur</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">random_pool_h</span><span class="p">,</span> <span class="n">no_random</span><span class="p">)</span>
+    <span class="n">phi_random</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">_create_random_phi</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">random_heur</span><span class="p">,</span> <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_coef</span><span class="p">,</span>
+                                             <span class="n">no_less</span><span class="o">=</span><span class="n">no_less</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">)</span>
+    <span class="c1"># Additional best phi functions, which are not included in the random pool, although highly unlikely if they were</span>
+    <span class="k">if</span> <span class="n">additional_best</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">best_pool_phi</span> <span class="o">+=</span> <span class="n">additional_best</span>
+
+    <span class="c1"># Best phis</span>
+    <span class="n">best_phi</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">V</span><span class="o">.</span><span class="n">best_phis</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">heuristics</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="n">no_elements</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="n">additional_best</span><span class="p">,</span>
+                    <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">))</span>
+    <span class="n">random_group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">phi_random</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">best_group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">best_phi</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ev_random</span> <span class="o">=</span> <span class="n">random_group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">(</span><span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
+    <span class="n">ev_best</span> <span class="o">=</span> <span class="n">best_group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">(</span><span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">analysis_ability_difference</span><span class="p">:</span>
+        <span class="n">ab_stats_best</span> <span class="o">=</span> <span class="n">best_group</span><span class="o">.</span><span class="n">analyze_ability_difference</span><span class="p">()</span>
+        <span class="n">ab_stats_random</span> <span class="o">=</span> <span class="n">random_group</span><span class="o">.</span><span class="n">analyze_ability_difference</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">analysis</span><span class="p">:</span>
+        <span class="n">additional_best_no</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">additional_best</span><span class="p">)</span> <span class="k">if</span> <span class="n">additional_best</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">additional_best_no</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">additional_best</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">region</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">search</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">additional_best</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">search</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Default search</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;phi_comparison_trial_V_random&quot;</span>
+        <span class="n">name</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;_N_</span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s2">_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_</span><span class="si">{</span><span class="n">additional_best_no</span><span class="si">}</span><span class="s2">_search_</span><span class="si">{</span><span class="n">search</span><span class="si">}</span><span class="s2">_&quot;</span>
+        <span class="n">name</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;less_</span><span class="si">{</span><span class="n">less_ability_coef</span><span class="si">}</span><span class="s2">_noless_</span><span class="si">{</span><span class="n">no_less</span><span class="si">}</span><span class="s2">_alternative_</span><span class="si">{</span><span class="n">alternative_stop</span><span class="si">}</span><span class="s2">_&quot;</span>
+        <span class="n">name</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;stop_</span><span class="si">{</span><span class="n">stop</span><span class="si">}</span><span class="s2">.pdf&quot;</span>
+        <span class="n">best_group</span><span class="o">.</span><span class="n">plot_comparison</span><span class="p">(</span><span class="n">random_group</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\Phi_B$ vs $\Phi_R$&quot;</span><span class="p">,</span>
+                                   <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">V</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;plot_V_&quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random group vs Best group&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="p">(</span><span class="n">random_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">V</span><span class="p">(</span><span class="n">random_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="p">(</span><span class="n">best_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">V</span><span class="p">(</span><span class="n">best_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">best_message</span> <span class="o">=</span> <span class="s2">&quot;Best heuristics: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">best_heuristics</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">intersection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">best_message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and </span><span class="si">{</span><span class="n">intersection</span><span class="si">}</span><span class="s2"> additional best phi functions&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distinct in best heuristics: &quot;</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="s2">&quot; Distinct in expected values: &quot;</span><span class="p">,</span>
+              <span class="n">distinct_heur_exp</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random heuristics: &quot;</span><span class="p">,</span> <span class="n">random_heur</span><span class="p">)</span>
+        <span class="c1"># Extract the different numbers in the random heuristics and the missing ones</span>
+        <span class="n">random_heur_numbers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">random_heur</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">h</span><span class="p">])</span>
+        <span class="n">missing_heur</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">random_heur_numbers</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random heuristics unique: &quot;</span><span class="p">,</span> <span class="n">random_heur_numbers</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing heuristics: &quot;</span><span class="p">,</span> <span class="n">missing_heur</span><span class="p">)</span>
+        <span class="c1"># The same for the best heuristics</span>
+        <span class="n">best_heur_numbers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">h</span><span class="p">])</span>
+        <span class="n">missing_best_heur</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">best_heur_numbers</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best heuristics unique: &quot;</span><span class="p">,</span> <span class="n">best_heur_numbers</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing best heuristics: &quot;</span><span class="p">,</span> <span class="n">missing_best_heur</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">best_message</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random expected value: &quot;</span><span class="p">,</span> <span class="n">ev_random</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random expected value, individual: &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">phi_random</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best expected value: &quot;</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best expected value, individual: &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">best_phi</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best heuristics expected value, individual: &quot;</span><span class="p">,</span>
+              <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">)</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="c1"># input(&quot;Press Enter to continue...&quot;)</span>
+    <span class="k">if</span> <span class="n">analysis_ability_difference</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span><span class="p">,</span> <span class="n">ab_stats_best</span><span class="p">,</span> <span class="n">ab_stats_random</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span></div>
+
+
+<div class="viewcode-block" id="_generate_caption"><a class="viewcode-back" href="../../functions.html#simulations.functions._generate_caption">[docs]</a><span class="k">def</span> <span class="nf">_generate_caption</span><span class="p">(</span><span class="n">file_name_xlsx</span><span class="p">,</span> <span class="n">no_Vs</span><span class="p">,</span> <span class="n">no_random</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">percentage_random</span><span class="p">,</span> <span class="n">additional_best_no</span><span class="p">,</span>
+                      <span class="n">less_ability_coef</span><span class="p">,</span> <span class="n">no_less</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">delta_rho</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a caption for the results of the expected values and the number of iterations.</span>
+
+<span class="sd">    :param file_name_xlsx: The name of the file to be created.</span>
+<span class="sd">    :type file_name_xlsx: str</span>
+<span class="sd">    :param no_Vs: The number of :math:`V` functions to test.</span>
+<span class="sd">    :type no_Vs: int</span>
+<span class="sd">    :param no_random: The number of random heuristics to test.</span>
+<span class="sd">    :type no_random: int</span>
+<span class="sd">    :param n: The number of elements in the function :math:`V`.</span>
+<span class="sd">    :type n: int</span>
+<span class="sd">    :param l: The maximum number that each element in the heuristic can take.</span>
+<span class="sd">    :type l: int</span>
+<span class="sd">    :param percentage_random: The percentage of random :math:`V` functions.</span>
+<span class="sd">    :type percentage_random: float</span>
+<span class="sd">    :param additional_best_no: The number of additional best heuristics to test.</span>
+<span class="sd">    :type additional_best_no: int</span>
+<span class="sd">    :param less_ability_coef: The less ability coefficient.</span>
+<span class="sd">    :type less_ability_coef: float</span>
+<span class="sd">    :param no_less: The number of less ability elements.</span>
+<span class="sd">    :type no_less: int</span>
+<span class="sd">    :param alternative_stop: Whether to use an alternative stop condition.</span>
+<span class="sd">    :type alternative_stop: bool</span>
+<span class="sd">    :param stop: The stop condition.</span>
+<span class="sd">    :type stop: float</span>
+<span class="sd">    :param delta_rho: The delta-rho ratio.</span>
+<span class="sd">    :type delta_rho: list   </span>
+
+<span class="sd">    :return: The caption.</span>
+<span class="sd">    :rtype: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Readable caption</span>
+    <span class="k">if</span> <span class="n">percentage_random</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">phi_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">percentage_random</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">phi_str</span> <span class="o">=</span> <span class="s2">&quot;, $V$ functions are parametrically generated&quot;</span>
+    <span class="k">elif</span> <span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">phi_str</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;, $V$ function is parametrically generated with $\alpha, \beta, \gamma, x_0, \delta = &quot;</span> <span class="o">+</span> \
+                  <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">)$&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">phi_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, </span><span class="si">{</span><span class="n">percentage_random</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">}</span><span class="se">\\</span><span class="s2">% percentage of random $</span><span class="se">\\</span><span class="s2">\phi$ functions&quot;</span>
+    <span class="n">add_best_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, </span><span class="si">{</span><span class="n">additional_best_no</span><span class="si">}</span><span class="s2"> additional $</span><span class="se">\\</span><span class="s2">phi$ functions&quot;</span> <span class="k">if</span> <span class="n">additional_best_no</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">less_ability_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, </span><span class="si">{</span><span class="n">less_ability_coef</span><span class="si">}</span><span class="s2"> less ability coefficient, </span><span class="si">{</span><span class="n">no_less</span><span class="si">}</span><span class="s2"> number of less ability elements&quot;</span> <span class="k">if</span> <span class="n">less_ability_coef</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">alternative_stop_str</span> <span class="o">=</span> <span class="s2">&quot;, stop when a disagreement cycle is detected&quot;</span> <span class="k">if</span> <span class="n">alternative_stop</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">stop_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, stop set to </span><span class="si">{</span><span class="n">stop</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">stop</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">delta_rho_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;, delta-rho ratios $A_R$=</span><span class="si">{</span><span class="n">delta_rho</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> and $A_B$=</span><span class="si">{</span><span class="n">delta_rho</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="n">caption</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Results of the expected values and the number of iterations with $n$=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">, $l$=</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">, &quot;</span> <span class="o">+</span> \
+              <span class="sa">f</span><span class="s2">&quot;$M$=</span><span class="si">{</span><span class="n">no_Vs</span><span class="si">}</span><span class="s2"> number of trials, &quot;</span> <span class="o">+</span> \
+              <span class="sa">f</span><span class="s2">&quot;$N_1$=</span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s2"> elements in the random group&quot;</span> <span class="o">+</span> \
+              <span class="n">phi_str</span> <span class="o">+</span> \
+              <span class="n">add_best_str</span> <span class="o">+</span> \
+              <span class="n">less_ability_str</span> <span class="o">+</span> \
+              <span class="n">alternative_stop_str</span> <span class="o">+</span> \
+              <span class="n">stop_str</span> <span class="o">+</span> \
+              <span class="n">delta_rho_str</span> <span class="o">+</span> \
+              <span class="s2">&quot;. &quot;</span> <span class="o">+</span> \
+              <span class="s2">&quot;In parenthesis, the standard deviation of the expected values.&quot;</span>
+
+    <span class="k">return</span> <span class="n">caption</span></div>
+
+
+<div class="viewcode-block" id="_create_latex_table"><a class="viewcode-back" href="../../functions.html#simulations.functions._create_latex_table">[docs]</a><span class="k">def</span> <span class="nf">_create_latex_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">file_name_xlsx</span><span class="p">,</span> <span class="n">caption</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a :math:`\\LaTeX` table from a data frame.</span>
+
+<span class="sd">    :param df: The data frame to be converted to a :math:`\\LaTeX` table.</span>
+<span class="sd">    :type df: pandas.DataFrame</span>
+<span class="sd">    :param file_name_xlsx: The name of the file to be created.</span>
+<span class="sd">    :type file_name_xlsx: str</span>
+<span class="sd">    :param caption: The caption of the table.</span>
+<span class="sd">    :type caption: str</span>
+<span class="sd">    :param all: Whether to show all columns.</span>
+<span class="sd">    :type all: bool</span>
+<span class="sd">    :param precision: The precision of the table.</span>
+<span class="sd">    :type precision: int</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    :rtype: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">columns_latex</span> <span class="o">=</span> <span class="p">[</span><span class="n">LATEX_COLUMN_DICT</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">LATEX_COLUMN_DICT</span><span class="p">]</span>
+    <span class="n">columns_old</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">LATEX_COLUMN_DICT</span><span class="p">]</span>
+    <span class="n">df_latex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">columns_latex</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">columns_old</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">:</span>
+        <span class="c1"># Keep only the first 5 columns</span>
+        <span class="n">df_latex</span> <span class="o">=</span> <span class="n">df_latex</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">df_formatted</span> <span class="o">=</span> <span class="n">df_latex</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_formatted</span> <span class="o">=</span> <span class="n">df_formatted</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_latex</span><span class="o">.</span><span class="n">columns</span><span class="p">)):</span>
+        <span class="n">avg</span> <span class="o">=</span> <span class="n">df_latex</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+        <span class="n">std</span> <span class="o">=</span> <span class="n">df_latex</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">precision</span>
+        <span class="c1"># Integers with no decimal points, else 4 decimal points</span>
+        <span class="k">if</span> <span class="n">avg</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">avg</span><span class="p">):</span>
+            <span class="n">avg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">avg</span><span class="p">)</span>
+            <span class="n">df_formatted</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="n">df_formatted</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">avg</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">std</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df_formatted</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Average&#39;</span><span class="p">,</span> <span class="n">df_formatted</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">avg</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">std</span><span class="si">:</span><span class="s2">.</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="c1"># Keep only the average row</span>
+    <span class="n">df_formatted</span> <span class="o">=</span> <span class="n">df_formatted</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;Average&#39;</span><span class="p">]]</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tables_path</span><span class="p">,</span> <span class="n">file_name_xlsx</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;tab:&quot;</span> <span class="o">+</span> <span class="n">file_name_xlsx</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">generate_latex_table</span><span class="p">(</span><span class="n">df_formatted</span><span class="p">,</span> <span class="n">output_path</span><span class="o">=</span><span class="n">output_path</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="n">caption</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span></div>
+
+
+<span class="c1"># Results functions</span>
+<div class="viewcode-block" id="excel_results"><a class="viewcode-back" href="../../functions.html#simulations.functions.excel_results">[docs]</a><span class="k">def</span> <span class="nf">excel_results</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                  <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">additional_best_no</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                  <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                  <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">analysis_ability_difference</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                  <span class="n">open_excel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an Excel file with the results of the expected values and the number of iterations for each phi function.</span>
+
+<span class="sd">    :param no_Vs: Number of :math:`V` functions to test.</span>
+<span class="sd">    :type no_Vs: int</span>
+<span class="sd">    :param latex: Flag to create a :LaTeX: table with the results.</span>
+<span class="sd">    :type latex: bool</span>
+<span class="sd">    :param percentage_random: Percentage of random :math:`V` functions.</span>
+<span class="sd">    :type percentage_random: float</span>
+<span class="sd">    :param add_radial_search: Flag to add a radial search to the pool of best phis.</span>
+<span class="sd">    :type add_radial_search: bool</span>
+<span class="sd">    :param additional_best_no: Number of additional best phi functions to add to the pool of best phis.</span>
+<span class="sd">    :type additional_best_no: int</span>
+<span class="sd">    :param params: Parameters for the deterministic V function. If entered, the random V functions are ignored, it</span>
+<span class="sd">     returns the results with just one function V.</span>
+<span class="sd">    :param search: Number of elements in the region for the additional phis.</span>
+<span class="sd">    :type search: int</span>
+<span class="sd">    :param less_ability_coef: The less ability coefficient. See :py:class:`.simulator_dynamics.PhiFunction`.</span>
+<span class="sd">    :type less_ability_coef: float</span>
+<span class="sd">    :param no_less: The number of less ability elements.</span>
+<span class="sd">    :type no_less: int</span>
+<span class="sd">    :param alternative_stop: Flag to use the alternative stop condition (stop when a disagreement cycle is detected).</span>
+<span class="sd">    :type alternative_stop: bool</span>
+<span class="sd">    :param stop: The stop condition.</span>
+<span class="sd">    :type stop: int</span>
+<span class="sd">    :param analysis_ability_difference: Flag to analyze the ability difference.</span>
+<span class="sd">    :type analysis_ability_difference: bool</span>
+<span class="sd">    :param delta_rho: List of deltas and rhos for the group dynamics. In particular, if provided, it contains:</span>
+<span class="sd">        - delta_rho[0]: The ratio of deltas and rhos for the random group.</span>
+<span class="sd">        - delta_rho[1]: The ratio of deltas and rhos for the best group.</span>
+<span class="sd">    :type delta_rho: list </span>
+<span class="sd">    :param analysis: Flag to analyze the phi functions.</span>
+<span class="sd">    :type analysis: bool</span>
+<span class="sd">    :param function: The function :math:`V`.</span>
+<span class="sd">    :type function: function</span>
+<span class="sd">    :param open_excel: Flag to open the Excel file.</span>
+<span class="sd">    :type open_excel: bool</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">add_radial_search</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The delta_rho parameter is only available when add_radial_search is True&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">no_Vs</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">percentage_random</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="ne">Warning</span><span class="p">(</span><span class="s2">&quot;The parameter no_Vs, percentage_random are ignored when params is provided&quot;</span><span class="p">))</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">analysis_ability_difference</span><span class="p">:</span>
+        <span class="n">results_ab_diff</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">no_Vs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;V function </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">/</span> <span class="n">no_Vs</span> <span class="o">&lt;</span> <span class="n">percentage_random</span><span class="p">:</span>
+            <span class="n">V</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">V</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">V</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">function</span><span class="p">)</span>
+
+        <span class="n">index</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">return_index</span><span class="p">(</span><span class="n">case</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+        <span class="c1"># Store the picture of V, one for each V</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">/</span> <span class="n">no_Vs</span> <span class="o">&gt;=</span> <span class="n">percentage_random</span><span class="p">:</span>
+            <span class="n">V</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;V_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">saving_folder</span><span class="o">=</span><span class="n">repo_path</span><span class="p">)</span>
+
+        <span class="c1"># Define best agents</span>
+        <span class="n">phi_best</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">create_additional_bests</span><span class="p">(</span><span class="n">add_radial_search</span><span class="o">=</span><span class="n">add_radial_search</span><span class="p">,</span>
+                                             <span class="n">additional_best_no</span><span class="o">=</span><span class="n">additional_best_no</span><span class="p">,</span>
+                                             <span class="n">search</span><span class="o">=</span><span class="n">search</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">)</span>
+
+        <span class="c1"># Compare the expected values of the best heuristics with random heuristics</span>
+        <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pool_tools</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">create_pool_tools</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">repeat</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">while</span> <span class="n">length</span> <span class="o">&lt;</span> <span class="n">no_random</span><span class="p">:</span>
+                <span class="n">repeat</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">pool_tools</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">create_pool_tools</span><span class="p">(</span><span class="n">delta_rho_ratio</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">repeat</span><span class="o">=</span><span class="n">repeat</span><span class="p">)</span>
+                <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pool_tools</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">repeat</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Repeat </span><span class="si">{</span><span class="n">repeat</span><span class="si">}</span><span class="s2"> times to get </span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s2"> heuristics&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">analysis_ability_difference</span><span class="p">:</span>
+            <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span><span class="p">,</span> <span class="n">ab_stats_best</span><span class="p">,</span> <span class="n">ab_stats_random</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">test_group_h</span><span class="p">(</span><span class="n">pool_tools</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="n">no_random</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="n">phi_best</span><span class="p">,</span>
+                             <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_coef</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="n">no_less</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span>
+                             <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="n">analysis</span><span class="p">,</span>
+                             <span class="n">analysis_ability_difference</span><span class="o">=</span><span class="n">analysis_ability_difference</span><span class="p">))</span>
+            <span class="n">results_ab_diff</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">ab_stats_best</span><span class="p">,</span> <span class="o">*</span><span class="n">ab_stats_random</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">test_group_h</span><span class="p">(</span><span class="n">pool_tools</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="n">no_random</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="n">phi_best</span><span class="p">,</span>
+                             <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_coef</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="n">no_less</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span>
+                             <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="n">analysis</span><span class="p">))</span>
+
+        <span class="n">best_beat_heur</span> <span class="o">=</span> <span class="n">ev_best</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">ev_random</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Store results in a dictionary</span>
+        <span class="n">results</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ev_random</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ev_random</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ev_best</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ev_best</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">best_beat_heur</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span>
+                          <span class="n">distinct_heur_exp</span><span class="p">,</span> <span class="n">intersection</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Expected value random&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Expected iterations random&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Expected value best&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Expected iterations best&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Best outperform random&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Distinct in best heuristic (sorted)&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Distinct in best heuristic (expected)&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Intersection&#39;</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;results_M_</span><span class="si">{</span><span class="n">no_Vs</span><span class="si">}</span><span class="s1">_randomVperc_</span><span class="si">{</span><span class="n">percentage_random</span><span class="si">}</span><span class="s1">_N_</span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s1">_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">_&#39;</span>
+                     <span class="sa">f</span><span class="s1">&#39;addPhi_</span><span class="si">{</span><span class="n">additional_best_no</span><span class="si">}</span><span class="s1">_search_</span><span class="si">{</span><span class="n">search</span><span class="si">}</span><span class="s1">_less_</span><span class="si">{</span><span class="n">less_ability_coef</span><span class="si">}</span><span class="s1">_noless_</span><span class="si">{</span><span class="n">no_less</span><span class="si">}</span><span class="s1">_&#39;</span>
+                     <span class="sa">f</span><span class="s1">&#39;alternative_</span><span class="si">{</span><span class="n">alternative_stop</span><span class="si">}</span><span class="s1">_stop_</span><span class="si">{</span><span class="n">stop</span><span class="si">}</span><span class="s1">.xlsx&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;results_M_</span><span class="si">{</span><span class="n">no_Vs</span><span class="si">}</span><span class="s1">_randomVperc_</span><span class="si">{</span><span class="n">percentage_random</span><span class="si">}</span><span class="s1">_N_</span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s1">_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s1">_&#39;</span>
+                     <span class="sa">f</span><span class="s1">&#39;delta_rho_</span><span class="si">{</span><span class="n">delta_rho</span><span class="si">}</span><span class="s1">.xlsx&#39;</span><span class="p">)</span>
+    <span class="n">_create_excel_from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">analysis_ability_difference</span><span class="p">:</span>
+        <span class="n">df_ab_diff</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">results_ab_diff</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span>
+                                            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Mean ability best&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;Min ability best&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;Max ability best&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;Mean ability random&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;Min ability random&#39;</span><span class="p">,</span>
+                                                     <span class="s1">&#39;Max ability random&#39;</span><span class="p">])</span>
+        <span class="n">file_name_ab_diff</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;_ab_diff.xlsx&quot;</span><span class="p">)</span>
+        <span class="n">_create_excel_from_df</span><span class="p">(</span><span class="n">df_ab_diff</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file_name_ab_diff</span><span class="p">))</span>
+
+    <span class="c1"># Add the pictures to the Excel file so it fits inside a cell on the right</span>
+    <span class="n">wb</span> <span class="o">=</span> <span class="n">load_workbook</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">))</span>
+    <span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">active</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">no_Vs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">/</span> <span class="n">no_Vs</span> <span class="o">&gt;=</span> <span class="n">percentage_random</span><span class="p">:</span>
+            <span class="c1"># Adjusted image size</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;V_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+            <span class="n">img</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">100</span>
+            <span class="n">img</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">100</span>
+            <span class="c1"># Count las column</span>
+            <span class="n">no_columns</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">col</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="n">no_columns</span><span class="p">)</span>  <span class="c1"># That goes through A, B, ...</span>
+            <span class="n">ws</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">col</span><span class="si">}{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">ws</span><span class="o">.</span><span class="n">row_dimensions</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># adjust cell size to fit the image</span>
+            <span class="n">ws</span><span class="o">.</span><span class="n">column_dimensions</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">20</span>
+
+    <span class="n">excel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+    <span class="n">saving_routine_excel</span><span class="p">(</span><span class="n">wb</span><span class="p">,</span> <span class="n">excel_path</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="n">open_excel</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">latex</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">latex</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+            <span class="nb">all</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">precision</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">all</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">precision</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">caption</span> <span class="o">=</span> <span class="n">_generate_caption</span><span class="p">(</span><span class="n">file_name_xlsx</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="n">no_Vs</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="n">no_random</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span>
+                                    <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="n">percentage_random</span><span class="p">,</span>
+                                    <span class="n">additional_best_no</span><span class="o">=</span><span class="n">additional_best_no</span><span class="p">,</span>
+                                    <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_coef</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="n">no_less</span><span class="p">,</span>
+                                    <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+                                    <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">)</span>
+        <span class="n">_create_latex_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">file_name_xlsx</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="n">caption</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="n">precision</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">analysis_ability_difference</span><span class="p">:</span>
+            <span class="n">caption_ab_diff</span> <span class="o">=</span> <span class="n">caption</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Results of the expected values and the number of iterations with&quot;</span><span class="p">,</span>
+                                              <span class="s2">&quot;Statistics of the ability difference between the best and random heuristics with&quot;</span><span class="p">)</span>
+            <span class="n">file_name_ab_diff</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;_ab_diff.xlsx&quot;</span><span class="p">)</span>
+            <span class="n">_create_latex_table</span><span class="p">(</span><span class="n">df_ab_diff</span><span class="p">,</span> <span class="n">file_name_xlsx</span><span class="o">=</span><span class="n">file_name_ab_diff</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="n">caption_ab_diff</span><span class="p">,</span>
+                                <span class="nb">all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="test_V"><a class="viewcode-back" href="../../functions.html#simulations.functions.test_V">[docs]</a><span class="k">def</span> <span class="nf">test_V</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trials</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+           <span class="n">additional_best_no</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+           <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+           <span class="n">open_excel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test a fixed V taking several trials for the random group.</span>
+
+<span class="sd">    :param params: Parameters for the deterministic :math:`V` function. If entered, the random :math:`V` functions are ignored, it</span>
+<span class="sd">     returns the results with just one function :math:`V`.</span>
+<span class="sd">    :type params: tuple</span>
+<span class="sd">    :param trials: Number of trials for the random group.</span>
+<span class="sd">    :type trials: int</span>
+<span class="sd">    :param no_random: Number of elements in the random group.</span>
+<span class="sd">    :type no_random: int</span>
+<span class="sd">    :param n: Number of elements in the function :math:`V`.</span>
+<span class="sd">    :type n: int</span>
+<span class="sd">    :param l: Maximum number that each element in the heuristic can take.</span>
+<span class="sd">    :type l: int</span>
+<span class="sd">    :param add_radial_search: Flag to add a radial search to the pool of best phis.</span>
+<span class="sd">    :type add_radial_search: bool</span>
+<span class="sd">    :param additional_best_no: Number of additional best phi functions to add to the pool of best phis.</span>
+<span class="sd">    :type additional_best_no: int</span>
+<span class="sd">    :param search: Number of elements in the region for the additional phis.</span>
+<span class="sd">    :type search: int</span>
+<span class="sd">    :param less_ability_coef: Less ability coefficient.</span>
+<span class="sd">    :type less_ability_coef: float</span>
+<span class="sd">    :param no_less: Number of less ability elements.</span>
+<span class="sd">    :type no_less: int</span>
+<span class="sd">    :param alternative_stop: Flag to use the alternative stop condition (stop when a disagreement cycle is detected).</span>
+<span class="sd">    :type alternative_stop: bool</span>
+<span class="sd">    :param stop: Stop condition.</span>
+<span class="sd">    :type stop: int</span>
+<span class="sd">    :param latex: Flag to create a :math:`\LaTeX` table with the results.</span>
+<span class="sd">    :type latex: bool</span>
+<span class="sd">    :param analysis: Flag to analyze the phi functions.</span>
+<span class="sd">    :type analysis: bool</span>
+<span class="sd">    :param delta_rho: List of deltas and rhos for the group dynamics.</span>
+<span class="sd">    :type delta_rho: list</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pool_tools</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">create_pool_tools</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">pool_tools</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">create_pool_tools</span><span class="p">(</span><span class="n">delta_rho_ratio</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">repeat</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mi">100</span> <span class="o">/</span> <span class="n">no_random</span><span class="p">)))</span>
+    <span class="n">best_phi</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">V</span><span class="o">.</span><span class="n">best_phis</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">pool_tools</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="n">no_random</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">))</span>
+    <span class="n">best_group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">best_phi</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">analysis</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">additional_best_no</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best heuristics: </span><span class="si">{</span><span class="n">best_heuristics</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">ev_best</span> <span class="o">=</span> <span class="n">best_group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">(</span><span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best expected value: &quot;</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best expected value, individual: &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">best_phi</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best heuristics expected value, individual: &quot;</span><span class="p">,</span>
+                  <span class="p">[</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">)</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best delta_rho: </span><span class="si">{</span><span class="n">delta_rho</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trial </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">add_best</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">create_additional_bests</span><span class="p">(</span><span class="n">add_radial_search</span><span class="o">=</span><span class="n">add_radial_search</span><span class="p">,</span> <span class="n">additional_best_no</span><span class="o">=</span><span class="n">additional_best_no</span><span class="p">,</span>
+                                             <span class="n">search</span><span class="o">=</span><span class="n">search</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">)</span>
+        <span class="c1"># Note that this is random too</span>
+        <span class="k">if</span> <span class="n">analysis</span> <span class="ow">and</span> <span class="n">additional_best_no</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Analyze the phi functions</span>
+            <span class="n">add_best_group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">add_best</span><span class="p">)</span>
+            <span class="n">add_best_group</span><span class="o">.</span><span class="n">analyze_phi_region</span><span class="p">()</span>
+
+        <span class="n">best_phi</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">V</span><span class="o">.</span><span class="n">best_phis</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">pool_tools</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="n">no_random</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="n">add_best</span><span class="p">,</span>
+                        <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="o">=</span><span class="n">best_heuristics</span><span class="p">))</span>
+        <span class="n">best_group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">best_phi</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ev_best</span> <span class="o">=</span> <span class="n">best_group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">(</span><span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
+
+        <span class="n">random_sample</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">pool_tools</span><span class="p">,</span> <span class="n">no_random</span><span class="p">)</span>
+        <span class="n">phi_random</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">_create_random_phi</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">random_sample</span><span class="p">,</span> <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_coef</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="n">no_less</span><span class="p">)</span>
+        <span class="n">random_group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">phi_random</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">ev_random</span> <span class="o">=</span> <span class="n">random_group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">(</span><span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">analysis</span><span class="p">:</span>
+            <span class="n">best_group</span><span class="o">.</span><span class="n">plot_comparison</span><span class="p">(</span><span class="n">random_group</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span>
+                                       <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\Phi_B$ vs $\Phi_R$&quot;</span><span class="p">,</span>
+                                       <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;phi_comparison_trial_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">_N_</span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s2">_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_</span><span class="si">{</span><span class="n">additional_best_no</span><span class="si">}</span><span class="s2">_&quot;</span>
+                                            <span class="sa">f</span><span class="s2">&quot;search_</span><span class="si">{</span><span class="n">search</span><span class="si">}</span><span class="s2">_less_</span><span class="si">{</span><span class="n">less_ability_coef</span><span class="si">}</span><span class="s2">_noless_</span><span class="si">{</span><span class="n">no_less</span><span class="si">}</span><span class="s2">_alternative_</span><span class="si">{</span><span class="n">alternative_stop</span><span class="si">}</span><span class="s2">_&quot;</span>
+                                            <span class="sa">f</span><span class="s2">&quot;stop_</span><span class="si">{</span><span class="n">stop</span><span class="si">}</span><span class="s2">.pdf&quot;</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)))</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="p">(</span><span class="n">random_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">V</span><span class="p">(</span><span class="n">random_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="p">(</span><span class="n">best_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">V</span><span class="p">(</span><span class="n">best_group</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">best_message</span> <span class="o">=</span> <span class="s2">&quot;Best heuristics: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">best_heuristics</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">intersection</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">best_message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and </span><span class="si">{</span><span class="n">intersection</span><span class="si">}</span><span class="s2"> additional best phi functions&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distinct in best heuristics: &quot;</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="s2">&quot; Distinct in expected values: &quot;</span><span class="p">,</span>
+                  <span class="n">distinct_heur_exp</span><span class="p">)</span>
+            <span class="n">random_heur</span> <span class="o">=</span> <span class="n">random_sample</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random heuristics: &quot;</span><span class="p">,</span> <span class="n">random_heur</span><span class="p">)</span>
+            <span class="c1"># Extract the different numbers in the random heuristics and the missing ones</span>
+            <span class="n">random_heur_numbers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">random_heur</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">h</span><span class="p">])</span>
+            <span class="n">missing_heur</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">random_heur_numbers</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random heuristics unique: &quot;</span><span class="p">,</span> <span class="n">random_heur_numbers</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing heuristics: &quot;</span><span class="p">,</span> <span class="n">missing_heur</span><span class="p">)</span>
+            <span class="c1"># The same for the best heuristics</span>
+            <span class="n">best_heur_numbers</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">best_heuristics</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">h</span><span class="p">])</span>
+            <span class="n">missing_best_heur</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">best_heur_numbers</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best heuristics unique: &quot;</span><span class="p">,</span> <span class="n">best_heur_numbers</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing best heuristics: &quot;</span><span class="p">,</span> <span class="n">missing_best_heur</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">best_message</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random expected value: &quot;</span><span class="p">,</span> <span class="n">ev_random</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random expected value, individual: &quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">phi_random</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">analysis</span> <span class="ow">and</span> <span class="n">additional_best_no</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">([</span><span class="n">phi</span><span class="o">.</span><span class="n">heuristics</span> <span class="k">for</span> <span class="n">phi</span> <span class="ow">in</span> <span class="n">phi_random</span><span class="p">])</span>
+        <span class="n">best_beat_heur</span> <span class="o">=</span> <span class="n">ev_best</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">ev_random</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># Store results in a dictionary</span>
+        <span class="n">results</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ev_random</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ev_random</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ev_best</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ev_best</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">best_beat_heur</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span>
+                      <span class="n">distinct_heur_exp</span><span class="p">,</span> <span class="n">intersection</span><span class="p">)</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Expected value random&quot;</span><span class="p">,</span> <span class="s2">&quot;Expected iterations random&quot;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Expected value best&#39;</span><span class="p">,</span> <span class="s1">&#39;Expected iterations best&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Best outperform random&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Distinct in best heuristic (sorted)&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Distinct in best heuristic (expected)&#39;</span><span class="p">,</span>
+                                                                  <span class="s1">&#39;Intersection&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">delta_rho</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;test_V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">_M_</span><span class="si">{</span><span class="n">trials</span><span class="si">}</span><span class="s2">_N_</span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s2">_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_</span><span class="si">{</span><span class="n">additional_best_no</span><span class="si">}</span><span class="s2">_&quot;</span> \
+                    <span class="sa">f</span><span class="s2">&quot;search_</span><span class="si">{</span><span class="n">search</span><span class="si">}</span><span class="s2">_less_</span><span class="si">{</span><span class="n">less_ability_coef</span><span class="si">}</span><span class="s2">_noless_</span><span class="si">{</span><span class="n">no_less</span><span class="si">}</span><span class="s2">_&quot;</span> \
+                    <span class="sa">f</span><span class="s2">&quot;alternative_</span><span class="si">{</span><span class="n">alternative_stop</span><span class="si">}</span><span class="s2">_stop_</span><span class="si">{</span><span class="n">stop</span><span class="si">}</span><span class="s2">.xlsx&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;test_V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">_M_</span><span class="si">{</span><span class="n">trials</span><span class="si">}</span><span class="s2">_N_</span><span class="si">{</span><span class="n">no_random</span><span class="si">}</span><span class="s2">_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_delta_rho_</span><span class="si">{</span><span class="n">delta_rho</span><span class="si">}</span><span class="s2">.xlsx&quot;</span>
+    <span class="n">_create_excel_from_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">),</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># Add the image of the function V inside the Excel file</span>
+    <span class="n">V</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+    <span class="n">wb</span> <span class="o">=</span> <span class="n">load_workbook</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">))</span>
+    <span class="n">ws</span> <span class="o">=</span> <span class="n">wb</span><span class="o">.</span><span class="n">active</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">.png not found, generating it&quot;</span><span class="p">)</span>
+        <span class="n">V</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">,</span> <span class="n">saving_folder</span><span class="o">=</span><span class="n">figures_path</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">figures_path</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">))</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">ws</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="s1">&#39;A1&#39;</span><span class="p">)</span>
+    <span class="n">wb</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">))</span>
+    <span class="c1"># Open excel</span>
+    <span class="k">if</span> <span class="n">open_excel</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;start excel &quot;</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span><span class="w"> </span><span class="n">file_name</span><span class="p">)</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">latex</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">latex</span> <span class="o">==</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+            <span class="nb">all</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">all</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">caption</span> <span class="o">=</span> <span class="n">_generate_caption</span><span class="p">(</span><span class="n">file_name_xlsx</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="n">trials</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="n">no_random</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span>
+                                    <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                                    <span class="n">additional_best_no</span><span class="o">=</span><span class="n">additional_best_no</span><span class="p">,</span>
+                                    <span class="n">less_ability_coef</span><span class="o">=</span><span class="n">less_ability_coef</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="n">no_less</span><span class="p">,</span>
+                                    <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span>
+                                    <span class="n">delta_rho</span><span class="o">=</span><span class="n">delta_rho</span><span class="p">)</span>
+        <span class="n">_create_latex_table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">file_name_xlsx</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="n">caption</span><span class="p">,</span> <span class="nb">all</span><span class="o">=</span><span class="nb">all</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="plots_convergence_from_excel"><a class="viewcode-back" href="../../functions.html#simulations.functions.plots_convergence_from_excel">[docs]</a><span class="k">def</span> <span class="nf">plots_convergence_from_excel</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">column_names</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">saving_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                 <span class="n">saving_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ma_window</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                 <span class="n">group_statistics</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the cumulative mean as a function of the number of V functions from an Excel file.</span>
+<span class="sd">    </span>
+<span class="sd">    :param file_name: The name of the file to be created.</span>
+<span class="sd">    :type file_name: str</span>
+<span class="sd">    :param column_names: The names of the columns to be plotted.</span>
+<span class="sd">    :type column_names: list</span>
+<span class="sd">    :param title: The title of the plot.</span>
+<span class="sd">    :type title: str</span>
+<span class="sd">    :param saving_path: The path to save the plot.</span>
+<span class="sd">    :type saving_path: str</span>
+<span class="sd">    :param saving_name: The name of the file to be saved.</span>
+<span class="sd">    :type saving_name: str</span>
+<span class="sd">    :param ma_window: The window size for the moving average.</span>
+<span class="sd">    :type ma_window: int</span>
+<span class="sd">    :param ylim: The y-axis limits.</span>
+<span class="sd">    :type ylim: tuple</span>
+<span class="sd">    :param sizes: The sizes of the plot.</span>
+<span class="sd">    :type sizes: tuple</span>
+<span class="sd">    :param group_statistics: Whether to plot the group statistics.</span>
+<span class="sd">    :type group_statistics: bool</span>
+
+<span class="sd">    :return: None</span>
+<span class="sd">    :rtype: None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">group_statistics</span><span class="p">:</span>
+        <span class="n">file_name_stats</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;_ab_diff.xlsx&quot;</span><span class="p">)</span>
+        <span class="n">df_stats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_name_stats</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">df_total</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df_stats</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df_total</span> <span class="o">=</span> <span class="n">df</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">df_total</span><span class="p">[</span><span class="n">column_names</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="c1"># Exclude rows corresponding to the average and standard deviation (last two rows)</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">values</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">ys_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ma_window</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not enough data points (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span><span class="si">}</span><span class="s2">) for the moving average with window size </span><span class="si">{</span><span class="n">ma_window</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+    <span class="n">df_values</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">ys_mav</span> <span class="o">=</span> <span class="n">df_values</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">ma_window</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">if</span> <span class="n">sizes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">labelsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">title_size</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">ysize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">xsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">legend_size</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">figsize</span> <span class="o">=</span> <span class="n">sizes</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">labelsize</span> <span class="o">=</span> <span class="mi">12</span>
+        <span class="n">title_size</span> <span class="o">=</span> <span class="mi">13</span>
+        <span class="n">ysize</span> <span class="o">=</span> <span class="mi">12</span>
+        <span class="n">xsize</span> <span class="o">=</span> <span class="mi">12</span>
+        <span class="n">legend_size</span> <span class="o">=</span> <span class="mi">12</span>
+        <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">latex_settings</span><span class="p">(</span><span class="n">plt</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="n">labelsize</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column_name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">column_names</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">column_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Expected value random&quot;</span><span class="p">,</span> <span class="s1">&#39;Expected value best&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">column_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;random&quot;</span><span class="p">):</span>
+                <span class="n">phi</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\Phi_R&quot;</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">phi</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\Phi_B&quot;</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">group_statistics</span><span class="p">:</span>
+                <span class="n">label_mav</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\mathbb</span><span class="si">{E}</span><span class="s2">_\nu(V\circ{\phi^{&quot;</span> <span class="o">+</span> <span class="n">phi</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;}})^\textsc</span><span class="si">{ma}</span><span class="s2">$&quot;</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ys_mav</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label_mav</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">label_mean</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\hat{\mathcal</span><span class="si">{A}</span><span class="s2">}_M(&quot;</span> <span class="o">+</span> <span class="n">phi</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;)$&quot;</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ys_mean</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label_mean</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">column_name</span> <span class="o">==</span> <span class="s2">&quot;Best outperform random&quot;</span><span class="p">:</span>
+            <span class="n">label_mean</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\hat{\mathcal</span><span class="si">{O}</span><span class="s2">}_{\Phi_B, \Phi_R}$&quot;</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ys_mean</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label_mean</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">column_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Mean ability best&quot;</span><span class="p">,</span> <span class="s2">&quot;Min ability best&quot;</span><span class="p">,</span> <span class="s2">&quot;Max ability best&quot;</span><span class="p">,</span> <span class="s2">&quot;Mean ability random&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;Min ability random&quot;</span><span class="p">,</span> <span class="s2">&quot;Max ability random&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">column_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;best&quot;</span><span class="p">):</span>
+                <span class="n">phi</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;{\Phi_B}&quot;</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">phi</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;{\Phi_R}&quot;</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+            <span class="k">if</span> <span class="n">column_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Mean&quot;</span><span class="p">):</span>
+                <span class="n">operator</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{mean}</span><span class="s2">}_&quot;</span>
+                <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+                <span class="n">width</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">elif</span> <span class="n">column_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Min&quot;</span><span class="p">):</span>
+                <span class="n">operator</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{min}</span><span class="s2">}_&quot;</span>
+                <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span>
+                <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">column_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Max&quot;</span><span class="p">):</span>
+                <span class="n">operator</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;$\widehat{\textnormal</span><span class="si">{max}</span><span class="s2">}_&quot;</span>
+                <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span>
+                <span class="n">width</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">label_mean</span> <span class="o">=</span> <span class="n">operator</span> <span class="o">+</span> <span class="n">phi</span> <span class="o">+</span> <span class="sa">r</span><span class="s2">&quot;\left(\mathcal</span><span class="si">{A}</span><span class="s2">(\phi)\right)$&quot;</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ys_mean</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label_mean</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">width</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column name </span><span class="si">{</span><span class="n">column_names</span><span class="si">}</span><span class="s2"> not implemented&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ylim</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">group_statistics</span><span class="p">:</span>
+        <span class="n">lengend_pos</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">legend_size</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">lengend_pos</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">legend_size</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">lengend_pos</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Ability estimate&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">ysize</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$M$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">xsize</span><span class="p">)</span>
+    <span class="n">split_name</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">split_name</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">title_size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">saving_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">saving_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+            <span class="n">saving_name</span> <span class="o">=</span> <span class="n">title</span> <span class="o">+</span> <span class="s2">&quot;.pdf&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">saving_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.pdf&quot;</span><span class="p">):</span>
+                <span class="n">saving_name</span> <span class="o">=</span> <span class="n">saving_name</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">saving_name</span> <span class="o">=</span> <span class="n">saving_name</span> <span class="o">+</span> <span class="s2">&quot;.pdf&quot;</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">saving_path</span><span class="p">,</span> <span class="n">saving_name</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
