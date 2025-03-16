@@ -1,33 +1,19 @@
 import os
 import logging
 import pandas as pd
+from openpyxl import load_workbook
+from openpyxl.drawing.image import Image
 import random
-from itertools import permutations
 
 try:
     from .simulator_dynamics import PhiFunction, VFunction, PhiGroup
 except ImportError:
     from simulator_dynamics import PhiFunction, VFunction, PhiGroup
 try:
-    from .auxiliary import adjust_excel, generate_latex_table
+    from .auxiliary import adjust_excel, generate_latex_table, latex_settings, saving_routine_excel
 except ImportError:
-    from auxiliary import adjust_excel, generate_latex_table
+    from auxiliary import adjust_excel, generate_latex_table, latex_settings, saving_routine_excel
 # Additional imports to resolve missing modules and configuration variables
-try:
-    from openpyxl import load_workbook
-except ImportError:
-    from openpyxl import load_workbook
-
-try:
-    from openpyxl.drawing.image import Image
-except ImportError:
-    from openpyxl.drawing.image import Image
-
-try:
-    from .auxiliary import latex_settings, saving_routine_excel
-except ImportError:
-    from auxiliary import latex_settings, saving_routine_excel
-
 try:
     from .config import tables_path, results_path, repo_path, figures_path
 except ImportError:
@@ -54,7 +40,7 @@ LATEX_COLUMN_DICT = {
 }
 
 
-def _create_excel_from_df(df, file_name, open_excel=False) -> None:
+def create_excel_from_df(df, file_name, open_excel=False) -> None:  # TODO: this cannot be a private function
     """Create an Excel file from a DataFrame.
 
 
@@ -83,148 +69,10 @@ def _create_excel_from_df(df, file_name, open_excel=False) -> None:
     adjust_excel(file_name, header="large", filter="all", align='center', open_excel=open_excel)
 
 
-# Testing functions
-# noinspection PyPep8Naming
-def test_individual_h(h, V, prints=False) -> tuple[float, float]:
-    """Test an individual heuristic.
-
-    :param h: The heuristic to test.
-    :type h: list
-    :param V: The :math:`V` function.
-    :type V: VFunction
-    :param prints: Whether to print the results.
-    :type prints: bool
-
-    :return: The expected value of the heuristic.
-    :rtype: tuple[float, float]
-    """
-    phi = PhiFunction(V=V, heuristics=h)
-    if prints:
-        print("Heuristic: ", h)
-        print("Expected value: ", phi.expected_value)
-        print("")
-    else:
-        return phi.expected_value
-
-
-# Testing group dynamics
-def test_group_h(heuristics, V, no_random=10, no_elements=None, additional_best=None, analysis=False,
-                 less_ability_coef=None, no_less=0, alternative_stop=False, stop=None, delta_rho=None,
-                 analysis_ability_difference=False) -> tuple:
-    """Test the group dynamics of a set of heuristics.
-
-    :param heuristics: The heuristics to test.
-    :type heuristics: list
-    :param V: The :math:`V` function.
-    :type V: VFunction
-    :param no_random: The number of random heuristics to test.
-    :type no_random: int
-    :param no_elements: The number of elements to test.
-    :type no_elements: int
-    :param additional_best: The additional best heuristics to test.
-    :type additional_best: list
-    :param analysis: Whether to analyze the results.
-    :type analysis: bool
-    :param less_ability_coef: The less ability coefficient.
-    :type less_ability_coef: float
-    :param no_less: The number of less ability elements.
-    :type no_less: int
-    :param alternative_stop: Whether to use an alternative stop condition.
-    :type alternative_stop: bool
-    :param stop: The stop condition.
-    :type stop: int
-    :param delta_rho: List of delta ratios for the group dynamics.
-    :type delta_rho: list
-    :param analysis_ability_difference: Whether to analyze the ability difference.
-    :type analysis_ability_difference: bool
-
-    :return: The expected value of the heuristics.
-    :rtype: tuple
-    """
-
-    n = V.n
-    # l is the maximum number that each element in the heuristic can take
-    l = max(max(heuristics))
-    # k is the number of elements in the heuristic
-    k = len(heuristics[0])
-
-    if no_elements is None:
-        no_elements = no_random
-    random_pool_h = heuristics
-    best_pool_phi = [PhiFunction(V=V, heuristics=h) for h in random_pool_h]
-    random_heur = random.sample(random_pool_h, no_random)
-    phi_random = PhiGroup._create_random_phi(V, random_heur, less_ability_coef=less_ability_coef,
-                                             no_less=no_less, delta_rho=delta_rho)
-    # Additional best phi functions, which are not included in the random pool, although highly unlikely if they were
-    if additional_best is not None:
-        best_pool_phi += additional_best
-
-    # Best phis
-    best_phi, best_heuristics, intersection, distinct_heur_sorted, distinct_heur_exp = (
-        V.best_phis(heuristics=heuristics, no_elements=no_elements, additional_best=additional_best,
-                    delta_rho=delta_rho))
-    random_group = PhiGroup(phi_list=phi_random, is_best=False)
-    best_group = PhiGroup(phi_list=best_phi, is_best=True)
-    ev_random = random_group.expected_value_group(alternative_stop=alternative_stop, stop=stop)
-    ev_best = best_group.expected_value_group(alternative_stop=alternative_stop, stop=stop)
-    if analysis_ability_difference:
-        ab_stats_best = best_group.analyze_ability_difference()
-        ab_stats_random = random_group.analyze_ability_difference()
-    if analysis:
-        additional_best_no = len(additional_best) if additional_best is not None else 0
-        if additional_best_no > 0 and additional_best[0].region is not None:
-            search = len(additional_best[0].region)
-        else:
-            search = 5  # Default search
-        name = f"phi_comparison_trial_V_random"
-        name += f"_N_{no_random}_n_{n}_l_{l}_addPhi_{additional_best_no}_search_{search}_"
-        name += f"less_{less_ability_coef}_noless_{no_less}_alternative_{alternative_stop}_"
-        name += f"stop_{stop}.pdf"
-        best_group.plot_comparison(random_group, title=r"$\Phi_B$ vs $\Phi_R$",
-                                   name=name)
-        V.plot(name="plot_V_" + name)
-        print("Random group vs Best group")
-        if delta_rho is None:
-            for i in range(n):
-                print(
-                    f"{i} -> {(random_group(i)[0], f'{V(random_group(i)[0]):.3f}')} vs {(best_group(i)[0], f'{V(best_group(i)[0]):.3f}')}")
-        best_message = "Best heuristics: " + str(best_heuristics)
-        if intersection is not None:
-            best_message += f" and {intersection} additional best phi functions"
-        print("Distinct in best heuristics: ", distinct_heur_sorted, " Distinct in expected values: ",
-              distinct_heur_exp)
-        print("Random heuristics: ", random_heur)
-        # Extract the different numbers in the random heuristics and the missing ones
-        random_heur_numbers = set([i for h in random_heur for i in h])
-        missing_heur = [i for i in range(1, l + 1) if i not in random_heur_numbers]
-        print("Random heuristics unique: ", random_heur_numbers)
-        print("Missing heuristics: ", missing_heur)
-        # The same for the best heuristics
-        best_heur_numbers = set([i for h in best_heuristics for i in h])
-        missing_best_heur = [i for i in range(1, l + 1) if i not in best_heur_numbers]
-        print("Best heuristics unique: ", best_heur_numbers)
-        print("Missing best heuristics: ", missing_best_heur)
-        print(best_message)
-        print("Random expected value: ", ev_random)
-        print("Random expected value, individual: ", [phi.expected_value[0] for phi in phi_random])
-        print("Best expected value: ", ev_best)
-        print("Best expected value, individual: ", [phi.expected_value[0] for phi in best_phi])
-        print("Best heuristics expected value, individual: ",
-              [PhiFunction(heuristics=h, V=V).expected_value[0] for h in best_heuristics])
-        print("")
-        # input("Press Enter to continue...")
-    if analysis_ability_difference:
-        return ev_random, ev_best, intersection, distinct_heur_sorted, distinct_heur_exp, ab_stats_best, ab_stats_random
-    else:
-        return ev_random, ev_best, intersection, distinct_heur_sorted, distinct_heur_exp
-
-
-def _generate_caption(file_name_xlsx, no_Vs, no_random, n, l, percentage_random, additional_best_no,
-                      less_ability_coef, no_less, alternative_stop, stop, delta_rho, params=None):
+def generate_caption(no_Vs, no_random, n, l, percentage_random, additional_best_no,
+                     less_ability_coef, no_less, alternative_stop, stop, delta_rho, params=None):
     """Generate a caption for the results of the expected values and the number of iterations.
 
-    :param file_name_xlsx: The name of the file to be created.
-    :type file_name_xlsx: str
     :param no_Vs: The number of :math:`V` functions to test.
     :type no_Vs: int
     :param no_random: The number of random heuristics to test.
@@ -283,11 +131,11 @@ def _generate_caption(file_name_xlsx, no_Vs, no_random, n, l, percentage_random,
     return caption
 
 
-def _create_latex_table(df, file_name_xlsx, caption, all=False, precision=3):
+def create_latex_table(df, file_name_xlsx, caption, all=False, precision=3):
     """
-    Create a :math:`\\LaTeX` table from a data frame.
+    Create a LaTeX table from a data frame.
 
-    :param df: The data frame to be converted to a :math:`\\LaTeX` table.
+    :param df: The data frame to be converted to a LaTeX table.
     :type df: pandas.DataFrame
     :param file_name_xlsx: The name of the file to be created.
     :type file_name_xlsx: str
@@ -415,14 +263,14 @@ def excel_results(n, l, k, no_Vs=100, latex=True, percentage_random=1, no_random
                 print(f"Repeat {repeat} times to get {no_random} heuristics")
         if analysis_ability_difference:
             ev_random, ev_best, intersection, distinct_heur_sorted, distinct_heur_exp, ab_stats_best, ab_stats_random = (
-                test_group_h(pool_tools, V, no_random=no_random, additional_best=phi_best,
+                PhiGroup.test(pool_tools, V, no_random=no_random, additional_best=phi_best,
                              less_ability_coef=less_ability_coef, no_less=no_less, alternative_stop=alternative_stop,
                              stop=stop, delta_rho=delta_rho, analysis=analysis,
                              analysis_ability_difference=analysis_ability_difference))
             results_ab_diff[index] = (*ab_stats_best, *ab_stats_random)
         else:
             ev_random, ev_best, intersection, distinct_heur_sorted, distinct_heur_exp = (
-                test_group_h(pool_tools, V, no_random=no_random, additional_best=phi_best,
+                PhiGroup.test(pool_tools, V, no_random=no_random, additional_best=phi_best,
                              less_ability_coef=less_ability_coef, no_less=no_less, alternative_stop=alternative_stop,
                              stop=stop, delta_rho=delta_rho, analysis=analysis))
 
@@ -448,7 +296,7 @@ def excel_results(n, l, k, no_Vs=100, latex=True, percentage_random=1, no_random
     else:
         file_name = (f'results_M_{no_Vs}_randomVperc_{percentage_random}_N_{no_random}_n_{n}_l_{l}_'
                      f'delta_rho_{delta_rho}.xlsx')
-    _create_excel_from_df(df, os.path.join(results_path, file_name))
+    create_excel_from_df(df, os.path.join(results_path, file_name))
 
     if analysis_ability_difference:
         df_ab_diff = pd.DataFrame.from_dict(results_ab_diff, orient='index',
@@ -459,7 +307,7 @@ def excel_results(n, l, k, no_Vs=100, latex=True, percentage_random=1, no_random
                                                      'Min ability random',
                                                      'Max ability random'])
         file_name_ab_diff = file_name.replace(".xlsx", "_ab_diff.xlsx")
-        _create_excel_from_df(df_ab_diff, os.path.join(results_path, file_name_ab_diff))
+        create_excel_from_df(df_ab_diff, os.path.join(results_path, file_name_ab_diff))
 
     # Add the pictures to the Excel file so it fits inside a cell on the right
     wb = load_workbook(os.path.join(results_path, file_name))
@@ -487,26 +335,26 @@ def excel_results(n, l, k, no_Vs=100, latex=True, percentage_random=1, no_random
         else:
             all = False
             precision = 3
-        caption = _generate_caption(file_name_xlsx=file_name, no_Vs=no_Vs, no_random=no_random, n=n,
-                                    l=l, percentage_random=percentage_random,
-                                    additional_best_no=additional_best_no,
-                                    less_ability_coef=less_ability_coef, no_less=no_less,
-                                    alternative_stop=alternative_stop, stop=stop, params=params,
-                                    delta_rho=delta_rho)
-        _create_latex_table(df, file_name_xlsx=file_name, caption=caption, all=all, precision=precision)
+        caption = generate_caption(no_Vs=no_Vs, no_random=no_random, n=n,
+                                   l=l, percentage_random=percentage_random,
+                                   additional_best_no=additional_best_no,
+                                   less_ability_coef=less_ability_coef, no_less=no_less,
+                                   alternative_stop=alternative_stop, stop=stop, params=params,
+                                   delta_rho=delta_rho)
+        create_latex_table(df, file_name_xlsx=file_name, caption=caption, all=all, precision=precision)
         if analysis_ability_difference:
             caption_ab_diff = caption.replace("Results of the expected values and the number of iterations with",
                                               "Statistics of the ability difference between the best and random heuristics with")
             file_name_ab_diff = file_name.replace(".xlsx", "_ab_diff.xlsx")
-            _create_latex_table(df_ab_diff, file_name_xlsx=file_name_ab_diff, caption=caption_ab_diff,
-                                all=True, precision=2)
+            create_latex_table(df_ab_diff, file_name_xlsx=file_name_ab_diff, caption=caption_ab_diff,
+                               all=True, precision=2)
 
 
-def test_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_search=False,
+def excel_results_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_search=False,
            additional_best_no=0, search=5, less_ability_coef=None, no_less=0,
            alternative_stop=False, stop=None, latex=True, analysis=False, delta_rho=None,
-           open_excel=True) -> None:
-    """Test a fixed V taking several trials for the random group.
+           open_excel=True) -> None:  # TODO: move to VFunction class
+    """Create an Excel file for a fixed :math:`V` function.
 
     :param params: Parameters for the deterministic :math:`V` function. If entered, the random :math:`V` functions are ignored, it
      returns the results with just one function :math:`V`.
@@ -552,7 +400,7 @@ def test_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_s
     if analysis:
         if additional_best_no == 0 and delta_rho is None:
             print(f"Best heuristics: {best_heuristics}")
-            ev_best = best_group.expected_value_group(alternative_stop=alternative_stop, stop=stop)
+            ev_best = best_group.expected_value(alternative_stop=alternative_stop, stop=stop)
             print("Best expected value: ", ev_best)
             print("Best expected value, individual: ", [phi.expected_value[0] for phi in best_phi])
             print("Best heuristics expected value, individual: ",
@@ -574,12 +422,12 @@ def test_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_s
             V.best_phis(heuristics=pool_tools, no_elements=no_random, additional_best=add_best,
                         delta_rho=delta_rho, best_heuristics=best_heuristics))
         best_group = PhiGroup(phi_list=best_phi, is_best=True)
-        ev_best = best_group.expected_value_group(alternative_stop=alternative_stop, stop=stop)
+        ev_best = best_group.expected_value(alternative_stop=alternative_stop, stop=stop)
 
         random_sample = random.sample(pool_tools, no_random)
-        phi_random = PhiGroup._create_random_phi(V, random_sample, less_ability_coef=less_ability_coef, no_less=no_less)
+        phi_random = PhiGroup.create_random_phi(V, random_sample, less_ability_coef=less_ability_coef, no_less=no_less)
         random_group = PhiGroup(phi_list=phi_random, is_best=False)
-        ev_random = random_group.expected_value_group(alternative_stop=alternative_stop, stop=stop)
+        ev_random = random_group.expected_value(alternative_stop=alternative_stop, stop=stop)
         if analysis:
             best_group.plot_comparison(random_group, alternative_stop=alternative_stop, stop=stop,
                                        title=r"$\Phi_B$ vs $\Phi_R$",
@@ -630,7 +478,7 @@ def test_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_s
                     f"alternative_{alternative_stop}_stop_{stop}.xlsx"
     else:
         file_name = f"test_V_{params}_M_{trials}_N_{no_random}_n_{n}_l_{l}_delta_rho_{delta_rho}.xlsx"
-    _create_excel_from_df(df, os.path.join(results_path, file_name), open_excel=False)
+    create_excel_from_df(df, os.path.join(results_path, file_name), open_excel=False)
     # Add the image of the function V inside the Excel file
     V.plot(name=f"V_{params}.png")
     wb = load_workbook(os.path.join(results_path, file_name))
@@ -640,7 +488,7 @@ def test_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_s
     except FileNotFoundError:
         print(f"File V_{params}.png not found, generating it")
         V.plot(name=f"V_{params}.png", saving_folder=figures_path)
-    img = Image(os.path.join(figures_path, f"V_{params}.png"))
+        img = Image(os.path.join(figures_path, f"V_{params}.png"))
     img.width = 100
     img.height = 100
     ws.add_image(img, 'A1')
@@ -653,13 +501,13 @@ def test_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_s
             all = True
         else:
             all = False
-        caption = _generate_caption(file_name_xlsx=file_name, no_Vs=trials, no_random=no_random, n=n,
-                                    l=l, percentage_random=0,
-                                    additional_best_no=additional_best_no,
-                                    less_ability_coef=less_ability_coef, no_less=no_less,
-                                    alternative_stop=alternative_stop, stop=stop, params=params,
-                                    delta_rho=delta_rho)
-        _create_latex_table(df, file_name_xlsx=file_name, caption=caption, all=all)
+        caption = generate_caption(no_Vs=trials, no_random=no_random, n=n,
+                                   l=l, percentage_random=0,
+                                   additional_best_no=additional_best_no,
+                                   less_ability_coef=less_ability_coef, no_less=no_less,
+                                   alternative_stop=alternative_stop, stop=stop, params=params,
+                                   delta_rho=delta_rho)
+        create_latex_table(df, file_name_xlsx=file_name, caption=caption, all=all)
 
 
 def plots_convergence_from_excel(file_name, column_names, title=None, saving_path=None,

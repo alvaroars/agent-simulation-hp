@@ -362,6 +362,26 @@ class PhiFunction:
         """
         return self.phi_function(i, return_checks=return_checks)
 
+    @staticmethod
+    def test(h, V, prints=False) -> tuple[float, float]:
+        """Test an individual heuristic.
+
+        :param V: The :math:`V` function.
+        :type V: VFunction
+        :param prints: Whether to print the results.
+        :type prints: bool
+
+        :return: The expected value of the heuristic.
+        :rtype: tuple[float, float]
+        """
+        phi = PhiFunction(V=V, heuristics=h)
+        if prints:
+            print("Heuristic: ", h)
+            print("Expected value: ", phi.expected_value)
+            print("")
+        else:
+            return phi.expected_value
+
 
 class PhiGroup:
     """Class to represent a group of phi functions."""
@@ -392,7 +412,25 @@ class PhiGroup:
         results_2 = [other(i) for i in range(n)]
         return results_1 == results_2
 
-    def phi_group(self, i, alternative_stop=False, stop=None) -> tuple[int, int] or int:
+    def phi_group(self, i, alternative_stop=False, stop=None, method="relay") -> tuple[int, int] or int:
+        """Compute :math:`\\phi^\\Phi(i)` using the group dynamics.
+
+        :param i: Starting point
+        :type i: int
+        :param alternative_stop: (optional, default is False) Flag to stop the algorithm when there is
+            a disagreement cycle
+        :type alternative_stop: bool
+        :param method: (optional, default is "relay") The method to use to compute the group dynamics
+        :type method: str
+        :return: :math:`\\phi^\\Phi(i)` according to the group dynamics and the number of checks
+        :rtype: tuple
+        """
+        if method == "relay":
+            return self.phi_group_relay(i, alternative_stop=alternative_stop, stop=stop)
+        else:
+            raise NotImplementedError(f"Method {method} not implemented")
+
+    def phi_group_relay(self, i, alternative_stop=False, stop=None) -> tuple[int, int] or int:
         """Compute :math:`\\phi^\\Phi(i)` using the group dynamics with a sequential approach, also known as `relay dynamics`.
 
         :param i: Starting point
@@ -405,7 +443,7 @@ class PhiGroup:
         :param stop: (optional, default is None) The number of checks to stop the algorithm
         :type stop: int
         :return: :math:`\\phi(i)` according to the group dynamics and the number of checks
-        :rtype: float or tuple
+        :rtype: tuple
         """
         x = i
         if stop is None:  # No stop provided, set an "infinite" number of checks
@@ -442,7 +480,7 @@ class PhiGroup:
                     raise ValueError("The group dynamics is not working properly")
                 return x, group_check
 
-    def expected_value_group(self, alternative_stop=False, stop=None) -> tuple[float, float]:
+    def expected_value(self, alternative_stop=False, stop=None) -> tuple[float, float]:
         """Compute the expected value of the maximum of :math:`V` using the group dynamics.
 
         :param alternative_stop: (optional, default is False) Flag to stop the algorithm when there is
@@ -513,7 +551,7 @@ class PhiGroup:
             print("Expected value of the radial search: ", self.phi_list[-1].expected_value[0])
 
     @staticmethod
-    def _create_random_phi(V, random_sample, less_ability_coef=None, no_less=0, delta_rho=None) -> list[PhiFunction]:
+    def create_random_phi(V, random_sample, less_ability_coef=None, no_less=0, delta_rho=None) -> list[PhiFunction]:
         """
         Create random :math:`\\phi` functions from a random sample of heuristics.
 
@@ -670,6 +708,116 @@ class PhiGroup:
 
         return pool_tools
 
+    @staticmethod
+    def test(heuristics, V, no_random=10, no_elements=None, additional_best=None, analysis=False,
+                    less_ability_coef=None, no_less=0, alternative_stop=False, stop=None, delta_rho=None,
+                    analysis_ability_difference=False) -> tuple: 
+        """Test the group dynamics of a set of heuristics.
+
+        :param heuristics: The heuristics to test.
+        :type heuristics: list
+        :param V: The :math:`V` function.
+        :type V: VFunction
+        :param no_random: The number of random heuristics to test.
+        :type no_random: int
+        :param no_elements: The number of elements to test.
+        :type no_elements: int
+        :param additional_best: The additional best heuristics to test.
+        :type additional_best: list
+        :param analysis: Whether to analyze the results.
+        :type analysis: bool
+        :param less_ability_coef: The less ability coefficient.
+        :type less_ability_coef: float
+        :param no_less: The number of less ability elements.
+        :type no_less: int
+        :param alternative_stop: Whether to use an alternative stop condition.
+        :type alternative_stop: bool
+        :param stop: The stop condition.
+        :type stop: int
+        :param delta_rho: List of delta ratios for the group dynamics.
+        :type delta_rho: list
+        :param analysis_ability_difference: Whether to analyze the ability difference.
+        :type analysis_ability_difference: bool
+
+        :return: The expected value of the heuristics.
+        :rtype: tuple
+        """
+
+        n = V.n
+        # l is the maximum number that each element in the heuristic can take
+        l = max(max(heuristics))
+        # k is the number of elements in the heuristic
+        k = len(heuristics[0])
+
+        if no_elements is None:
+            no_elements = no_random
+        random_pool_h = heuristics
+        best_pool_phi = [PhiFunction(V=V, heuristics=h) for h in random_pool_h]
+        random_heur = random.sample(random_pool_h, no_random)
+        phi_random = PhiGroup.create_random_phi(V, random_heur, less_ability_coef=less_ability_coef,
+                                                no_less=no_less, delta_rho=delta_rho)
+        # Additional best phi functions, which are not included in the random pool, although highly unlikely if they were
+        if additional_best is not None:
+            best_pool_phi += additional_best
+
+        # Best phis
+        best_phi, best_heuristics, intersection, distinct_heur_sorted, distinct_heur_exp = (
+            V.best_phis(heuristics=heuristics, no_elements=no_elements, additional_best=additional_best,
+                        delta_rho=delta_rho))
+        random_group = PhiGroup(phi_list=phi_random, is_best=False)
+        best_group = PhiGroup(phi_list=best_phi, is_best=True)
+        ev_random = random_group.expected_value(alternative_stop=alternative_stop, stop=stop)
+        ev_best = best_group.expected_value(alternative_stop=alternative_stop, stop=stop)
+        if analysis_ability_difference:
+            ab_stats_best = best_group.analyze_ability_difference()
+            ab_stats_random = random_group.analyze_ability_difference()
+        if analysis:
+            additional_best_no = len(additional_best) if additional_best is not None else 0
+            if additional_best_no > 0 and additional_best[0].region is not None:
+                search = len(additional_best[0].region)
+            else:
+                search = 5  # Default search
+            name = f"phi_comparison_trial_V_random"
+            name += f"_N_{no_random}_n_{n}_l_{l}_addPhi_{additional_best_no}_search_{search}_"
+            name += f"less_{less_ability_coef}_noless_{no_less}_alternative_{alternative_stop}_"
+            name += f"stop_{stop}.pdf"
+            best_group.plot_comparison(random_group, title=r"$\Phi_B$ vs $\Phi_R$",
+                                    name=name)
+            V.plot(name="plot_V_" + name)
+            print("Random group vs Best group")
+            if delta_rho is None:
+                for i in range(n):
+                    print(
+                        f"{i} -> {(random_group(i)[0], f'{V(random_group(i)[0]):.3f}')} vs {(best_group(i)[0], f'{V(best_group(i)[0]):.3f}')}")
+            best_message = "Best heuristics: " + str(best_heuristics)
+            if intersection is not None:
+                best_message += f" and {intersection} additional best phi functions"
+            print("Distinct in best heuristics: ", distinct_heur_sorted, " Distinct in expected values: ",
+                distinct_heur_exp)
+            print("Random heuristics: ", random_heur)
+            # Extract the different numbers in the random heuristics and the missing ones
+            random_heur_numbers = set([i for h in random_heur for i in h])
+            missing_heur = [i for i in range(1, l + 1) if i not in random_heur_numbers]
+            print("Random heuristics unique: ", random_heur_numbers)
+            print("Missing heuristics: ", missing_heur)
+            # The same for the best heuristics
+            best_heur_numbers = set([i for h in best_heuristics for i in h])
+            missing_best_heur = [i for i in range(1, l + 1) if i not in best_heur_numbers]
+            print("Best heuristics unique: ", best_heur_numbers)
+            print("Missing best heuristics: ", missing_best_heur)
+            print(best_message)
+            print("Random expected value: ", ev_random)
+            print("Random expected value, individual: ", [phi.expected_value[0] for phi in phi_random])
+            print("Best expected value: ", ev_best)
+            print("Best expected value, individual: ", [phi.expected_value[0] for phi in best_phi])
+            print("Best heuristics expected value, individual: ",
+                [PhiFunction(heuristics=h, V=V).expected_value[0] for h in best_heuristics])
+            print("")
+            # input("Press Enter to continue...")
+        if analysis_ability_difference:
+            return ev_random, ev_best, intersection, distinct_heur_sorted, distinct_heur_exp, ab_stats_best, ab_stats_random
+        else:
+            return ev_random, ev_best, intersection, distinct_heur_sorted, distinct_heur_exp
 
 class VFunction:
     """Class to represent a function :math:`V`.
@@ -694,7 +842,7 @@ class VFunction:
             raise ValueError(msg)
         if params is None and random is None and function is None:
             # If nothing is provided, create a V function with random parameters
-            self.params = VFunction._random_params(n)
+            self.params = VFunction.random_params(n)
         self.n = n
         self._create_V()
 
@@ -796,7 +944,7 @@ class VFunction:
         raise ValueError(msg)
 
     @staticmethod
-    def _random_params(n) -> tuple:
+    def random_params(n) -> tuple:
         """Generate random parameters for the parametric form of the function :math:`V`."""
         alpha = random.random()
         # beta = random.random() / (n/100)
