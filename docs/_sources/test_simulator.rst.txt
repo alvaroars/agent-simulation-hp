@@ -1,9 +1,9 @@
 Test Simulator
 ==============
 
-The Test Simulator module contains unit tests for verifying the functionality of the simulation system.
+This module contains unit tests for verifying the functionality of the simulation system.
 
-Test Classes
+Tests
 ------------
 
 .. autoclass:: simulations.test_simulator.TestSimulator

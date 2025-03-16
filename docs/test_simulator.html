@@ -50,6 +50,8 @@
     <script src="_static/sphinx_toolbox_installation.js"></script>
     <script src="_static/design-tabs.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'test_simulator';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -299,7 +301,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="simulator_dynamics.html">Simulator Dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Test Simulator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#test-classes">Test Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tests">Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a></li>
@@ -360,9 +362,9 @@ document.write(`
                   
   <section id="test-simulator">
 <h1>Test Simulator<a class="headerlink" href="#test-simulator" title="Permalink to this heading">#</a></h1>
-<p>The Test Simulator module contains unit tests for verifying the functionality of the simulation system.</p>
-<section id="test-classes">
-<h2>Test Classes<a class="headerlink" href="#test-classes" title="Permalink to this heading">#</a></h2>
+<p>This module contains unit tests for verifying the functionality of the simulation system.</p>
+<section id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simulations.test_simulator.</span></span><span class="sig-name descname"><span class="pre">TestSimulator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
@@ -370,13 +372,13 @@ document.write(`
 <dl class="py method">
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setUpClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.setUpClass"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Set up test fixtures that are used across all tests.</p>
+<dd><p>Set up test fixtures that are used across all tests. Only run once before all tests.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.setUp"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Set up test fixtures.</p>
+<dd><p>Set up test fixtures. Run before each test.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -388,19 +390,19 @@ document.write(`
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_individual_heuristic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_individual_heuristic"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test individual heuristic performance with different heuristics and hardcoded V function.</p>
+<dd><p>Test individual heuristic performance with different heuristics and hardcoded <span class="math notranslate nohighlight">\(V\)</span> function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_phi_function_initialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_phi_function_initialization"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test PhiFunction initialization with different parameters.</p>
+<dd><p>Test <span class="math notranslate nohighlight">\(\Phi\)</span> function initialization with different parameters.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_phi_region_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_phi_region_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test phi_region search functionality.</p>
+<dd><p>Test <span class="math notranslate nohighlight">\(\phi\)</span> region search functionality.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -418,25 +420,25 @@ document.write(`
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_group_dynamics_oscillatory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_group_dynamics_oscillatory"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test group dynamics with oscillatory V function.</p>
+<dd><p>Test group dynamics with oscillatory <span class="math notranslate nohighlight">\(V\)</span> function.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_phi_group_functionality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_phi_group_functionality"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test PhiGroup class functionality.</p>
+<dd><p>Test <span class="math notranslate nohighlight">\(\Phi\)</span> group class functionality.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_v_function_creation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_v_function_creation"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test VFunction creation and properties.</p>
+<dd><p>Test <span class="math notranslate nohighlight">\(V\)</span> function creation and properties.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_r_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_r_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test r_function and best phi calculations.</p>
+<dd><p>Test <span class="math notranslate nohighlight">\(r\)</span> function and best <span class="math notranslate nohighlight">\(\Phi\)</span> calculations.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -466,19 +468,19 @@ document.write(`
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_delta_invariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_delta_invariance"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Results should be independent of delta.</p>
+<dd><p>Results should be independent of <span class="math notranslate nohighlight">\(\delta\)</span>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_linear_V_apriori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_linear_V_apriori"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>More tests for the results when the V function is increasing when we know the apriori some results.</p>
+<dd><p>More tests for the results when the <span class="math notranslate nohighlight">\(V\)</span> function is increasing when we know the apriori some results.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">test_random_V_apriori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/test_simulator.html#TestSimulator.test_random_V_apriori"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
-<dd><p>Test the results when the V function is random and we know apriori some results.</p>
+<dd><p>Test the results when the <span class="math notranslate nohighlight">\(V\)</span> function is random and we know apriori some results.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -543,7 +545,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-classes">Test Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
 </ul>
   </nav></div>
 

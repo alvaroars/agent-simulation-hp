@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Functions" href="functions.html" />
-    <link rel="prev" title="Welcome to Agent-based simulations" href="index.html" />
+    <link rel="prev" title="Agent-based simulations" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -309,6 +309,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiFunction.from_h_to_phi"><code class="docutils literal notranslate"><span class="pre">PhiFunction.from_h_to_phi()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiFunction.phi_function"><code class="docutils literal notranslate"><span class="pre">PhiFunction.phi_function()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiFunction.__call__"><code class="docutils literal notranslate"><span class="pre">PhiFunction.__call__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiFunction.test"><code class="docutils literal notranslate"><span class="pre">PhiFunction.test()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup"><code class="docutils literal notranslate"><span class="pre">PhiGroup</span></code></a><ul>
@@ -316,12 +317,14 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.__call__"><code class="docutils literal notranslate"><span class="pre">PhiGroup.__call__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.__eq__"><code class="docutils literal notranslate"><span class="pre">PhiGroup.__eq__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.phi_group"><code class="docutils literal notranslate"><span class="pre">PhiGroup.phi_group()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.expected_value_group"><code class="docutils literal notranslate"><span class="pre">PhiGroup.expected_value_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.phi_group_relay"><code class="docutils literal notranslate"><span class="pre">PhiGroup.phi_group_relay()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.expected_value"><code class="docutils literal notranslate"><span class="pre">PhiGroup.expected_value()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.analyze_phi_region"><code class="docutils literal notranslate"><span class="pre">PhiGroup.analyze_phi_region()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup._create_random_phi"><code class="docutils literal notranslate"><span class="pre">PhiGroup._create_random_phi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.create_random_phi"><code class="docutils literal notranslate"><span class="pre">PhiGroup.create_random_phi()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.plot_comparison"><code class="docutils literal notranslate"><span class="pre">PhiGroup.plot_comparison()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.analyze_ability_difference"><code class="docutils literal notranslate"><span class="pre">PhiGroup.analyze_ability_difference()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.create_pool_tools"><code class="docutils literal notranslate"><span class="pre">PhiGroup.create_pool_tools()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.PhiGroup.test"><code class="docutils literal notranslate"><span class="pre">PhiGroup.test()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction"><code class="docutils literal notranslate"><span class="pre">VFunction</span></code></a><ul>
@@ -330,7 +333,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction._create_V"><code class="docutils literal notranslate"><span class="pre">VFunction._create_V()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction.plot"><code class="docutils literal notranslate"><span class="pre">VFunction.plot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction.return_index"><code class="docutils literal notranslate"><span class="pre">VFunction.return_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction._random_params"><code class="docutils literal notranslate"><span class="pre">VFunction._random_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction.random_params"><code class="docutils literal notranslate"><span class="pre">VFunction.random_params()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction.best_phis"><code class="docutils literal notranslate"><span class="pre">VFunction.best_phis()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.simulator_dynamics.VFunction.create_additional_bests"><code class="docutils literal notranslate"><span class="pre">VFunction.create_additional_bests()</span></code></a></li>
 </ul>
@@ -602,6 +605,26 @@ number of times the function V is evaluated.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiFunction.test">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiFunction.test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiFunction.test" title="Permalink to this definition">#</a></dt>
+<dd><p>Test an individual heuristic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>V</strong> (<a class="reference internal" href="#simulations.simulator_dynamics.VFunction" title="simulations.simulator_dynamics.VFunction"><em>VFunction</em></a>) – The <span class="math notranslate nohighlight">\(V\)</span> function.</p></li>
+<li><p><strong>prints</strong> (<em>bool</em>) – Whether to print the results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The expected value of the heuristic.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[float, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -644,7 +667,29 @@ a disagreement cycle</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiGroup.phi_group">
-<span class="sig-name descname"><span class="pre">phi_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup.phi_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup.phi_group" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">phi_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'relay'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup.phi_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup.phi_group" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute <span class="math notranslate nohighlight">\(\phi^\Phi(i)\)</span> using the group dynamics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>i</strong> (<em>int</em>) – Starting point</p></li>
+<li><p><strong>alternative_stop</strong> (<em>bool</em>) – (optional, default is False) Flag to stop the algorithm when there is
+a disagreement cycle</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – (optional, default is “relay”) The method to use to compute the group dynamics</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(\phi^\Phi(i)\)</span> according to the group dynamics and the number of checks</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiGroup.phi_group_relay">
+<span class="sig-name descname"><span class="pre">phi_group_relay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup.phi_group_relay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup.phi_group_relay" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute <span class="math notranslate nohighlight">\(\phi^\Phi(i)\)</span> using the group dynamics with a sequential approach, also known as <cite>relay dynamics</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -660,14 +705,14 @@ a disagreement cycle</p></li>
 <dd class="field-even"><p><span class="math notranslate nohighlight">\(\phi(i)\)</span> according to the group dynamics and the number of checks</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float or tuple</p>
+<dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiGroup.expected_value_group">
-<span class="sig-name descname"><span class="pre">expected_value_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup.expected_value_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup.expected_value_group" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiGroup.expected_value">
+<span class="sig-name descname"><span class="pre">expected_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup.expected_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup.expected_value" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the expected value of the maximum of <span class="math notranslate nohighlight">\(V\)</span> using the group dynamics.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -693,8 +738,8 @@ a disagreement cycle</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiGroup._create_random_phi">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_create_random_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#simulations.simulator_dynamics.PhiFunction" title="simulations.simulator_dynamics.PhiFunction"><span class="pre">simulations.simulator_dynamics.PhiFunction</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup._create_random_phi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup._create_random_phi" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiGroup.create_random_phi">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create_random_phi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#simulations.simulator_dynamics.PhiFunction" title="simulations.simulator_dynamics.PhiFunction"><span class="pre">simulations.simulator_dynamics.PhiFunction</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup.create_random_phi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup.create_random_phi" title="Permalink to this definition">#</a></dt>
 <dd><p>Create random <span class="math notranslate nohighlight">\(\phi\)</span> functions from a random sample of heuristics.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -756,6 +801,36 @@ of heuristics is created. If not None, the pool of <span class="math notranslate
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="simulations.simulator_dynamics.PhiGroup.test">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heuristics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_random</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_best</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_ability_difference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#PhiGroup.test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.PhiGroup.test" title="Permalink to this definition">#</a></dt>
+<dd><p>Test the group dynamics of a set of heuristics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heuristics</strong> (<em>list</em>) – The heuristics to test.</p></li>
+<li><p><strong>V</strong> (<a class="reference internal" href="#simulations.simulator_dynamics.VFunction" title="simulations.simulator_dynamics.VFunction"><em>VFunction</em></a>) – The <span class="math notranslate nohighlight">\(V\)</span> function.</p></li>
+<li><p><strong>no_random</strong> (<em>int</em>) – The number of random heuristics to test.</p></li>
+<li><p><strong>no_elements</strong> (<em>int</em>) – The number of elements to test.</p></li>
+<li><p><strong>additional_best</strong> (<em>list</em>) – The additional best heuristics to test.</p></li>
+<li><p><strong>analysis</strong> (<em>bool</em>) – Whether to analyze the results.</p></li>
+<li><p><strong>less_ability_coef</strong> (<em>float</em>) – The less ability coefficient.</p></li>
+<li><p><strong>no_less</strong> (<em>int</em>) – The number of less ability elements.</p></li>
+<li><p><strong>alternative_stop</strong> (<em>bool</em>) – Whether to use an alternative stop condition.</p></li>
+<li><p><strong>stop</strong> (<em>int</em>) – The stop condition.</p></li>
+<li><p><strong>delta_rho</strong> (<em>list</em>) – List of delta ratios for the group dynamics.</p></li>
+<li><p><strong>analysis_ability_difference</strong> (<em>bool</em>) – Whether to analyze the ability difference.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The expected value of the heuristics.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -812,8 +887,8 @@ in the paper. Optional, default is None.</p></li>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="simulations.simulator_dynamics.VFunction._random_params">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_random_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#VFunction._random_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.VFunction._random_params" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="simulations.simulator_dynamics.VFunction.random_params">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">random_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/simulations/simulator_dynamics.html#VFunction.random_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.simulator_dynamics.VFunction.random_params" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate random parameters for the parametric form of the function <span class="math notranslate nohighlight">\(V\)</span>.</p>
 </dd></dl>
 
@@ -892,7 +967,7 @@ the search region is the pool of points. If not None, the search region is the p
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to Agent-based simulations</p>
+        <p class="prev-next-title">Agent-based simulations</p>
       </div>
     </a>
     <a class="right-next"
@@ -932,6 +1007,7 @@ the search region is the pool of points. If not None, the search region is the p
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiFunction.from_h_to_phi"><code class="docutils literal notranslate"><span class="pre">PhiFunction.from_h_to_phi()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiFunction.phi_function"><code class="docutils literal notranslate"><span class="pre">PhiFunction.phi_function()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiFunction.__call__"><code class="docutils literal notranslate"><span class="pre">PhiFunction.__call__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiFunction.test"><code class="docutils literal notranslate"><span class="pre">PhiFunction.test()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup"><code class="docutils literal notranslate"><span class="pre">PhiGroup</span></code></a><ul class="nav section-nav flex-column">
@@ -939,12 +1015,14 @@ the search region is the pool of points. If not None, the search region is the p
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.__call__"><code class="docutils literal notranslate"><span class="pre">PhiGroup.__call__()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.__eq__"><code class="docutils literal notranslate"><span class="pre">PhiGroup.__eq__()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.phi_group"><code class="docutils literal notranslate"><span class="pre">PhiGroup.phi_group()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.expected_value_group"><code class="docutils literal notranslate"><span class="pre">PhiGroup.expected_value_group()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.phi_group_relay"><code class="docutils literal notranslate"><span class="pre">PhiGroup.phi_group_relay()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.expected_value"><code class="docutils literal notranslate"><span class="pre">PhiGroup.expected_value()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.analyze_phi_region"><code class="docutils literal notranslate"><span class="pre">PhiGroup.analyze_phi_region()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup._create_random_phi"><code class="docutils literal notranslate"><span class="pre">PhiGroup._create_random_phi()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.create_random_phi"><code class="docutils literal notranslate"><span class="pre">PhiGroup.create_random_phi()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.plot_comparison"><code class="docutils literal notranslate"><span class="pre">PhiGroup.plot_comparison()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.analyze_ability_difference"><code class="docutils literal notranslate"><span class="pre">PhiGroup.analyze_ability_difference()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.create_pool_tools"><code class="docutils literal notranslate"><span class="pre">PhiGroup.create_pool_tools()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.PhiGroup.test"><code class="docutils literal notranslate"><span class="pre">PhiGroup.test()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction"><code class="docutils literal notranslate"><span class="pre">VFunction</span></code></a><ul class="nav section-nav flex-column">
@@ -953,7 +1031,7 @@ the search region is the pool of points. If not None, the search region is the p
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction._create_V"><code class="docutils literal notranslate"><span class="pre">VFunction._create_V()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction.plot"><code class="docutils literal notranslate"><span class="pre">VFunction.plot()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction.return_index"><code class="docutils literal notranslate"><span class="pre">VFunction.return_index()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction._random_params"><code class="docutils literal notranslate"><span class="pre">VFunction._random_params()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction.random_params"><code class="docutils literal notranslate"><span class="pre">VFunction.random_params()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction.best_phis"><code class="docutils literal notranslate"><span class="pre">VFunction.best_phis()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.simulator_dynamics.VFunction.create_additional_bests"><code class="docutils literal notranslate"><span class="pre">VFunction.create_additional_bests()</span></code></a></li>
 </ul>

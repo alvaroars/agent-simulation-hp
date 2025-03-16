@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Welcome to Agent-based simulations &#8212; Agent-based simulations 1.0 documentation</title>
+    <title>Agent-based simulations &#8212; Agent-based simulations 1.0 documentation</title>
   
   
   
@@ -328,18 +328,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="welcome-to-agent-based-simulations">
-<h1>Welcome to Agent-based simulations<a class="headerlink" href="#welcome-to-agent-based-simulations" title="Permalink to this heading">#</a></h1>
-<p>This documentation covers the simulation framework for studying agent-based simulations.</p>
+  <section id="agent-based-simulations">
+<h1>Agent-based simulations<a class="headerlink" href="#agent-based-simulations" title="Permalink to this heading">#</a></h1>
+<p>This documentation covers a comprehensive simulation framework for studying agent-based models in the Hong-Page context, a widely used framework in the literature of collective intelligence, which lies in the intersection of the fields of social choice theory, economics, epistemology, and political philosophy. The library’s modular structure provides a solid foundation for exploring and extending the original model. Researchers can easily implement alternative agent behaviors, problem landscapes, and group dynamics while leveraging the core infrastructure for visualization, analysis, and result processing. This extensible architecture enables systematic investigation of model variations and refinements to advance our understanding of collective problem-solving.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For a complete theoretical background and research findings, please refer to:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4505907">[Rom23]</a></p></li>
+<li><p><a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4505907">[Rom23]</a> <em>Fᴀᴛᴀʟ Eʀʀᴏʀs Aɴᴅ Mɪsᴜsᴇ Oғ Mᴀᴛʜᴇᴍᴀᴛɪᴄs Iɴ Tʜᴇ Hᴏɴɢ-Pᴀɢᴇ Tʜᴇᴏʀᴇᴍ Aɴᴅ Lᴀɴᴅᴇᴍᴏʀᴇ’s Eᴘɪsᴛᴇᴍɪᴄ Aʀɢᴜᴍᴇɴᴛ</em>,</p></li>
+<li><p><a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5172653">[Rom25]</a> <em>Mᴀᴛʜᴇᴍᴀᴛɪᴄᴀʟ Aɴᴀʟʏsɪs Oғ Tʜᴇ Hᴏɴɢ-Pᴀɢᴇ Fʀᴀᴍᴇᴡᴏʀᴋ</em>.</p></li>
 </ul>
+<p>Specifically, the library implements the improvements presented in Section 6 of the second paper, following the notation of both references.</p>
 </div>
-<section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>This simulation framework implements models related to the Hong-Page framework, including the improvements presented in <a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5172653">[Rom25]</a>. The Hong-Page framework is a mathematical model of collective problem-solving that explores how agent diversity and cognitive abilities affect group performance. It gained prominence for its claim that “diversity trumps ability” - that under certain conditions, diverse groups can outperform groups composed of individually higher-performing agents. The framework includes both theoretical results (the Hong-Page Theorem) and agent-based simulations.</p>
+<p>The library provides a flexible architecture for exploring how agent diversity, cognitive abilities, and collaboration patterns influence collective intelligence and problem-solving effectiveness in the aforementioned framework. Functions for incorporating results directly into LaTeX code are available, as well as tools for exporting to Excel and generating various plots to visualize simulation outcomes.</p>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Core simulation components</strong>: The framework includes <cite>simulator_dynamics</cite> for creating value functions, agent heuristics, and group behaviors. Its modular structure accommodates various agent types, value functions, and group dynamics.</p></li>
+<li><p><strong>Agent diversity and abilities</strong>: The system supports modeling agents with different cognitive capabilities through various ability coefficients and heuristic combinations, allowing for research on diversity effects in problem-solving.</p></li>
+<li><p><strong>Group dynamics analysis</strong>: The framework provides tools for studying group problem-solving processes, including relay dynamics, disagreement cycles, and collaborative decision-making patterns.</p></li>
+<li><p><strong>Performance assessment</strong>: Users can evaluate expected performance and efficiency across different agent configurations and group compositions.</p></li>
+<li><p><strong>LaTeX integration</strong>: The automatic creation of LaTeX tables and captions for results.</p></li>
+<li><p><strong>Excel compatibility</strong>: Import/export simulation results to Excel for broader accessibility and collaborative analysis.</p></li>
+<li><p><strong>Visualization tools</strong>: automatic elaboration of plots from the simulations and excel results is possible. LaTeX equations can be integrated into the plots.</p></li>
+</ul>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -354,6 +370,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.from_h_to_phi"><code class="docutils literal notranslate"><span class="pre">PhiFunction.from_h_to_phi()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_function"><code class="docutils literal notranslate"><span class="pre">PhiFunction.phi_function()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__call__"><code class="docutils literal notranslate"><span class="pre">PhiFunction.__call__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.test"><code class="docutils literal notranslate"><span class="pre">PhiFunction.test()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup"><code class="docutils literal notranslate"><span class="pre">PhiGroup</span></code></a><ul>
@@ -361,12 +378,14 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__call__"><code class="docutils literal notranslate"><span class="pre">PhiGroup.__call__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__eq__"><code class="docutils literal notranslate"><span class="pre">PhiGroup.__eq__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.phi_group"><code class="docutils literal notranslate"><span class="pre">PhiGroup.phi_group()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.expected_value_group"><code class="docutils literal notranslate"><span class="pre">PhiGroup.expected_value_group()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.phi_group_relay"><code class="docutils literal notranslate"><span class="pre">PhiGroup.phi_group_relay()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.expected_value"><code class="docutils literal notranslate"><span class="pre">PhiGroup.expected_value()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_phi_region"><code class="docutils literal notranslate"><span class="pre">PhiGroup.analyze_phi_region()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup._create_random_phi"><code class="docutils literal notranslate"><span class="pre">PhiGroup._create_random_phi()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.create_random_phi"><code class="docutils literal notranslate"><span class="pre">PhiGroup.create_random_phi()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.plot_comparison"><code class="docutils literal notranslate"><span class="pre">PhiGroup.plot_comparison()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_ability_difference"><code class="docutils literal notranslate"><span class="pre">PhiGroup.analyze_ability_difference()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.create_pool_tools"><code class="docutils literal notranslate"><span class="pre">PhiGroup.create_pool_tools()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.test"><code class="docutils literal notranslate"><span class="pre">PhiGroup.test()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction"><code class="docutils literal notranslate"><span class="pre">VFunction</span></code></a><ul>
@@ -375,7 +394,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction._create_V"><code class="docutils literal notranslate"><span class="pre">VFunction._create_V()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction.plot"><code class="docutils literal notranslate"><span class="pre">VFunction.plot()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction.return_index"><code class="docutils literal notranslate"><span class="pre">VFunction.return_index()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction._random_params"><code class="docutils literal notranslate"><span class="pre">VFunction._random_params()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction.random_params"><code class="docutils literal notranslate"><span class="pre">VFunction.random_params()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction.best_phis"><code class="docutils literal notranslate"><span class="pre">VFunction.best_phis()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction.create_additional_bests"><code class="docutils literal notranslate"><span class="pre">VFunction.create_additional_bests()</span></code></a></li>
 </ul>
@@ -383,27 +402,22 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#test-functions">Test Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.test_individual_h"><code class="docutils literal notranslate"><span class="pre">test_individual_h()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.test_group_h"><code class="docutils literal notranslate"><span class="pre">test_group_h()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.test_V"><code class="docutils literal notranslate"><span class="pre">test_V()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html#excel-functions">Excel Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.excel_results"><code class="docutils literal notranslate"><span class="pre">excel_results()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.excel_results_V"><code class="docutils literal notranslate"><span class="pre">excel_results_V()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.plots_convergence_from_excel"><code class="docutils literal notranslate"><span class="pre">plots_convergence_from_excel()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions._create_excel_from_df"><code class="docutils literal notranslate"><span class="pre">_create_excel_from_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.create_excel_from_df"><code class="docutils literal notranslate"><span class="pre">create_excel_from_df()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html#latex-functions"><span class="math notranslate nohighlight">\(\\LaTeX\)</span> Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions._create_latex_table"><code class="docutils literal notranslate"><span class="pre">_create_latex_table()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions._generate_caption"><code class="docutils literal notranslate"><span class="pre">_generate_caption()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#latex-functions">LaTeX Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.create_latex_table"><code class="docutils literal notranslate"><span class="pre">create_latex_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html#simulations.functions.generate_caption"><code class="docutils literal notranslate"><span class="pre">generate_caption()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="test_simulator.html">Test Simulator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="test_simulator.html#test-classes">Test Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test_simulator.html#tests">Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a><ul>
@@ -413,36 +427,25 @@ document.write(`
 </ul>
 </div>
 </section>
-</section>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h1>
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </section>
-<section id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
-<p>This simulation framework implements models related to the Hong-Page diversity model. It provides tools for:</p>
-<ul class="simple">
-<li><p>Creating and evaluating value functions (V functions)</p></li>
-<li><p>Implementing agent heuristics and problem-solving strategies (Phi functions)</p></li>
-<li><p>Analyzing group dynamics and collective problem-solving</p></li>
-<li><p>Testing and comparing different configurations of agents and problems</p></li>
-</ul>
-<p>The framework is designed to be flexible and extensible, allowing for a variety of experimental setups and analysis approaches.</p>
-</section>
 <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
-<p>To use this framework, you typically:</p>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<section id="toy-example">
+<h3>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Define a value function (VFunction) representing the problem landscape</p></li>
-<li><p>Create agent heuristics using PhiFunction</p></li>
-<li><p>Form groups using PhiGroup</p></li>
+<li><p>Define a value function (<code class="docutils literal notranslate"><span class="pre">VFunction</span></code>) representing the problem landscape</p></li>
+<li><p>Create agent heuristics using <code class="docutils literal notranslate"><span class="pre">PhiFunction</span></code></p></li>
+<li><p>Form groups using <code class="docutils literal notranslate"><span class="pre">PhiGroup</span></code></p></li>
 <li><p>Run simulations and analyze results</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">simulations.simulator_dynamics</span> <span class="kn">import</span> <span class="n">VFunction</span><span class="p">,</span> <span class="n">PhiFunction</span><span class="p">,</span> <span class="n">PhiGroup</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">simulator_dynamics</span> <span class="kn">import</span> <span class="n">VFunction</span><span class="p">,</span> <span class="n">PhiFunction</span><span class="p">,</span> <span class="n">PhiGroup</span>
 
 <span class="c1"># Create a value function</span>
 <span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Problem space size</span>
@@ -460,11 +463,14 @@ document.write(`
 <span class="n">solution</span><span class="p">,</span> <span class="n">iterations</span> <span class="o">=</span> <span class="n">group</span><span class="p">(</span><span class="n">starting_point</span><span class="p">)</span>
 
 <span class="c1"># Calculate expected performance</span>
-<span class="n">expected_value</span><span class="p">,</span> <span class="n">expected_iterations</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">expected_value_group</span><span class="p">()</span>
+<span class="n">expected_value</span><span class="p">,</span> <span class="n">expected_iterations</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">expected_value</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected solution quality: </span><span class="si">{</span><span class="n">expected_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected number of iterations: </span><span class="si">{</span><span class="n">expected_iterations</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>For more examples, see the <a class="reference internal" href="test_simulator.html"><span class="doc">Test Simulator</span></a> module.</p>
+</section>
+</section>
 </section>
 
 
@@ -505,15 +511,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Welcome to Agent-based simulations</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-example">Toy example</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-and-tables">Indices and tables</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
 </ul>
-
   </nav></div>
 
   <div class="sidebar-secondary-item">

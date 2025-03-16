@@ -300,21 +300,16 @@ document.write(`
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="simulator_dynamics.html">Simulator Dynamics</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#test-functions">Test Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.functions.test_individual_h"><code class="docutils literal notranslate"><span class="pre">test_individual_h()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.functions.test_group_h"><code class="docutils literal notranslate"><span class="pre">test_group_h()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.functions.test_V"><code class="docutils literal notranslate"><span class="pre">test_V()</span></code></a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#excel-functions">Excel Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.functions.excel_results"><code class="docutils literal notranslate"><span class="pre">excel_results()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.functions.excel_results_V"><code class="docutils literal notranslate"><span class="pre">excel_results_V()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#simulations.functions.plots_convergence_from_excel"><code class="docutils literal notranslate"><span class="pre">plots_convergence_from_excel()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.functions._create_excel_from_df"><code class="docutils literal notranslate"><span class="pre">_create_excel_from_df()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.functions.create_excel_from_df"><code class="docutils literal notranslate"><span class="pre">create_excel_from_df()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#latex-functions"><span class="math notranslate nohighlight">\(\\LaTeX\)</span> Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.functions._create_latex_table"><code class="docutils literal notranslate"><span class="pre">_create_latex_table()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#simulations.functions._generate_caption"><code class="docutils literal notranslate"><span class="pre">_generate_caption()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#latex-functions">LaTeX Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.functions.create_latex_table"><code class="docutils literal notranslate"><span class="pre">create_latex_table()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulations.functions.generate_caption"><code class="docutils literal notranslate"><span class="pre">generate_caption()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -379,89 +374,6 @@ document.write(`
   <section id="functions">
 <h1>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h1>
 <p>The Functions module provides utility functions for testing, analyzing, and reporting simulation results.</p>
-<section id="test-functions">
-<h2>Test Functions<a class="headerlink" href="#test-functions" title="Permalink to this heading">#</a></h2>
-<p>Functions to analyze the individual heuristic, group dynamics, and value functions.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="simulations.functions.test_individual_h">
-<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">test_individual_h</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/simulations/functions.html#test_individual_h"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.test_individual_h" title="Permalink to this definition">#</a></dt>
-<dd><p>Test an individual heuristic.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>h</strong> (<em>list</em>) – The heuristic to test.</p></li>
-<li><p><strong>V</strong> (<a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction" title="simulations.simulator_dynamics.VFunction"><em>VFunction</em></a>) – The <span class="math notranslate nohighlight">\(V\)</span> function.</p></li>
-<li><p><strong>prints</strong> (<em>bool</em>) – Whether to print the results.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The expected value of the heuristic.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>tuple[float, float]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="simulations.functions.test_group_h">
-<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">test_group_h</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heuristics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_random</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_elements</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_best</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_ability_difference</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="reference internal" href="_modules/simulations/functions.html#test_group_h"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.test_group_h" title="Permalink to this definition">#</a></dt>
-<dd><p>Test the group dynamics of a set of heuristics.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>heuristics</strong> (<em>list</em>) – The heuristics to test.</p></li>
-<li><p><strong>V</strong> (<a class="reference internal" href="simulator_dynamics.html#simulations.simulator_dynamics.VFunction" title="simulations.simulator_dynamics.VFunction"><em>VFunction</em></a>) – The <span class="math notranslate nohighlight">\(V\)</span> function.</p></li>
-<li><p><strong>no_random</strong> (<em>int</em>) – The number of random heuristics to test.</p></li>
-<li><p><strong>no_elements</strong> (<em>int</em>) – The number of elements to test.</p></li>
-<li><p><strong>additional_best</strong> (<em>list</em>) – The additional best heuristics to test.</p></li>
-<li><p><strong>analysis</strong> (<em>bool</em>) – Whether to analyze the results.</p></li>
-<li><p><strong>less_ability_coef</strong> (<em>float</em>) – The less ability coefficient.</p></li>
-<li><p><strong>no_less</strong> (<em>int</em>) – The number of less ability elements.</p></li>
-<li><p><strong>alternative_stop</strong> (<em>bool</em>) – Whether to use an alternative stop condition.</p></li>
-<li><p><strong>stop</strong> (<em>int</em>) – The stop condition.</p></li>
-<li><p><strong>delta_rho</strong> (<em>list</em>) – List of delta ratios for the group dynamics.</p></li>
-<li><p><strong>analysis_ability_difference</strong> (<em>bool</em>) – Whether to analyze the ability difference.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The expected value of the heuristics.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="simulations.functions.test_V">
-<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">test_V</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_random</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_radial_search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_best_no</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/simulations/functions.html#test_V"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.test_V" title="Permalink to this definition">#</a></dt>
-<dd><p>Test a fixed V taking several trials for the random group.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>params</strong> (<em>tuple</em>) – Parameters for the deterministic <span class="math notranslate nohighlight">\(V\)</span> function. If entered, the random <span class="math notranslate nohighlight">\(V\)</span> functions are ignored, it
-returns the results with just one function <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
-<li><p><strong>trials</strong> (<em>int</em>) – Number of trials for the random group.</p></li>
-<li><p><strong>no_random</strong> (<em>int</em>) – Number of elements in the random group.</p></li>
-<li><p><strong>n</strong> (<em>int</em>) – Number of elements in the function <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
-<li><p><strong>l</strong> (<em>int</em>) – Maximum number that each element in the heuristic can take.</p></li>
-<li><p><strong>add_radial_search</strong> (<em>bool</em>) – Flag to add a radial search to the pool of best phis.</p></li>
-<li><p><strong>additional_best_no</strong> (<em>int</em>) – Number of additional best phi functions to add to the pool of best phis.</p></li>
-<li><p><strong>search</strong> (<em>int</em>) – Number of elements in the region for the additional phis.</p></li>
-<li><p><strong>less_ability_coef</strong> (<em>float</em>) – Less ability coefficient.</p></li>
-<li><p><strong>no_less</strong> (<em>int</em>) – Number of less ability elements.</p></li>
-<li><p><strong>alternative_stop</strong> (<em>bool</em>) – Flag to use the alternative stop condition (stop when a disagreement cycle is detected).</p></li>
-<li><p><strong>stop</strong> (<em>int</em>) – Stop condition.</p></li>
-<li><p><strong>latex</strong> (<em>bool</em>) – Flag to create a <span class="math notranslate nohighlight">\(\LaTeX\)</span> table with the results.</p></li>
-<li><p><strong>analysis</strong> (<em>bool</em>) – Flag to analyze the phi functions.</p></li>
-<li><p><strong>delta_rho</strong> (<em>list</em>) – List of deltas and rhos for the group dynamics.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
 <section id="excel-functions">
 <h2>Excel Functions<a class="headerlink" href="#excel-functions" title="Permalink to this heading">#</a></h2>
 <p>Functions related to Excel files.</p>
@@ -500,6 +412,34 @@ returns the results with just one function V.</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="simulations.functions.excel_results_V">
+<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">excel_results_V</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_random</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_radial_search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_best_no</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/simulations/functions.html#excel_results_V"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.excel_results_V" title="Permalink to this definition">#</a></dt>
+<dd><p>Create an Excel file for a fixed <span class="math notranslate nohighlight">\(V\)</span> function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params</strong> (<em>tuple</em>) – Parameters for the deterministic <span class="math notranslate nohighlight">\(V\)</span> function. If entered, the random <span class="math notranslate nohighlight">\(V\)</span> functions are ignored, it
+returns the results with just one function <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+<li><p><strong>trials</strong> (<em>int</em>) – Number of trials for the random group.</p></li>
+<li><p><strong>no_random</strong> (<em>int</em>) – Number of elements in the random group.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – Number of elements in the function <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
+<li><p><strong>l</strong> (<em>int</em>) – Maximum number that each element in the heuristic can take.</p></li>
+<li><p><strong>add_radial_search</strong> (<em>bool</em>) – Flag to add a radial search to the pool of best phis.</p></li>
+<li><p><strong>additional_best_no</strong> (<em>int</em>) – Number of additional best phi functions to add to the pool of best phis.</p></li>
+<li><p><strong>search</strong> (<em>int</em>) – Number of elements in the region for the additional phis.</p></li>
+<li><p><strong>less_ability_coef</strong> (<em>float</em>) – Less ability coefficient.</p></li>
+<li><p><strong>no_less</strong> (<em>int</em>) – Number of less ability elements.</p></li>
+<li><p><strong>alternative_stop</strong> (<em>bool</em>) – Flag to use the alternative stop condition (stop when a disagreement cycle is detected).</p></li>
+<li><p><strong>stop</strong> (<em>int</em>) – Stop condition.</p></li>
+<li><p><strong>latex</strong> (<em>bool</em>) – Flag to create a <span class="math notranslate nohighlight">\(\LaTeX\)</span> table with the results.</p></li>
+<li><p><strong>analysis</strong> (<em>bool</em>) – Flag to analyze the phi functions.</p></li>
+<li><p><strong>delta_rho</strong> (<em>list</em>) – List of deltas and rhos for the group dynamics.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="simulations.functions.plots_convergence_from_excel">
 <span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">plots_convergence_from_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saving_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saving_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_statistics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/functions.html#plots_convergence_from_excel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.plots_convergence_from_excel" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the cumulative mean as a function of the number of V functions from an Excel file.</p>
@@ -527,8 +467,8 @@ returns the results with just one function V.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="simulations.functions._create_excel_from_df">
-<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">_create_excel_from_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/simulations/functions.html#_create_excel_from_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions._create_excel_from_df" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="simulations.functions.create_excel_from_df">
+<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">create_excel_from_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/simulations/functions.html#create_excel_from_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.create_excel_from_df" title="Permalink to this definition">#</a></dt>
 <dd><p>Create an Excel file from a DataFrame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -543,16 +483,16 @@ returns the results with just one function V.</p></li>
 
 </section>
 <section id="latex-functions">
-<h2><span class="math notranslate nohighlight">\(\\LaTeX\)</span> Functions<a class="headerlink" href="#latex-functions" title="Permalink to this heading">#</a></h2>
-<p>Functions to generate <span class="math notranslate nohighlight">\(\\LaTeX\)</span> code for tables and figures.</p>
+<h2>LaTeX Functions<a class="headerlink" href="#latex-functions" title="Permalink to this heading">#</a></h2>
+<p>Functions to generate LaTeX code for tables and figures.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="simulations.functions._create_latex_table">
-<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">_create_latex_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name_xlsx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caption</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/functions.html#_create_latex_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions._create_latex_table" title="Permalink to this definition">#</a></dt>
-<dd><p>Create a <span class="math notranslate nohighlight">\(\LaTeX\)</span> table from a data frame.</p>
+<dt class="sig sig-object py" id="simulations.functions.create_latex_table">
+<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">create_latex_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name_xlsx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caption</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/functions.html#create_latex_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.create_latex_table" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a LaTeX table from a data frame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – The data frame to be converted to a <span class="math notranslate nohighlight">\(\LaTeX\)</span> table.</p></li>
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – The data frame to be converted to a LaTeX table.</p></li>
 <li><p><strong>file_name_xlsx</strong> (<em>str</em>) – The name of the file to be created.</p></li>
 <li><p><strong>caption</strong> (<em>str</em>) – The caption of the table.</p></li>
 <li><p><strong>all</strong> (<em>bool</em>) – Whether to show all columns.</p></li>
@@ -569,13 +509,12 @@ returns the results with just one function V.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="simulations.functions._generate_caption">
-<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">_generate_caption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name_xlsx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_Vs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_random</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentage_random</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_best_no</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/functions.html#_generate_caption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions._generate_caption" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object py" id="simulations.functions.generate_caption">
+<span class="sig-prename descclassname"><span class="pre">simulations.functions.</span></span><span class="sig-name descname"><span class="pre">generate_caption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">no_Vs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_random</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentage_random</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_best_no</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">less_ability_coef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_less</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alternative_stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/simulations/functions.html#generate_caption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#simulations.functions.generate_caption" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate a caption for the results of the expected values and the number of iterations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>file_name_xlsx</strong> (<em>str</em>) – The name of the file to be created.</p></li>
 <li><p><strong>no_Vs</strong> (<em>int</em>) – The number of <span class="math notranslate nohighlight">\(V\)</span> functions to test.</p></li>
 <li><p><strong>no_random</strong> (<em>int</em>) – The number of random heuristics to test.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – The number of elements in the function <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
@@ -648,21 +587,16 @@ returns the results with just one function V.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-functions">Test Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.test_individual_h"><code class="docutils literal notranslate"><span class="pre">test_individual_h()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.test_group_h"><code class="docutils literal notranslate"><span class="pre">test_group_h()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.test_V"><code class="docutils literal notranslate"><span class="pre">test_V()</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excel-functions">Excel Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.excel_results"><code class="docutils literal notranslate"><span class="pre">excel_results()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.excel_results_V"><code class="docutils literal notranslate"><span class="pre">excel_results_V()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.plots_convergence_from_excel"><code class="docutils literal notranslate"><span class="pre">plots_convergence_from_excel()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions._create_excel_from_df"><code class="docutils literal notranslate"><span class="pre">_create_excel_from_df()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.create_excel_from_df"><code class="docutils literal notranslate"><span class="pre">create_excel_from_df()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex-functions"><span class="math notranslate nohighlight">\(\\LaTeX\)</span> Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions._create_latex_table"><code class="docutils literal notranslate"><span class="pre">_create_latex_table()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions._generate_caption"><code class="docutils literal notranslate"><span class="pre">_generate_caption()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latex-functions">LaTeX Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.create_latex_table"><code class="docutils literal notranslate"><span class="pre">create_latex_table()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations.functions.generate_caption"><code class="docutils literal notranslate"><span class="pre">generate_caption()</span></code></a></li>
 </ul>
 </li>
 </ul>
