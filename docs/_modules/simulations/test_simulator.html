@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -8,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>simulations.test_simulator &#8212; Agent-based simulations 1.0 documentation</title>
+    <title>simulations.test_simulator &#8212; Agent-based simulations</title>
   
   
   
@@ -28,27 +27,24 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx-toolbox.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx_toolbox_installation.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=0d720c8e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../_static/sphinx_toolbox_installation.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/simulations/test_simulator';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -114,7 +110,7 @@
   
   
   
-    <p class="title logo__title">Agent-based simulations 1.0 documentation</p>
+    <p class="title logo__title">Agent-based simulations</p>
   
 </a></div>
     
@@ -422,8 +418,12 @@ document.write(`
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the value of r for a given index i for a hardcoded r function.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
-<div class="viewcode-block" id="TestSimulator"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator">[docs]</a><span class="k">class</span> <span class="nc">TestSimulator</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-<div class="viewcode-block" id="TestSimulator.setUpClass"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.setUpClass">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="TestSimulator">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator">[docs]</a>
+<span class="k">class</span> <span class="nc">TestSimulator</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="TestSimulator.setUpClass">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.setUpClass">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">setUpClass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up test fixtures that are used across all tests. Only run once before all tests.&quot;&quot;&quot;</span>
         <span class="c1"># Create test directories if they don&#39;t exist</span>
@@ -438,14 +438,20 @@ document.write(`
             <span class="s1">&#39;tables&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">tables_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">tables_path</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
         <span class="p">}</span></div>
 
-<div class="viewcode-block" id="TestSimulator.setUp"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.setUp">[docs]</a>    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.setUp">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.setUp">[docs]</a>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Set up test fixtures. Run before each test.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="n">i</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">V_random</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">V_params</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">V_r</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="n">r_function</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.tearDownClass"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.tearDownClass">[docs]</a>    <span class="nd">@classmethod</span>
+
+<div class="viewcode-block" id="TestSimulator.tearDownClass">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.tearDownClass">[docs]</a>
+    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">tearDownClass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Clean up any files created during testing.&quot;&quot;&quot;</span>
         <span class="c1"># Remove any new files in results directory</span>
@@ -466,7 +472,10 @@ document.write(`
             <span class="k">if</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">original_paths</span><span class="p">[</span><span class="s1">&#39;tables&#39;</span><span class="p">]:</span>
                 <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tables_path</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_individual_heuristic"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_individual_heuristic">[docs]</a>    <span class="k">def</span> <span class="nf">test_individual_heuristic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_individual_heuristic">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_individual_heuristic">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_individual_heuristic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test individual heuristic performance with different heuristics and hardcoded :math:`V` function.&quot;&quot;&quot;</span>
         <span class="c1"># Test case 1: Basic heuristic</span>
         <span class="n">r1</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="o">.</span><span class="n">test</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -486,7 +495,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">r3</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">25.3</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_phi_function_initialization"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_function_initialization">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_function_initialization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_function_initialization">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_function_initialization">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_phi_function_initialization</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test :math:`\\Phi` function initialization with different parameters.&quot;&quot;&quot;</span>
         <span class="c1"># Test initialization with region</span>
         <span class="n">phi_region</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -504,7 +516,10 @@ document.write(`
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
             <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_phi_region_search"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_region_search">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_region_search</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_region_search">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_region_search">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_phi_region_search</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test :math:`\\phi` region search functionality.&quot;&quot;&quot;</span>
         <span class="n">phi</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
@@ -517,7 +532,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">checks</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_phi_hp_algorithm"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_hp_algorithm">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_hp_algorithm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_hp_algorithm">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_hp_algorithm">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_phi_hp_algorithm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test Hong-Page algorithm implementation.&quot;&quot;&quot;</span>
         <span class="c1"># Test basic HP algorithm</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="o">.</span><span class="n">phi_hp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">)</span>
@@ -530,7 +548,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">checks</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertGreater</span><span class="p">(</span><span class="n">checks</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_group_dynamics"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_group_dynamics">[docs]</a>    <span class="k">def</span> <span class="nf">test_group_dynamics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_group_dynamics">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_group_dynamics">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_group_dynamics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test group dynamics performance.&quot;&quot;&quot;</span>
         <span class="n">heuristics_k_test</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
         <span class="n">res</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">heuristics_k_test</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -541,7 +562,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Distinct heuristics sorted</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Distinct heuristics expected</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_group_dynamics_oscillatory"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_group_dynamics_oscillatory">[docs]</a>    <span class="k">def</span> <span class="nf">test_group_dynamics_oscillatory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_group_dynamics_oscillatory">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_group_dynamics_oscillatory">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_group_dynamics_oscillatory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test group dynamics with oscillatory :math:`V` function.&quot;&quot;&quot;</span>
         <span class="c1"># Create test data</span>
         <span class="n">heuristics_k_test</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
@@ -558,7 +582,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>  <span class="c1"># Distinct heuristics sorted</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">resp</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>  <span class="c1"># Distinct heuristics expected</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_phi_group_functionality"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_group_functionality">[docs]</a>    <span class="k">def</span> <span class="nf">test_phi_group_functionality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_phi_group_functionality">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_phi_group_functionality">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_phi_group_functionality</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test :math:`\\Phi` group class functionality.&quot;&quot;&quot;</span>
         <span class="c1"># Create a group of phi functions</span>
         <span class="n">phis</span> <span class="o">=</span> <span class="p">[</span>
@@ -578,7 +605,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">exp_value</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">exp_iter</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_v_function_creation"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_v_function_creation">[docs]</a>    <span class="k">def</span> <span class="nf">test_v_function_creation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_v_function_creation">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_v_function_creation">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_v_function_creation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test :math:`V` function creation and properties.&quot;&quot;&quot;</span>
         <span class="c1"># Test random V function</span>
         <span class="n">v_random</span> <span class="o">=</span> <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -597,7 +627,10 @@ document.write(`
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
             <span class="n">VFunction</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_r_function"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_r_function">[docs]</a>    <span class="k">def</span> <span class="nf">test_r_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_r_function">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_r_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_r_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test :math:`r` function and best :math:`\\Phi` calculations.&quot;&quot;&quot;</span>
         <span class="n">heuristics_k_test</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
 
@@ -630,7 +663,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">distinct_sorted</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">distinct_exp</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_test_V_function"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_test_V_function">[docs]</a>    <span class="k">def</span> <span class="nf">test_test_V_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_test_V_function">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_test_V_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_test_V_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test the test_V function with various parameters.&quot;&quot;&quot;</span>
         <span class="c1"># Test with parametric V</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -641,7 +677,10 @@ document.write(`
         <span class="n">expected_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;test_V_</span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">_M_2_N_5_n_</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">_l_</span><span class="si">{</span><span class="n">l</span><span class="si">}</span><span class="s2">_addPhi_0_search_5_less_None_noless_0_alternative_False_stop_None.xlsx&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results_path</span><span class="p">,</span> <span class="n">expected_file</span><span class="p">)))</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_excel_results"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_excel_results">[docs]</a>    <span class="k">def</span> <span class="nf">test_excel_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_excel_results">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_excel_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_excel_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test the excel_results function with various configurations.&quot;&quot;&quot;</span>
         <span class="c1"># Test basic excel creation</span>
         <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
@@ -667,7 +706,10 @@ document.write(`
                             <span class="s2">&quot;_less_None_noless_0_alternative_False_stop_None_ab_diff.tex&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tables_path</span><span class="p">,</span> <span class="n">expected_file_ab</span><span class="p">)))</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_excel_results_errors"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_excel_results_errors">[docs]</a>    <span class="k">def</span> <span class="nf">test_excel_results_errors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_excel_results_errors">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_excel_results_errors">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_excel_results_errors</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test error handling in excel_results function.&quot;&quot;&quot;</span>
         <span class="c1"># Test error when delta_rho provided without radial search</span>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
@@ -678,7 +720,10 @@ document.write(`
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
             <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">function</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">open_excel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_file_content_validity"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_file_content_validity">[docs]</a>    <span class="k">def</span> <span class="nf">test_file_content_validity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_file_content_validity">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_file_content_validity">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_file_content_validity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test that created files have valid content.&quot;&quot;&quot;</span>
         <span class="c1"># Create a test file</span>
         <span class="n">excel_results</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">no_Vs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">latex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">percentage_random</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
@@ -700,7 +745,10 @@ document.write(`
                 <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">begin</span><span class="si">{table}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">end</span><span class="si">{table}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">content</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_delta_invariance"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_delta_invariance">[docs]</a>    <span class="k">def</span> <span class="nf">test_delta_invariance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_delta_invariance">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_delta_invariance">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_delta_invariance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Results should be independent of :math:`\\delta`.&quot;&quot;&quot;</span>
         <span class="n">params</span> <span class="o">=</span> <span class="n">VFunction</span><span class="o">.</span><span class="n">random_params</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
         <span class="n">params_without_delta</span> <span class="o">=</span> <span class="n">params</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -717,7 +765,10 @@ document.write(`
             <span class="n">V_2</span><span class="o">.</span><span class="n">best_phis</span><span class="p">(</span><span class="n">heuristics</span><span class="o">=</span><span class="n">heuristics_k_test</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">best_heuristics_1</span><span class="p">,</span> <span class="n">best_heuristics_2</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_linear_V_apriori"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_linear_V_apriori">[docs]</a>    <span class="k">def</span> <span class="nf">test_linear_V_apriori</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_linear_V_apriori">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_linear_V_apriori">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_linear_V_apriori</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;More tests for the results when the :math:`V` function is increasing when we know the apriori some results.&quot;&quot;&quot;</span>
         <span class="n">V</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">V_linear</span>
         <span class="n">heuristics</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">k</span><span class="p">)]</span>
@@ -747,7 +798,10 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">ev_best_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">ev_random_2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="TestSimulator.test_random_V_apriori"><a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_random_V_apriori">[docs]</a>    <span class="k">def</span> <span class="nf">test_random_V_apriori</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestSimulator.test_random_V_apriori">
+<a class="viewcode-back" href="../../test_simulator.html#simulations.test_simulator.TestSimulator.test_random_V_apriori">[docs]</a>
+    <span class="k">def</span> <span class="nf">test_random_V_apriori</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test the results when the :math:`V` function is random and we know apriori some results.&quot;&quot;&quot;</span>
         <span class="n">n</span> <span class="o">=</span> <span class="mi">25</span>
         <span class="n">l</span> <span class="o">=</span> <span class="mi">5</span>
@@ -793,7 +847,9 @@ document.write(`
         <span class="n">random_heur_plus</span> <span class="o">=</span> <span class="p">[</span><span class="n">delta</span><span class="p">]</span>
         <span class="n">phi_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="n">V</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="n">random_heur_plus</span><span class="p">))</span>
         <span class="n">group</span> <span class="o">=</span> <span class="n">PhiGroup</span><span class="p">(</span><span class="n">phi_list</span><span class="o">=</span><span class="n">phi_list</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">group</span><span class="p">(</span><span class="n">j_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">j_1</span><span class="p">)</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">group</span><span class="p">(</span><span class="n">j_2</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">j_1</span><span class="p">)</span></div>
+</div>
+
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -840,8 +896,17 @@ document.write(`
     <div class="footer-items__start">
       
         <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Álvaro Romaniega.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     <br/>
   </p>
 </div>

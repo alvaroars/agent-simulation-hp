@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -8,7 +7,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>simulations.simulator_dynamics &#8212; Agent-based simulations 1.0 documentation</title>
+    <title>simulations.simulator_dynamics &#8212; Agent-based simulations</title>
   
   
   
@@ -28,27 +27,24 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/sphinx-toolbox.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx_toolbox_installation.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=0d720c8e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=d6b6a36a"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../_static/sphinx_toolbox_installation.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/simulations/simulator_dynamics';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -114,7 +110,7 @@
   
   
   
-    <p class="title logo__title">Agent-based simulations 1.0 documentation</p>
+    <p class="title logo__title">Agent-based simulations</p>
   
 </a></div>
     
@@ -371,7 +367,9 @@ document.write(`
 
 <span class="c1"># Class to represent a phi function</span>
 <span class="c1"># noinspection PyPep8Naming</span>
-<div class="viewcode-block" id="PhiFunction"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction">[docs]</a><span class="k">class</span> <span class="nc">PhiFunction</span><span class="p">:</span>
+<div class="viewcode-block" id="PhiFunction">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction">[docs]</a>
+<span class="k">class</span> <span class="nc">PhiFunction</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a :math:`\\phi` function.</span>
 
 <span class="sd">    :param V: The function :math:`V` to be maximized</span>
@@ -423,7 +421,9 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; best_point = phi_heuristic(15)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PhiFunction.__init__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="PhiFunction.__init__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random_points</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heuristics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">global</span> <span class="n">plot_count</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">V</span>  <span class="c1"># The function is a function of V</span>
@@ -512,13 +512,19 @@ document.write(`
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Only one region, random_points, radius or heuristics MUST be provided&quot;</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PhiFunction.__eq__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__eq__">[docs]</a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiFunction.__eq__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__eq__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if two :math:`\\phi` functions are equal. By definition if they are equal as functions.&quot;&quot;&quot;</span>
         <span class="n">results_1</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span>
         <span class="n">results_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">other</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">n</span><span class="p">)]</span>
         <span class="k">return</span> <span class="n">results_1</span> <span class="o">==</span> <span class="n">results_2</span></div>
 
-<div class="viewcode-block" id="PhiFunction.expected_value_static"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.expected_value_static">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="PhiFunction.expected_value_static">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.expected_value_static">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">expected_value_static</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">phi_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the expected value of the maximum of :math:`V` using the uniform distribution.</span>
 
@@ -536,11 +542,14 @@ document.write(`
         <span class="n">expected_value_iterations</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">/</span> <span class="n">n</span>
         <span class="k">return</span> <span class="n">expected_value</span><span class="p">,</span> <span class="n">expected_value_iterations</span></div>
 
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">expected_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">expected_value_static</span><span class="p">(</span><span class="n">phi_function</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_function</span><span class="p">,</span> <span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">)</span>
 
-<div class="viewcode-block" id="PhiFunction.phi_region"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_region">[docs]</a>    <span class="k">def</span> <span class="nf">phi_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<div class="viewcode-block" id="PhiFunction.phi_region">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_region">[docs]</a>
+    <span class="k">def</span> <span class="nf">phi_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)`  where :math:`\\phi(i)` is the maximizer of :math:`V` in the search space.</span>
 
 <span class="sd">        :param i: The starting point.</span>
@@ -634,7 +643,10 @@ document.write(`
             <span class="k">return</span> <span class="n">maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">no_checks</span>
         <span class="k">return</span> <span class="n">maximizer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="PhiFunction.phi_hp"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_hp">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="PhiFunction.phi_hp">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_hp">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">phi_hp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)` using the Hong-Page algorithm.</span>
 
@@ -675,7 +687,10 @@ document.write(`
                     <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">number_of_checks</span>
                 <span class="k">return</span> <span class="n">x</span></div>
 
-<div class="viewcode-block" id="PhiFunction.from_h_to_phi"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.from_h_to_phi">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="PhiFunction.from_h_to_phi">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.from_h_to_phi">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_h_to_phi</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert a heuristic to a :math:`\\phi` function.</span>
 
@@ -688,7 +703,10 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="k">lambda</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">:</span> <span class="n">PhiFunction</span><span class="o">.</span><span class="n">phi_hp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">return_checks</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PhiFunction.phi_function"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_function">[docs]</a>    <span class="k">def</span> <span class="nf">phi_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiFunction.phi_function">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.phi_function">[docs]</a>
+    <span class="k">def</span> <span class="nf">phi_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)` using the region, random_points, radius or heuristics, see :meth:`phi_region` and :meth:`phi_hp` for more details.</span>
 
 <span class="sd">        :param i: The starting point</span>
@@ -705,7 +723,10 @@ document.write(`
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No region, random_points, radius or heuristics provided&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PhiFunction.__call__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiFunction.__call__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.__call__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi(i)` using the region, random_points, radius or heuristics, see :meth:`phi_region` and :meth:`phi_hp` for more details.</span>
 <span class="sd">        </span>
 <span class="sd">        :param i: The starting point</span>
@@ -717,7 +738,10 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_function</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">return_checks</span><span class="o">=</span><span class="n">return_checks</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PhiFunction.test"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.test">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="PhiFunction.test">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiFunction.test">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">prints</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Test an individual heuristic.</span>
 
@@ -735,17 +759,26 @@ document.write(`
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected value: &quot;</span><span class="p">,</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span></div></div>
+            <span class="k">return</span> <span class="n">phi</span><span class="o">.</span><span class="n">expected_value</span></div>
+</div>
 
 
-<div class="viewcode-block" id="PhiGroup"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup">[docs]</a><span class="k">class</span> <span class="nc">PhiGroup</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiGroup">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup">[docs]</a>
+<span class="k">class</span> <span class="nc">PhiGroup</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a group of phi functions.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="PhiGroup.__init__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="PhiGroup.__init__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_best</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span> <span class="o">=</span> <span class="n">phi_list</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">is_best</span> <span class="o">=</span> <span class="n">is_best</span></div>
 
-<div class="viewcode-block" id="PhiGroup.__call__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiGroup.__call__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__call__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi^\\Phi(i)` using the group dynamics with a sequential approach, also known as ``relay dynamics``.</span>
 
 <span class="sd">        :param i: Starting point</span>
@@ -760,14 +793,20 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_group</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="n">alternative_stop</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PhiGroup.__eq__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__eq__">[docs]</a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiGroup.__eq__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.__eq__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if two :math:`\\Phi` groups are equal. By definition if they are equal as functions.&quot;&quot;&quot;</span>
         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">n</span>
         <span class="n">results_1</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
         <span class="n">results_2</span> <span class="o">=</span> <span class="p">[</span><span class="n">other</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
         <span class="k">return</span> <span class="n">results_1</span> <span class="o">==</span> <span class="n">results_2</span></div>
 
-<div class="viewcode-block" id="PhiGroup.phi_group"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.phi_group">[docs]</a>    <span class="k">def</span> <span class="nf">phi_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;relay&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiGroup.phi_group">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.phi_group">[docs]</a>
+    <span class="k">def</span> <span class="nf">phi_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;relay&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi^\\Phi(i)` using the group dynamics.</span>
 
 <span class="sd">        :param i: Starting point</span>
@@ -785,7 +824,10 @@ document.write(`
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Method </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> not implemented&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="PhiGroup.phi_group_relay"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.phi_group_relay">[docs]</a>    <span class="k">def</span> <span class="nf">phi_group_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiGroup.phi_group_relay">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.phi_group_relay">[docs]</a>
+    <span class="k">def</span> <span class="nf">phi_group_relay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute :math:`\\phi^\\Phi(i)` using the group dynamics with a sequential approach, also known as `relay dynamics`.</span>
 
 <span class="sd">        :param i: Starting point</span>
@@ -835,7 +877,10 @@ document.write(`
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The group dynamics is not working properly&quot;</span><span class="p">)</span>
                 <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">group_check</span></div>
 
-<div class="viewcode-block" id="PhiGroup.expected_value"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.expected_value">[docs]</a>    <span class="k">def</span> <span class="nf">expected_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+
+<div class="viewcode-block" id="PhiGroup.expected_value">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.expected_value">[docs]</a>
+    <span class="k">def</span> <span class="nf">expected_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute the expected value of the maximum of :math:`V` using the group dynamics.</span>
 
 <span class="sd">        :param alternative_stop: (optional, default is False) Flag to stop the algorithm when there is</span>
@@ -857,7 +902,10 @@ document.write(`
         <span class="n">expected_iterations</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span> <span class="o">/</span> <span class="n">n</span>
         <span class="k">return</span> <span class="n">expected_values</span><span class="p">,</span> <span class="n">expected_iterations</span></div>
 
-<div class="viewcode-block" id="PhiGroup.analyze_phi_region"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_phi_region">[docs]</a>    <span class="k">def</span> <span class="nf">analyze_phi_region</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiGroup.analyze_phi_region">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_phi_region">[docs]</a>
+    <span class="k">def</span> <span class="nf">analyze_phi_region</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Analyze the :math:`\\phi` functions to check duplicates, expected values and regions.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Check if there are duplicates in the best phi functions. Find that sorted regions are the same</span>
@@ -905,7 +953,10 @@ document.write(`
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>  <span class="c1"># Hardcoded for the example of 10 additional best phi functions</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected value of the radial search: &quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">expected_value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="PhiGroup.create_random_phi"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.create_random_phi">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="PhiGroup.create_random_phi">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.create_random_phi">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">create_random_phi</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">random_sample</span><span class="p">,</span> <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PhiFunction</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create random :math:`\\phi` functions from a random sample of heuristics.</span>
@@ -946,7 +997,10 @@ document.write(`
 
         <span class="k">return</span> <span class="n">phi_random</span></div>
 
-<div class="viewcode-block" id="PhiGroup.plot_comparison"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.plot_comparison">[docs]</a>    <span class="k">def</span> <span class="nf">plot_comparison</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_group_alt</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+
+<div class="viewcode-block" id="PhiGroup.plot_comparison">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.plot_comparison">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot_comparison</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phi_group_alt</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                         <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figures_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot the :math:`\\phi` functions.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">sizes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1014,7 +1068,10 @@ document.write(`
             <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="PhiGroup.analyze_ability_difference"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_ability_difference">[docs]</a>    <span class="k">def</span> <span class="nf">analyze_ability_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+
+<div class="viewcode-block" id="PhiGroup.analyze_ability_difference">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.analyze_ability_difference">[docs]</a>
+    <span class="k">def</span> <span class="nf">analyze_ability_difference</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Analyze the ability difference between the :math:`\\phi` functions.&quot;&quot;&quot;</span>
         <span class="c1"># Compute individual ability</span>
         <span class="n">phis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">phi_list</span>
@@ -1025,7 +1082,10 @@ document.write(`
         <span class="n">max_ability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">abilities</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mean_ability</span><span class="p">,</span> <span class="n">min_ability</span><span class="p">,</span> <span class="n">max_ability</span></div>
 
-<div class="viewcode-block" id="PhiGroup.create_pool_tools"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.create_pool_tools">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="PhiGroup.create_pool_tools">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.create_pool_tools">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">create_pool_tools</span><span class="p">(</span><span class="n">delta_rho_ratio</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a pool of heuristics or :math:`\\delta` and :math:`\\rho` for the group dynamics.</span>
@@ -1063,7 +1123,10 @@ document.write(`
 
         <span class="k">return</span> <span class="n">pool_tools</span></div>
 
-<div class="viewcode-block" id="PhiGroup.test"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.test">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="PhiGroup.test">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.PhiGroup.test">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">heuristics</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">no_random</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">no_elements</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">analysis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                     <span class="n">less_ability_coef</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_less</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">alternative_stop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                     <span class="n">analysis_ability_difference</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span> 
@@ -1172,9 +1235,13 @@ document.write(`
         <span class="k">if</span> <span class="n">analysis_ability_difference</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span><span class="p">,</span> <span class="n">ab_stats_best</span><span class="p">,</span> <span class="n">ab_stats_random</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span></div></div>
+            <span class="k">return</span> <span class="n">ev_random</span><span class="p">,</span> <span class="n">ev_best</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span></div>
+</div>
 
-<div class="viewcode-block" id="VFunction"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction">[docs]</a><span class="k">class</span> <span class="nc">VFunction</span><span class="p">:</span>
+
+<div class="viewcode-block" id="VFunction">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction">[docs]</a>
+<span class="k">class</span> <span class="nc">VFunction</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a function :math:`V`.</span>
 
 <span class="sd">    </span>
@@ -1187,7 +1254,9 @@ document.write(`
 <span class="sd">    :type function: function    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="VFunction.__init__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="VFunction.__init__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="n">params</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">random</span> <span class="o">=</span> <span class="n">random</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">function</span> <span class="o">=</span> <span class="n">function</span>
@@ -1201,11 +1270,17 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_create_V</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="VFunction.__call__"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.__call__">[docs]</a>    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+
+<div class="viewcode-block" id="VFunction.__call__">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.__call__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the :math:`V` function.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">V</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="VFunction._create_V"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction._create_V">[docs]</a>    <span class="k">def</span> <span class="nf">_create_V</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="VFunction._create_V">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction._create_V">[docs]</a>
+    <span class="k">def</span> <span class="nf">_create_V</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the :math:`V` function.&quot;&quot;&quot;</span>
         <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -1229,7 +1304,10 @@ document.write(`
 
         <span class="bp">self</span><span class="o">.</span><span class="n">V</span> <span class="o">=</span> <span class="n">V</span></div>
 
-<div class="viewcode-block" id="VFunction.plot"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.plot">[docs]</a>    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">saving_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figures_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<div class="viewcode-block" id="VFunction.plot">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">saving_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figures_path</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Plot the :math:`V` function.</span>
 <span class="sd">        </span>
@@ -1286,7 +1364,10 @@ document.write(`
             <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="VFunction.return_index"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.return_index">[docs]</a>    <span class="k">def</span> <span class="nf">return_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">:</span>
+
+<div class="viewcode-block" id="VFunction.return_index">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.return_index">[docs]</a>
+    <span class="k">def</span> <span class="nf">return_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">params_formatted</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
                                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1298,7 +1379,10 @@ document.write(`
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Either params or random or function must be provided in the VFunction class&quot;</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="VFunction.random_params"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.random_params">[docs]</a>    <span class="nd">@staticmethod</span>
+
+<div class="viewcode-block" id="VFunction.random_params">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.random_params">[docs]</a>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">random_params</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate random parameters for the parametric form of the function :math:`V`.&quot;&quot;&quot;</span>
         <span class="n">alpha</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
@@ -1310,7 +1394,10 @@ document.write(`
 
         <span class="k">return</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">i_0</span><span class="p">,</span> <span class="n">displacement</span></div>
 
-<div class="viewcode-block" id="VFunction.best_phis"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.best_phis">[docs]</a>    <span class="k">def</span> <span class="nf">best_phis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">heuristics</span><span class="p">,</span> <span class="n">no_elements</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+
+<div class="viewcode-block" id="VFunction.best_phis">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.best_phis">[docs]</a>
+    <span class="k">def</span> <span class="nf">best_phis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">heuristics</span><span class="p">,</span> <span class="n">no_elements</span><span class="p">,</span> <span class="n">additional_best</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Find the best :math:`\\phi` functions according to the expected value of the maximum of :math:`V` for a given set of heuristics.</span>
 
 <span class="sd">        :param V: The function :math:`V` to be maximized</span>
@@ -1394,7 +1481,10 @@ document.write(`
 
         <span class="k">return</span> <span class="n">best_phi</span><span class="p">,</span> <span class="n">best_heuristics</span><span class="p">,</span> <span class="n">intersection</span><span class="p">,</span> <span class="n">distinct_heur_sorted</span><span class="p">,</span> <span class="n">distinct_heur_exp</span></div>
 
-<div class="viewcode-block" id="VFunction.create_additional_bests"><a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.create_additional_bests">[docs]</a>    <span class="k">def</span> <span class="nf">create_additional_bests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">additional_best_no</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+
+<div class="viewcode-block" id="VFunction.create_additional_bests">
+<a class="viewcode-back" href="../../simulator_dynamics.html#simulations.simulator_dynamics.VFunction.create_additional_bests">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_additional_bests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_radial_search</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">additional_best_no</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">search</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
                                 <span class="n">exclude_max</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">delta_rho</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PhiFunction</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create additional best :math:`\\phi` functions.</span>
 
@@ -1435,7 +1525,9 @@ document.write(`
             <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
                 <span class="n">phi_rad</span> <span class="o">=</span> <span class="n">PhiFunction</span><span class="p">(</span><span class="n">V</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">pair</span><span class="p">)</span>
                 <span class="n">phi_best</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phi_rad</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">phi_best</span></div></div>
+        <span class="k">return</span> <span class="n">phi_best</span></div>
+</div>
+
 </pre></div>
 
                 </article>
@@ -1478,8 +1570,17 @@ document.write(`
     <div class="footer-items__start">
       
         <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2025, Álvaro Romaniega.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     <br/>
   </p>
 </div>

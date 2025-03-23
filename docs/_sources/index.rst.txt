@@ -1,16 +1,20 @@
-Agent-based simulations
-=======================
+Agent-based simulations in computational philosophy and social choice theory
+============================================================================
 
 This documentation covers a comprehensive simulation framework for studying agent-based models in the Hong-Page context, a widely used framework in the literature of collective intelligence, which lies in the intersection of the fields of social choice theory, economics, epistemology, and political philosophy. The library's modular structure provides a solid foundation for exploring and extending the original model. Researchers can easily implement alternative agent behaviors, problem landscapes, and group dynamics while leveraging the core infrastructure for visualization, analysis, and result processing. This extensible architecture enables systematic investigation of model variations and refinements to advance our understanding of collective problem-solving.
 
 .. note::
    For a complete theoretical background and research findings, please refer to:
    
-   - `[Rom23] <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4505907>`_ *Fᴀᴛᴀʟ Eʀʀᴏʀs Aɴᴅ Mɪsᴜsᴇ Oғ Mᴀᴛʜᴇᴍᴀᴛɪᴄs Iɴ Tʜᴇ Hᴏɴɢ-Pᴀɢᴇ Tʜᴇᴏʀᴇᴍ Aɴᴅ Lᴀɴᴅᴇᴍᴏʀᴇ's Eᴘɪsᴛᴇᴍɪᴄ Aʀɢᴜᴍᴇɴᴛ*,
+   - `[Rom23] <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4505907>`_ *Fatal Errors and Misuse of Mathematics in the Hong-Page Theorem and Landemore's Epistemic Argument*,
 
-   - `[Rom25] <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5172653>`_ *Mᴀᴛʜᴇᴍᴀᴛɪᴄᴀʟ Aɴᴀʟʏsɪs Oғ Tʜᴇ Hᴏɴɢ-Pᴀɢᴇ Fʀᴀᴍᴇᴡᴏʀᴋ*.
+   - `[Rom25] <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5172653>`_ *Mathematical Analysis of the Hong-Page Framework*,
+
+   - `Less technical summary: <https://alvaroromaniega.wordpress.com/2023/10/22/misuse-of-mathematics-in-the-hong-page-theorem-and-landemores-epistemic-argument-for-democracy/>`_ *Misuse of Mathematics in the Hong-Page Theorem and Landemore's Epistemic Argument for Democracy*,
+
+   - My previous research on the area, `[Rom22] <https://www.sciencedirect.com/science/article/pii/S0165489622000543>`_ *On the Probability of the Condorcet Jury Theorem or the Miracle of Aggregation*, Mᴀᴛʜᴇᴍᴀᴛɪᴄᴀʟ Sᴏᴄɪᴀʟ Sᴄɪᴇɴᴄᴇs, Elsevier, Volume 119, September 2022, Pages 41-55.
    
-   Specifically, the library implements the improvements presented in Section 6 of the second paper, following the notation of both references.
+   Specifically, the library implements the improvements presented in Section 6 of the second paper, and this documentation follows the notation presented there.
 
 Overview       
 --------
