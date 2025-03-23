@@ -1,4 +1,3 @@
-import matplotlib as plt
 import numpy as np
 import os
 import random
@@ -71,6 +70,7 @@ class PhiFunction:
     def __init__(self, V, region=None, random_points=None, radius=None, heuristics=None,
                  less_ability_coef=None) -> None:
         global plot_count
+        plot_count = 0
         self.V = V  # The function is a function of V
         self.n = V.n
         n = self.n
@@ -88,7 +88,7 @@ class PhiFunction:
             if self.la_type == "displacement":
                 # Introduce a displacement
                 c = self.la_params[0]
-                alt_V_u = lambda i: V(int(i - c % n))
+                alt_V_u = lambda i: V((i - c) % n)            
             elif self.la_type == "error":
                 c = self.la_params[0]
                 error_subset = random.sample(range(n), int(c * n))
@@ -140,7 +140,7 @@ class PhiFunction:
                 max_value = max([alt_V_u(j) for j in range(n)])
                 self.alt_V = VFunction(n=n, function=lambda i: (alt_V_u(i) / max_value))
                 # Plot both functions
-                if c3 > 0 and plot_count < 1:
+                if c3 > 0 and plot_count < 1:  # Only plot once
                     plt.plot([V(j) for j in range(n)])
                     # plt.plot([alt_V_u(j) for j in range(n)])
                     plt.plot([self.alt_V(j) for j in range(n)])

@@ -42,6 +42,7 @@ try:
 except ImportError:
     from .functions import (
         excel_results,
+        excel_results_V,
     )
 try:
     from config import (

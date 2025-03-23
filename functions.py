@@ -1,9 +1,10 @@
-import os
+import os  # Assumes Windows
 import logging
 import pandas as pd
 from openpyxl import load_workbook
 from openpyxl.drawing.image import Image
 import random
+import warnings
 
 try:
     from .simulator_dynamics import PhiFunction, VFunction, PhiGroup
@@ -225,7 +226,7 @@ def excel_results(n, l, k, no_Vs=100, latex=True, percentage_random=1, no_random
     if params is not None or function is not None:
         no_Vs = 1
         percentage_random = 0
-        print(Warning("The parameter no_Vs, percentage_random are ignored when params is provided"))
+        warnings.warn("The parameter no_Vs, percentage_random are ignored when params is provided")
 
     results = dict()
     if analysis_ability_difference:
@@ -353,7 +354,7 @@ def excel_results(n, l, k, no_Vs=100, latex=True, percentage_random=1, no_random
 def excel_results_V(params=None, trials=100, no_random=10, n=200, l=12, k=3, add_radial_search=False,
            additional_best_no=0, search=5, less_ability_coef=None, no_less=0,
            alternative_stop=False, stop=None, latex=True, analysis=False, delta_rho=None,
-           open_excel=True) -> None:  # TODO: move to VFunction class
+           open_excel=True) -> None:  # TODO: refactor common code with excel_results, worth it?
     """Create an Excel file for a fixed :math:`V` function.
 
     :param params: Parameters for the deterministic :math:`V` function. If entered, the random :math:`V` functions are ignored, it
