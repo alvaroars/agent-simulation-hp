@@ -11,9 +11,11 @@ sys.path.insert(0, simulations_path)
 
 
 # -- Project information -----------------------------------------------------
-project = 'Agent-based simulations'
+project = 'Agent-based simulations in computational philosophy'
 author = 'Álvaro Romaniega'
 release = '1.0'
+copyright = '2025, Álvaro Romaniega'
+version = '1.0'
 master_doc = "index"
 
 # -- Extensions configuration ------------------------------------------------
@@ -69,12 +71,14 @@ autosectionlabel_prefix_document = True
 
 # -- HTML output configuration ----------------------------------------------
 html_theme = "pydata_sphinx_theme"
+html_title = "Agent-based simulations"
 html_theme_options = {
     "collapse_navigation": False,
 }
 
 html_show_sourcelink = True
 python_module_index = False
+html_show_copyright = True
 
 html_sidebars = {
     "**": [
